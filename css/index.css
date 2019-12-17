@@ -197,14 +197,13 @@ ul li img {
 	background-color: white;
 }
 
-#single div :fir {
-	width: 13.125rem;
-	height: 13.5rem;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	/* background-color: white; */
+.superThing #single :first-child {
+	background-color: transparent;
+	align-items: normal;
+	justify-content: normal;
+}
+.superThing #single :first-child img{
+	margin: 10px;
 }
 
 #s #single li {
@@ -251,13 +250,23 @@ ul li img {
 	background-color: transparent;
 }
 
+#superlogo {
+	width: 129px;
+	height: 36px;
+	cursor: pointer;
+}
+
 .font2 {
 	font-size: 14px;
-	color: rgba(255, 255, 255, 0.8);
+	color: rgba(255, 255, 255, 0.8) !important;
 	font-weight: bold;
 	cursor: pointer;
-	background-color: transparent;
-	z-index: -1;
+	text-align: left;
+	margin-left: 20px;
+}
+
+#timeline span{
+	margin-left: 0px;
 }
 
 .underline {
@@ -268,11 +277,18 @@ ul li img {
 	margin-left: 4px;
 }
 
-
+.separator{
+	width: 20px;
+	height: 5px;
+	background-color: white;
+	margin-left: 20px;
+	margin-top: 7px;
+}
 
 #clock {
 	width: 1.25rem;
 	height: 1.25rem;
+	float: none;
 }
 
 .intro {
@@ -280,9 +296,36 @@ ul li img {
 	height: 35px;
 	margin-left: 20px;
 	margin-top: 12px;
-	font-size: 26px;\
+	font-size: 26px;
 	display: inline-block;
 	cursor: pointer;
 	max-width: 190px;
 	overflow: hidden;
+}
+#timeline{
+	display: flex;
+	align-items: center;
+	left: -6px;
+	margin-left: 6px;
+}
+.time{
+	display: inline-block;
+	width: 35px;
+	height: 35px;
+	line-height: 35px;
+	text-align: center;
+	background-color: #161616 !important;
+	color: #fff;
+	font-size: 20px;
+	font-family: Tahoma;
+	font-weight: bold;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	margin-left: 6px;
+}
+
+#timeline2{
+	/*position: absolute;*/
+	/*margin-top: 56px;*/
+	margin-left: 6px;
 }
