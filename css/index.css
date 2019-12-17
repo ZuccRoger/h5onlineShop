@@ -329,3 +329,36 @@ ul li img {
 	/*margin-top: 56px;*/
 	margin-left: 6px;
 }
+
+.intro{
+	color: #B77347;
+	height: 35px;
+	margin-left: 20px;
+	margin-top: 12px;
+	font-size: 26px;
+	display: inline-block;
+	cursor: pointer;
+	max-width: 190px;
+	overflow: hidden;
+}
+.intro2{
+	color: rgba(183,115,71,0.7);
+	margin-left: 8px;
+	font-size: 16px;
+	margin-top: 27px;
+	height: 21px;
+	cursor: pointer;
+	display: inline-block;
+	max-width: 208px;
+	overflow: hidden;
+	position: relative;
+	top: -3px;
+}
+.introdiv{
+	width: 900px;
+	height: 334px;
+	position: relative;
+	padding-left: 20px;
+	background-color: blue;
+
+}
