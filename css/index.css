@@ -1,0 +1,288 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+html,
+body {
+	height: 100%;
+}
+
+.location {
+	width: 1rem;
+}
+
+.hd_header_bar {
+	display: flex;
+	justify-content: space-between;
+	height: 30px;
+}
+
+.hd_header_bar div {
+	display: flex;
+}
+
+span {
+	font: 12px "Microsoft YaHei", Helvetica Neue, tahoma, Arial, Verdana, "Hiragino Sans GB", "\5b8b\4f53";
+	color: #666;
+}
+
+em {
+	font-style: normal;
+	font: 12px "Microsoft YaHei", Helvetica Neue, tahoma, Arial, Verdana, "Hiragino Sans GB", "\5b8b\4f53";
+}
+
+.hd_header_wrap {
+	height: 30px;
+	background-color: #f4f4f4;
+	border-bottom: 1px solid #e5e5e5;
+	display: flex;
+	justify-content: center;
+	font: 12px "Microsoft YaHei", Helvetica Neue, tahoma, Arial, Verdana, "Hiragino Sans GB", "\5b8b\4f53";
+}
+
+.flex {
+	display: flex;
+	align-items: center;
+}
+
+.spanleft {
+	padding-left: 3px;
+}
+
+input {
+	border-bottom-right-radius: 100px;
+	border-top-right-radius: 100px;
+	background-color: transparent;
+	border-radius: 100px;
+	outline: 0 none;
+	height: 38px;
+	line-height: 38px;
+	border: 1px solid #e2e2e2;
+	color: #333;
+	background: #fcfcfc;
+	padding-left: 32px;
+}
+
+input:hover {
+	border: 1px solid red;
+}
+
+#goods {
+	margin: 4px;
+	padding-left: 32px;
+}
+
+#goods li {
+	float: left;
+	text-decoration: none;
+	float: left;
+	margin-right: 10px;
+	line-height: 19px;
+	font-size: 14px;
+	color: #aaa;
+}
+
+button {
+	position: absolute;
+	background-color: transparent;
+	border: none;
+}
+
+.reletive {
+	position: relative;
+}
+
+.search {
+	position: absolute;
+	top: 0.5rem;
+	right: 9rem;
+}
+
+.font {
+	font: 16px "Microsoft YaHei", Helvetica Neue, tahoma, Arial, Verdana, "Hiragino Sans GB", "\5b8b\4f53";
+	color: #333;
+}
+
+.font :hover {
+	color: red;
+}
+
+#cart::-webkit-input-placeholder {
+	color: black;
+}
+
+ul li {
+	float: left;
+}
+
+ul li:hover {
+	float: left;
+	color: red;
+	cursor: pointer;
+}
+
+ul img {
+	float: left;
+}
+
+#category {
+	margin-left: 1.125rem;
+	margin-right: 0.2rem;
+}
+
+.lunbodiv {
+	width: 6.875rem;
+	height: 2.5rem;
+	background-color: white;
+	text-align: center;
+	line-height: 2.5rem;
+	margin: 0.25rem;
+	cursor: pointer;
+}
+
+.lunbodiv :hover {
+	background-color: #333333;
+}
+
+.lunboparrent {
+	display: flex;
+	justify-content: center;
+	margin-top: -1.25rem;
+}
+
+.superThing {
+	width: 66.875rem;
+	margin: 0 auto;
+	height: 23.125rem;
+}
+
+ul li img {
+	width: 6.875rem;
+	height: 6.875rem;
+}
+
+#single {
+	background-image: url(../img/single/super_single_bg.png);
+	position: relative;
+	width: 1070px;
+	margin: 0 auto;
+	height: 370px;
+	text-align: center;
+}
+
+#s {
+	width: 13.125rem;
+	height: 13.5rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	background-color: transparent
+}
+
+#single li {
+	width: 13.125rem;
+	height: 13.5rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	background-color: white;
+}
+
+#single div :fir {
+	width: 13.125rem;
+	height: 13.5rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	/* background-color: white; */
+}
+
+#s #single li {
+	background-color: transparent !important;
+}
+
+#single li :hover {
+	transform: scale(1.2);
+}
+
+#single li div {
+	width: 9.5625rem;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.s_bar {
+	margin-top: 0.625rem;
+	;
+	background-color: #E2E2E2;
+	border-radius: 100px;
+	width: 9.375rem;
+	height: 0.375rem;
+}
+
+#single .s_progress {
+	width: 12%;
+	height: 100%;
+	border-radius: 6.25rem;
+	background-color: #d9161d;
+	background-image: linear-gradient(-90deg, #d9161d 0%, #f0444d 100%);
+}
+
+#single li div :nth-child(2) {
+	color: red;
+	font-family: Tahoma, "Microsoft YaHei";
+	color: #e50113;
+	font-weight: bold;
+	font-size: 14px;
+}
+
+#single div li :hover {
+	background-color: transparent;
+}
+
+.font2 {
+	font-size: 14px;
+	color: rgba(255, 255, 255, 0.8);
+	font-weight: bold;
+	cursor: pointer;
+	background-color: transparent;
+	z-index: -1;
+}
+
+.underline {
+	text-decoration: line-through;
+	font-size: 12px;
+	color: #999;
+	font-weight: normal;
+	margin-left: 4px;
+}
+
+
+
+#clock {
+	width: 1.25rem;
+	height: 1.25rem;
+}
+
+.intro {
+	color: #B77347;
+	height: 35px;
+	margin-left: 20px;
+	margin-top: 12px;
+	font-size: 26px;\
+	display: inline-block;
+	cursor: pointer;
+	max-width: 190px;
+	overflow: hidden;
+}
