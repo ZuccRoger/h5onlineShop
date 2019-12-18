@@ -359,6 +359,145 @@ ul li img {
 	height: 334px;
 	position: relative;
 	padding-left: 20px;
-	background-color: blue;
+}
 
+#intro1 {
+	background-image: url("../img/intro/index.jpg");
+	width: 189px;
+}
+
+#intro {
+	position: absolute;
+	left: 13px;
+	top: 20px;
+}
+
+#intro li {
+	width: 76px;
+	height: 25px;
+	border: 1px solid white;
+	margin: 3px;
+	text-align: center;
+	color: white;
+}
+
+#intro2 {
+	position: relative;
+}
+
+#intro2 img {
+	width: 110px;
+	height: 110px;
+	position: absolute;
+	right: 23px;
+	top: 30px;
+}
+
+#intro2 a div {
+	border: 1px solid rgba(228, 147, 55, 0.5) !important;
+	color: #e49337 !important;
+	font-size: 14px;
+	cursor: pointer;
+	overflow: hidden;
+	left: 30px;
+	top: 100px;
+	position: absolute;
+	padding: 7px;
+}
+
+.intro_wine {
+	position: absolute !important;
+	width: 90px !important;
+	height: 90px !important;
+	top: 50px !important;
+	right: 10px !important;
+}
+
+.span1 {
+	margin-top: 40px;
+	color: #793a11;
+	white-space: nowrap;
+	overflow: hidden;
+	-o-text-overflow: ellipsis;
+	text-overflow: ellipsis;
+	width: 150px;
+	margin-left: 30px;
+	font-size: 14px;
+	position: absolute;
+}
+
+.span2 {
+	color: #b77347;
+	margin-top: 5px;
+	white-space: nowrap;
+	overflow: hidden;
+	-o-text-overflow: ellipsis;
+	text-overflow: ellipsis;
+	width: 150px;
+	margin-left: 30px;
+	font-size: 14px;
+	position: absolute;
+	top: 62px;
+}
+
+#intro_wine_rice {
+	width: 335px;
+	height: 50%;
+	display: flex
+}
+
+#intro_wine_rice a :nth-child(1) {
+	margin-left: 15px;
+	font-size: 14px;
+	color: #666;
+	margin-top: 10px;
+	overflow: hidden;
+	height: 14px;
+	width: 102px;
+	line-height: 1;
+	margin-bottom: 7px;
+}
+
+#intro_wine_rice a :nth-child(2) {
+	margin-left: 15px;
+	font-size: 14px;
+	color: #999;
+	margin-top: -1px;
+	overflow: hidden;
+	height: 14px;
+	width: 102px;
+	line-height: 1;
+	margin-bottom: 7px;
+}
+
+#rank_intro {
+	width: 33%;
+	height: 100%;
+	background-color: white;
+	position: relative;
+}
+
+#rank_intro :nth-child(2) {
+	margin-top: 20px;
+}
+
+#rank_intro :nth-child(3) {
+	font-size: 14px;
+	color: #999;
+	margin-top: 7px;
+	width: 130px;
+	height: 21px;
+	overflow: hidden;
+	white-space: nowrap;
+}
+#rank_intro div div{
+	height: 90px;
+	width: 90px;
+	background-color: white;
+}
+
+#rank_intro img {
+	width: 60px;
+	height: 60px;
+	text-align: center;
 }
