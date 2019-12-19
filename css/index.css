@@ -56,7 +56,7 @@ em {
 	padding-left: 3px;
 }
 
-input {
+.input_circle {
 	border-bottom-right-radius: 100px;
 	border-top-right-radius: 100px;
 	background-color: transparent;
@@ -70,7 +70,7 @@ input {
 	padding-left: 32px;
 }
 
-input:hover {
+.input_circle :hover {
 	border: 1px solid red;
 }
 
@@ -827,4 +827,46 @@ ul li img {
 #bottom_span span {
     display: block;
     margin: 10px 0px;
+}
+
+.page {
+	float: right;
+}
+
+.page li {
+	border: 1px solid #F2855F;
+	background: #ff8c64;
+	color: #fff;
+	float: left;
+	width: 34px;
+	height: 34px;
+	overflow: hidden;
+	margin-left: 5px;
+	padding: 9px 0;
+	line-height: 14px;
+	font: 12px "Microsoft YaHei", Helvetica Neue, tahoma, Arial, Verdana, "Hiragino Sans GB", "\5b8b\4f53";
+	font-size: 16px;
+	font-family: Arial;
+	text-align: center;
+	display: flex !important;
+	justify-content: center !important;
+	align-items: center !important;
+}
+
+.page .ellipsis {
+	border: none;
+	background: none;
+	letter-spacing: 2px;
+	font-weight: bold;
+	font-family: "Microsoft Yahei";
+	float: left;
+	width: 34px;
+	height: 16px;
+	overflow: hidden;
+	margin-left: 5px;
+	padding: 9px 0;
+	color: #999;
+	font-size: 16px;
+	text-align: center;
+	line-height: 14px;
 }
