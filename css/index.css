@@ -109,9 +109,15 @@ button {
 	font: 16px "Microsoft YaHei", Helvetica Neue, tahoma, Arial, Verdana, "Hiragino Sans GB", "\5b8b\4f53";
 	color: #333;
 }
+.font li :hover {
+    color: red;
+    cursor: pointer;
+}
+
 
 .font :hover {
 	color: red;
+    cursor: pointer;
 }
 
 #cart::-webkit-input-placeholder {
@@ -722,4 +728,103 @@ ul li img {
 	display: inline-flex;
 }
 
+#bottom_parent {
+    background-color: white;
+}
 
+#bottom {
+    width: 1080px;
+    margin: 0 auto;
+}
+
+#bottom ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+#bottom ul li {
+    width: 1080px;
+    margin: 40px 40px 40px 0px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#bottom ul li b {
+    margin: 10px 0;
+}
+
+#bottom ul li div {
+    margin-left: 10px;
+}
+
+#bottom ul li img {
+    width: 66px;
+    height: 66px;
+}
+
+#bottom dl {
+    float: left;
+    display: block;
+    width: 195px;
+}
+
+#bottom dl dt {
+    height: 32px;
+    padding: 0 8px;
+    font-size: 14px;
+    line-height: 32px;
+    overflow: hidden;
+    font-family: "Microsoft YaHei";
+    color: #666;
+    font-weight: bold;
+}
+
+#bottom dl dd {
+    height: 24px;
+    padding: 0 8px;
+    line-height: 24px;
+    overflow: hidden;
+    white-space: normal;
+    font-size: 12px;
+}
+
+.bottom_code {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.bottom_code span {
+    line-height: 32px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #666;
+}
+
+.bottom_code img {
+    width: 90px;
+    height: 90px;
+}
+
+
+#bottom_span {
+    position: absolute;
+    text-align: center;
+    border: none;
+    margin: 0 auto;
+    margin-left: 64px;
+}
+
+#bottom_span a {
+    color: #333;
+    margin: 0px 3px;
+    font: 12px "Microsoft YaHei", Helvetica Neue, tahoma, Arial, Verdana, "Hiragino Sans GB", "\5b8b\4f53";
+}
+
+#bottom_span span {
+    display: block;
+    margin: 10px 0px;
+}

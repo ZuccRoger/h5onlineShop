@@ -1,24 +1,254 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<title></title>
-		<link rel="stylesheet" type="text/css" href="../css/index.css">
-	</head>
-	<body>
-		<div class="seven-face">
-			<div class="row">
-				<span class="pip"></span>
-				<span class="pip"></span>
-				<span class="pip"></span>
+<head>
+	<meta charset="utf-8"/>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="../css/index.css">
+	<link rel="stylesheet" type="text/css" href="../css/index2.css">
+</head>
+<body>
+<!-- 顶部条 -->
+<div style="display: flex;flex-direction: column">
+	<div class="hd_header_wrap">
+		<div style="width: 1070px;height: 13.75rem;">
+			<div class="hd_header_bar">
+				<div>
+					<div class="flex">
+						<img src="../img/index.png" class="location">
+						<span style="padding-left: 3px;">首页:</span>
+						<em>杭州</em>
+					</div>
+					<div class="flex" style="margin-left: 20px;">
+						<img src="../img/location.png" class="location">
+						<span style="padding-left: 3px;">送货地址:</span>
+						<em>杭州</em>
+					</div>
+					<div class="flex" style="margin-left: 20px;">
+						<img src="../img/notification.png" class="location">
+						<!-- <span style="padding-left: 3px;">送货地址:</span> -->
+						<ul>
+							<a href="" title="防范金融诈骗提示">
+								<li>
+											<span class="spanleft">
+												防范金融诈骗提示
+											</span>
+								</li>
+							</a>
+							<!-- <a href="" title="1号店配送费调整公告">
+
+                            <li><span>1号店配送费调整公告</span></li>
+                        </a>
+                        <a href="" title="1金融下线公告">
+                            <li><span>1金融下线公告</span></li>
+                        </a> -->
+						</ul>
+					</div>
+				</div>
+				<div>
+					<div class="flex">
+						<span style="padding-left: 3px;">晚上好，请 </span>
+						<span style="color: red;">登录</span>
+					</div>
+					<div class="flex" style="margin-left: 20px;">
+						<span style="padding-left: 3px;color: #AAAAAA;">注册</span>
+					</div>
+					<div class="flex" style="margin-left: 20px;">
+						<img src="../img/membership.png" class="location">
+						<span style="padding-left: 3px;">会员俱乐部</span>
+					</div>
+					<div class="flex" style="margin-left: 20px;">
+						<img src="../img/order.png" class="location">
+						<span style="padding-left: 3px;">我的订单</span>
+					</div>
+				</div>
 			</div>
-			<div class="row2">
-				<span class="pip"></span>
+			<div class="flex">
+				<img src="../img/logo.png" alt="" style="height: 140px;width: 140px;">
+				<img src="../img/desc1.jpg" alt="" style="height: 90px;width: 160px;">
+				<div style="margin-left: 100px;">
+					<div class="reletive">
+						<input type="text" style="width: 500px;height: 38px;" placeholder="性感内衣">
+						<img style="position: absolute;right: 4.6875rem;top: 0.625rem;" src="../img/cart.png"
+							 class="location">
+						<input id="cart" type="text"
+							   style="width: 100px;height: 38px;cursor: pointer;margin-left: 30px;" class="font"
+							   placeholder="购物车">
+						<button type="button" class="search"><img src="../img/search.png" style="width: 22px;"></button>
+					</div>
+					<div id="goods">
+						<li>纸巾卷纸</li>
+						<li>花生油</li>
+						<li>金纺</li>
+						<li>矿泉水</li>
+						<li>海飞丝洗发水</li>
+						<li>抽纸</li>
+						<li>威露士</li>
+					</div>
+				</div>
 			</div>
-			<div class="row3">
-				<span class="pip"></span>
-				<span class="pip"></span>
+			<div class="flex" style="border-bottom: 2px solid red">
+				<div style="width: 140px;height: 40px;background-color: red;opacity:0.8;display: flex;align-items: center;padding: 0 10px;cursor: pointer;">
+					<img src="../img/menu.png" alt="" style="width: 17%;">
+					<li id="category" class="font" style="color: white;">全部类目</li>
+					<img src="../img/down.png" alt="" style="width: 12%;">
+				</div>
+				<ul class="font">
+					<li style="margin-left: 6.25rem;">金币签到</li>
+					<li style="margin-left: 6.25rem;">充值</li>
+					<li style="margin-left: 6.25rem;">领券中心</li>
+				</ul>
 			</div>
 		</div>
-	</body>
+	</div>
+	<div style="height: 180px"></div>
+	<div style="width: 1080px;margin: 0 auto">
+		<div id="brand">
+			<img src="../img/page2/category.png" alt="">
+			<span>全部结果</span>
+			<span>></span>
+			<span>" 进口 "</span>
+		</div>
+		<div style="height: 160px" id="brand2">
+			<div style="display: flex;background-color: rgba(255,255,255,0.2);height: 30px">
+				<div style="width: 130px">
+					<span>相关分类</span>
+				</div>
+				<div style="width: 950px;border-bottom:1px #e2e2e2 dashed;border-left:1px #e2e2e2 dashed">
+					<span style="margin-left: 20px">进口食品</span>
+				</div>
+			</div>
+
+			<div style="display: flex;height: 130px;">
+				<div style="width: 130px;height: 130px;;border-top:1px #e2e2e2 dashed;border-left:1px #e2e2e2 dashed"">品牌</div>
+				<div style="width: 950px;border-left:1px #e2e2e2 dashed">
+					<ul>
+						<li><a href=""><img src="../img/page2/brand1.jpg" alt=""></a></li>
+						<li><a href=""><img src="../img/page2/brand2.jpg" alt=""></a></li>
+						<li><a href=""><img src="../img/page2/brand3.jpg" alt=""></a></li>
+						<li><a href=""><img src="../img/page2/brand4.jpg" alt=""></a></li>
+						<li><a href=""><img src="../img/page2/brand5.jpg" alt=""></a></li>
+						<li><a href=""><img src="../img/page2/brand6.jpg" alt=""></a></li>
+						<li><a href=""><img src="../img/page2/brand7.jpg" alt=""></a></li>
+						<li><a href=""><img src="../img/page2/brand8.jpg" alt=""></a></li>
+						<li><a href=""><img src="../img/page2/brand9.jpg" alt=""></a></li>
+						<li><a href=""><img src="../img/page2/brand10.jpg" alt=""></a></li>
+						<li><a href=""><img src="../img/page2/brand11.jpg" alt=""></a></li>
+						<li><a href=""><img src="../img/page2/brand12.png" alt=""></a></li>
+						<li><a href=""><img src="../img/page2/brand13.jpg" alt=""></a></li>
+						<li><a href=""><img src="../img/page2/brand14.jpg" alt=""></a></li>
+						<li><a href=""><img src="../img/page2/brand15.jpg" alt=""></a></li>
+						<li><a href=""><img src="../img/page2/brand16.jpg" alt=""></a></li>
+						<li><a href=""><img src="../img/page2/brand17.jpg" alt=""></a></li>
+						<li><a href=""><img src="../img/page2/brand18.jpg" alt=""></a></li>
+						<li><a href=""><img src="../img/page2/brand19.png" alt=""></a></li>
+						<li><a href=""><img src="../img/page2/brand20.jpg" alt=""></a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<div id="bottom_parent">
+		<div id="bottom">
+			<ul>
+				<li>
+					<img src="../img/bottom/bottom1.jpg" alt="">
+					<div style="display: flex;flex-direction: column;">
+						<b>正品保证</b>
+						<span>正品行货 放心选购</span>
+					</div>
+				</li>
+				<li>
+					<img src="../img/bottom/bottom1.jpg" alt="">
+					<div style="display: flex;flex-direction: column;">
+						<b>正品保证</b>
+						<span>正品行货 放心选购</span>
+					</div>
+				</li>
+				<li>
+					<img src="../img/bottom/bottom1.jpg" alt="">
+					<div style="display: flex;flex-direction: column;">
+						<b>正品保证</b>
+						<span>正品行货 放心选购</span>
+					</div>
+				</li>
+				<li>
+					<img src="../img/bottom/bottom1.jpg" alt="">
+					<div style="display: flex;flex-direction: column;">
+						<b>正品保证</b>
+						<span>正品行货 放心选购</span>
+					</div>
+				</li>
+			</ul>
+			<div style="background-color:#ebebeb;width: 100%;height: 1px;margin-top: -10px"></div>
+			<div style="background-color: white;height: 150px">
+				<dl>
+					<dt>新手入门</dt>
+					<dd>购物流程</dd>
+					<dd>会员制度</dd>
+					<dd>订单查询</dd>
+					<dd>服务协议及隐私说明</dd>
+					<dd>网站地图</dd>
+				</dl>
+				<dl>
+					<dt>支付方式</dt>
+					<dd>货到付款</dd>
+					<dd>网上支付</dd>
+					<dd>礼品卡支付</dd>
+					<dd>其它支付</dd>
+				</dl>
+				<dl>
+					<dt>配送服务</dt>
+					<dd>配送进度查询</dd>
+					<dd>商品验货与签收</dd>
+				</dl>
+				<dl>
+					<dt>相关规则</dt>
+					<dd>平台规则</dd>
+					<dd>退换货政策</dd>
+					<dd>发票制度</dd>
+					<dd>帮助中心</dd>
+				</dl>
+				<div style="display: flex;flex-direction: row">
+					<div class="bottom_code">
+						<span>APP更优惠</span>
+						<img src="../img/bottom/code1.png" alt="">
+					</div>
+					<div class="bottom_code" style="margin-left: 40px">
+						<span>加微信查订单</span>
+						<img src="../img/bottom/code2.jpg" alt="">
+					</div>
+				</div>
+			</div>
+
+
+		</div>
+		<div id="bottom_span">
+			<a href="">沪ICP备16050468号</a>
+			|
+			<a href="">经营证照</a>
+			|
+
+			<a href="">互联网药品信息服务资格证(沪)-经营性-2017-0006</a>
+			|
+			<a href="">违法和不良信息举报电话：0527-88100253</a>
+			|
+			<a href="">沪B2-20170039</a>
+			|
+			<a href="">沪公网安备 31010502002939号</a>
+			|
+			<a href="">友情链接 </a>
+			|
+			<a href="">出版物经营许可证</a>
+			|
+			<a href="">增值电信业务经营许可证</a>
+			<span>Copyright© 1号店网上超市 2007-2019，All Rights Reserved</span>
+		</div>
+
+	</div>
+</div>
+</div>
+</div>
+</body>
 </html>
