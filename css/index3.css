@@ -1,0 +1,18 @@
+#big{
+    width: 400px;
+    height: 400px;
+    border: 1px solid #E2E2E2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#big img{
+    width: 360px;
+    height: 360px;
+}
+#order_show{
+    float: left;
+}
+#order_show ul li{
+
+}
