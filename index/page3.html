@@ -262,12 +262,45 @@
         </div>
 
 
-        <div style="height: 30px;width: 100%;background-color: #647EDC;margin-top: 100px;display: flex">
-            <div style="background-color: #6A1752;width: 208px;height: 3000px">
-
+        <div style="height: 30px;width: 100%;margin-top: 100px;display: flex">
+            <div class="thing_rank_list" id="side_list_pro">
+                <ul style="display: flex;justify-content: space-between;flex-direction: column;border: 1px solid #e2e2e2">
+                    <li>
+                        <img src="../img/page3/rank_list/rank1.jpg" alt="">
+                        <span>捷森（jason）全麦面包 黑麦面包 500g  德国进口 吐司 营养早餐 粗粮低脂 健身餐面包"</span>
+                        <span class="p_money_page2">￥29.9</span>
+                        <button type="button">查看详情</button>
+                    </li>
+                    <li>
+                        <img src="../img/page3/rank_list/ad_rank_2.jpg" alt="">
+                        <span>印尼进口 Tango咔咔脆威化饼干 休闲零食小吃 早餐下午茶食品  巧克力味夹心160g/盒</span>
+                        <span class="p_money_page2">￥29.9</span>
+                        <button type="button">查看详情</button>
+                    </li>
+                    <li>
+                        <img src="../img/page3/rank_list/ad_rank_3.jpg" alt="">
+                        <span>马来西亚进口 EGO金小熊夹心饼干（草莓+牛奶+哈密瓜+巧克力）组合装200g（约10g*20包） 休闲零食 甜点小吃</span>
+                        <span class="p_money_page2">￥29.9</span>
+                        <button type="button">查看详情</button>
+                    </li>
+                    <li>
+                        <img src="../img/page3/rank_list/ad_rank_4.jpg" alt="">
+                        <span>费列罗（Ferrero Rocher）糖果巧克力榛果威化 分享零食婚庆喜糖 员工福利 48粒礼盒装600g 新老包装随机发货</span>
+                        <span class="p_money_page2">￥29.9</span>
+                        <button type="button">查看详情</button>
+                    </li>
+                    <li>
+                        <img src="../img/page3/rank_list/ad_rank_5.jpg" alt="">
+                        <span>马来西亚进口 EGO燕麦巧克力 牛奶味468g 糖果喜糖 休闲零食大礼包</span>
+                        <span class="p_money_page2">￥29.9</span>
+                        <button type="button">查看详情</button>
+                    </li>
+                </ul>
             </div>
-            <div style="width: 980px;background-color: #3c8020;height: 323px;margin-left: 20px">
-                <div style="display: flex;align-items: center">
+
+            <div style="width: 880px;height: 323px;margin-left: 20px;">
+                <div style="border: 1px solid #e2e2e2;">
+                    <div style="display: flex;align-items: center">
                     <div class="before_title"></div>
                     <span class="title">顾客最喜爱商品排行榜</span>
                 </div>
@@ -276,17 +309,293 @@
                         <li>
                             <img src="../img/page3/rank_list/rank1.jpg" alt="">
                             <span>捷森（jason）全麦面包 黑麦面包 500g  德国进口 吐司 营养早餐 粗粮低脂 健身餐面包"</span>
-                            <span>￥29.9</span>
-                            <button type="button" onclick="alert('你好，世界!')">查看详情</button>
+                            <span class="p_money_page2">￥29.9</span>
+                            <button type="button">查看详情</button>
                         </li>
-                        <li><span></span><span></span><span></span></li>
-                        <li><span></span><span></span><span></span></li>
-                        <li><span></span><span></span><span></span></li>
-                        <li><span></span><span></span><span></span></li>
+                        <li>
+                            <img src="../img/page3/rank_list/ad_rank_2.jpg" alt="">
+                            <span>印尼进口 Tango咔咔脆威化饼干 休闲零食小吃 早餐下午茶食品  巧克力味夹心160g/盒</span>
+                            <span class="p_money_page2">￥29.9</span>
+                            <button type="button">查看详情</button>
+                        </li>
+                        <li>
+                            <img src="../img/page3/rank_list/ad_rank_3.jpg" alt="">
+                            <span>马来西亚进口 EGO金小熊夹心饼干（草莓+牛奶+哈密瓜+巧克力）组合装200g（约10g*20包） 休闲零食 甜点小吃</span>
+                            <span class="p_money_page2">￥29.9</span>
+                            <button type="button">查看详情</button>
+                        </li>
+                        <li>
+                            <img src="../img/page3/rank_list/ad_rank_4.jpg" alt="">
+                            <span>费列罗（Ferrero Rocher）糖果巧克力榛果威化 分享零食婚庆喜糖 员工福利 48粒礼盒装600g 新老包装随机发货</span>
+                            <span class="p_money_page2">￥29.9</span>
+                            <button type="button">查看详情</button>
+                        </li>
+                        <li>
+                            <img src="../img/page3/rank_list/ad_rank_5.jpg" alt="">
+                            <span>马来西亚进口 EGO燕麦巧克力 牛奶味468g 糖果喜糖 休闲零食大礼包</span>
+                            <span class="p_money_page2">￥29.9</span>
+                            <button type="button">查看详情</button>
+                        </li>
+                    </ul>
+                </div>
+                </div>
+
+
+                <div id="rank_category">
+                    <ul>
+                        <li>商品介绍</li>
+                        <li>评价5+</li>
+                        <li>规格及包装</li>
+                        <li>售后服务</li>
+                    </ul>
+                </div>
+
+                <div id="parameter_specification">
+                    <span>规格参数</span>
+                    <span style="color: #0066cc">查看更多>></span>
+                    <dt>
+                    <dd>品牌：星七</dd>
+                    <dd>商品名称：日本进口 星七 STARS SEVEN 奶油味 夹心小蛋卷 早餐下午茶 休闲食品 办公室零食小吃 123g/袋</dd>
+                    <dd>商品编号：7766600</dd>
+                    <dd>商品毛重：135.00g</dd>
+                    <dd>商品产地：日本</dd>
+                    </dt>
+                </div>
+                <div class="notification">
+                    <p class="tit">1号店承诺</p>
+                    <p class="con">1号店平台卖家销售并发货的商品，由平台卖家提供发票和相应的售后服务。请您放心购买！
+                        <br>
+                        注：因厂家会在没有任何提前通知的情况下更改产品包装、产地或者一些附件，本司不能确保客户收到的货物与商城图片、产地、附件说明完全一致。只能确保为原厂正货！并且保证与当时市场上同样主流新品一致。若没有及时更新，请大家谅解！
+                    </p>
+                    <p class="tit">
+                        全国联保
+                    </p>
+                    <p class="con">
+                        凭质保证书及1号店发票，可享受全国联保服务（奢侈品、钟表除外；奢侈品、钟表由1号店联系保修，享受法定三包售后服务），与您亲临商场选购的商品享受相同的质量保证。1号店还为您提供具有竞争力的商品价格和运费政策，请您放心购买！
+                    </p>
+                    <p class="tit">
+                        权利声明
+                    </p>
+                    <p class="con">
+                        1号店上的所有商品信息、客户评价、商品咨询、网友讨论等内容，是1号店重要的经营资源，未经许可，禁止非法转载使用。
+                        <br>
+                        注：本站商品信息均来自于合作方，其真实性、准确性和合法性由信息拥有者（合作方）负责。本站不提供任何保证，并不承担任何法律责任。
+                    </p>
+                    <p class="tit">价格说明</p>
+                    <p class="con">1号店价：商品在1号店平台上，不参加降价让利促销团购等活动时的常规销售价格。
+                        <br>
+                        参考价：商品展示的参考价，可能是品牌专柜标价、商品吊牌价或由品牌供应商提供的正品零售价（如厂商指导价、建议零售价等）或该商品在1号店平台曾经展示过的销售价；由于地区、时间的差异性和市场行情波动，品牌专柜标价、商品吊牌价、销售商门店曾经展示过的销售价等可能会与您购物时展示的不一致，该价格仅供您参考
+                        <br>
+                        问题反馈：如有疑问，建议您在购买前联系客服咨询。
+                    </p>
+                </div>
+                <div class="rate">
+                    <div class="rate_left">
+                        <span>好评率</span>
+                        <h2>99%</h2>
+                        <span>共5万+人评论</span>
+                    </div>
+                    <div class="rate_right">
+                        <span>美味可口(191)</span>
+                        <span>香甜可口(119)</span>
+                        <span>食用方便(23)</span>
+                        <span>方便实用(11)</span>
+                        <span>新鲜味美(11)</span>
+                        <span>口感清香(10)</span>
+                        <span>造型精致(5)</span>
+                        <span>分量充足(2)</span>
+                        <span>很大厚实(1)</span>
+                        <span>口感清爽(1)</span>
+                        <span>营养丰富(1)</span>
+                    </div>
+                </div>
+                <div class="rate_list">
+                    <ul>
+                        <li><input type="radio">全部(5万+)</li>
+                        <li><input type="radio">晒单(700+)</li>
+                        <li><input type="radio">追评(50+)</li>
+                        <li><input type="radio">好评(1.3万+)</li>
+                        <li><input type="radio">中评(80+)</li>
+                        <li><input type="radio">差评(40+)</li>
+                    </ul>
+                </div>
+                <div id="rate_detail">
+                    <ul>
+                        <li>
+                            <div style="position:relative;width: 80px">
+                                <img src="../img/page3/portraits/icon.jpg" alt=""
+                                     class="user_img">
+                                <span class="user_comment">用户Roger</span>
+                            </div>
+                            <div class="rate_detail_right">
+                                <div class="flex_center_center">
+                                    <span>评分:</span>
+                                    <span style="display: flex;flex-direction: row">
+                                        <img src="../img/page3/star.png" alt="">
+                                        <img src="../img/page3/star.png" alt="">
+                                         <img src="../img/page3/star.png" alt="">
+                                         <img src="../img/page3/star.png" alt="">
+                                         <img src="../img/page3/star.png" alt="">
+                                    </span>
+                                </div>
+                                <div class="flex_center_center">
+                                    <span style="width: 80px;">内容:</span>
+                                    <span>这个小蛋卷有点贵，但是确实好吃！一个大包里面有25个左右，大包也不大，也很轻，毕竟小蛋卷就很小。半个手掌的长度，一个全部放在嘴里也没有问题。邮寄过来的箱子很大，估计是怕压碎了。也确实没有挤压坏的。味道很好，里面有夹心，吃着有点甜，不是很腻，个人还是很喜欢的！</span>
+                                </div>
+                                <div class="flex_center_center">
+                                    <span style="margin-right: 10px">晒单:</span>
+                                    <img class="upload_photo" src="../img/page3/upload_photo/upload_photo1.jpg" alt="">
+                                    <img class="upload_photo" src="../img/page3/upload_photo/upload_photo2.jpg" alt="">
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div style="position:relative;width: 80px">
+                                <img src="../img/page3/portraits/icon.jpg" alt=""
+                                     class="user_img">
+                                <span class="user_comment">用户Roger</span>
+                            </div>
+                            <div class="rate_detail_right">
+                                <div class="flex_center_center">
+                                    <span>评分:</span>
+                                    <span style="display: flex;flex-direction: row">
+                                        <img src="../img/page3/star.png" alt="">
+                                        <img src="../img/page3/star.png" alt="">
+                                         <img src="../img/page3/star.png" alt="">
+                                         <img src="../img/page3/star.png" alt="">
+                                         <img src="../img/page3/star.png" alt="">
+                                    </span>
+                                </div>
+                                <div class="flex_center_center">
+                                    <span style="width: 80px;">内容:</span>
+                                    <span>这个小蛋卷有点贵，但是确实好吃！一个大包里面有25个左右，大包也不大，也很轻，毕竟小蛋卷就很小。半个手掌的长度，一个全部放在嘴里也没有问题。邮寄过来的箱子很大，估计是怕压碎了。也确实没有挤压坏的。味道很好，里面有夹心，吃着有点甜，不是很腻，个人还是很喜欢的！</span>
+                                </div>
+                                <div class="flex_center_center">
+                                    <span style="margin-right: 10px">晒单:</span>
+                                    <img class="upload_photo" src="../img/page3/upload_photo/upload_photo1.jpg" alt="">
+                                    <img class="upload_photo" src="../img/page3/upload_photo/upload_photo2.jpg" alt="">
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div style="position:relative;width: 80px">
+                                <img src="../img/page3/portraits/icon.jpg" alt=""
+                                     class="user_img">
+                                <span class="user_comment">用户Roger</span>
+                            </div>
+                            <div class="rate_detail_right">
+                                <div class="flex_center_center">
+                                    <span>评分:</span>
+                                    <span style="display: flex;flex-direction: row">
+                                        <img src="../img/page3/star.png" alt="">
+                                        <img src="../img/page3/star.png" alt="">
+                                         <img src="../img/page3/star.png" alt="">
+                                         <img src="../img/page3/star.png" alt="">
+                                         <img src="../img/page3/star.png" alt="">
+                                    </span>
+                                </div>
+                                <div class="flex_center_center">
+                                    <span style="width: 80px;">内容:</span>
+                                    <span>这个小蛋卷有点贵，但是确实好吃！一个大包里面有25个左右，大包也不大，也很轻，毕竟小蛋卷就很小。半个手掌的长度，一个全部放在嘴里也没有问题。邮寄过来的箱子很大，估计是怕压碎了。也确实没有挤压坏的。味道很好，里面有夹心，吃着有点甜，不是很腻，个人还是很喜欢的！</span>
+                                </div>
+                                <div class="flex_center_center">
+                                    <span style="margin-right: 10px">晒单:</span>
+                                    <img class="upload_photo" src="../img/page3/upload_photo/upload_photo1.jpg" alt="">
+                                    <img class="upload_photo" src="../img/page3/upload_photo/upload_photo2.jpg" alt="">
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div style="position:relative;width: 80px">
+                                <img src="../img/page3/portraits/icon.jpg" alt=""
+                                     class="user_img">
+                                <span class="user_comment">用户Roger</span>
+                            </div>
+                            <div class="rate_detail_right">
+                                <div class="flex_center_center">
+                                    <span>评分:</span>
+                                    <span style="display: flex;flex-direction: row">
+                                        <img src="../img/page3/star.png" alt="">
+                                        <img src="../img/page3/star.png" alt="">
+                                         <img src="../img/page3/star.png" alt="">
+                                         <img src="../img/page3/star.png" alt="">
+                                         <img src="../img/page3/star.png" alt="">
+                                    </span>
+                                </div>
+                                <div class="flex_center_center">
+                                    <span style="width: 80px;">内容:</span>
+                                    <span>这个小蛋卷有点贵，但是确实好吃！一个大包里面有25个左右，大包也不大，也很轻，毕竟小蛋卷就很小。半个手掌的长度，一个全部放在嘴里也没有问题。邮寄过来的箱子很大，估计是怕压碎了。也确实没有挤压坏的。味道很好，里面有夹心，吃着有点甜，不是很腻，个人还是很喜欢的！</span>
+                                </div>
+                                <div class="flex_center_center">
+                                    <span style="margin-right: 10px">晒单:</span>
+                                    <img class="upload_photo" src="../img/page3/upload_photo/upload_photo1.jpg" alt="">
+                                    <img class="upload_photo" src="../img/page3/upload_photo/upload_photo2.jpg" alt="">
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div style="position:relative;width: 80px">
+                                <img src="../img/page3/portraits/icon.jpg" alt=""
+                                     class="user_img">
+                                <span class="user_comment">用户Roger</span>
+                            </div>
+                            <div class="rate_detail_right">
+                                <div class="flex_center_center">
+                                    <span>评分:</span>
+                                    <span style="display: flex;flex-direction: row">
+                                        <img src="../img/page3/star.png" alt="">
+                                        <img src="../img/page3/star.png" alt="">
+                                         <img src="../img/page3/star.png" alt="">
+                                         <img src="../img/page3/star.png" alt="">
+                                         <img src="../img/page3/star.png" alt="">
+                                    </span>
+                                </div>
+                                <div class="flex_center_center">
+                                    <span style="width: 80px;">内容:</span>
+                                    <span>这个小蛋卷有点贵，但是确实好吃！一个大包里面有25个左右，大包也不大，也很轻，毕竟小蛋卷就很小。半个手掌的长度，一个全部放在嘴里也没有问题。邮寄过来的箱子很大，估计是怕压碎了。也确实没有挤压坏的。味道很好，里面有夹心，吃着有点甜，不是很腻，个人还是很喜欢的！</span>
+                                </div>
+                                <div class="flex_center_center">
+                                    <span style="margin-right: 10px">晒单:</span>
+                                    <img class="upload_photo" src="../img/page3/upload_photo/upload_photo1.jpg" alt="">
+                                    <img class="upload_photo" src="../img/page3/upload_photo/upload_photo2.jpg" alt="">
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div style="position:relative;width: 80px">
+                                <img src="../img/page3/portraits/icon.jpg" alt=""
+                                     class="user_img">
+                                <span class="user_comment">用户Roger</span>
+                            </div>
+                            <div class="rate_detail_right">
+                                <div class="flex_center_center">
+                                    <span>评分:</span>
+                                    <span style="display: flex;flex-direction: row">
+                                        <img src="../img/page3/star.png" alt="">
+                                        <img src="../img/page3/star.png" alt="">
+                                         <img src="../img/page3/star.png" alt="">
+                                         <img src="../img/page3/star.png" alt="">
+                                         <img src="../img/page3/star.png" alt="">
+                                    </span>
+                                </div>
+                                <div class="flex_center_center">
+                                    <span style="width: 80px;">内容:</span>
+                                    <span>这个小蛋卷有点贵，但是确实好吃！一个大包里面有25个左右，大包也不大，也很轻，毕竟小蛋卷就很小。半个手掌的长度，一个全部放在嘴里也没有问题。邮寄过来的箱子很大，估计是怕压碎了。也确实没有挤压坏的。味道很好，里面有夹心，吃着有点甜，不是很腻，个人还是很喜欢的！</span>
+                                </div>
+                                <div class="flex_center_center">
+                                    <span style="margin-right: 10px">晒单:</span>
+                                    <img class="upload_photo" src="../img/page3/upload_photo/upload_photo1.jpg" alt="">
+                                    <img class="upload_photo" src="../img/page3/upload_photo/upload_photo2.jpg" alt="">
+                                </div>
+                            </div>
+                        </li>
+
                     </ul>
                 </div>
             </div>
+
         </div>
+
 
         <div id="bottom_parent" style="margin-top: 2000px">
             <div id="bottom">

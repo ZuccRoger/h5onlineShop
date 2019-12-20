@@ -89,7 +89,7 @@ em {
 	color: #aaa;
 }
 
-button {
+.button {
 	position: absolute;
 	background-color: transparent;
 	border: none;

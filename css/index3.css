@@ -351,7 +351,12 @@
     color: #333;
     font: normal 14px/35px '\5FAE\8F6F\96C5\9ED1';
 }
+
+.thing_rank_list {
+
+}
 .thing_rank_list ul li{
+    padding: 10px;
     width: 191px;
     height: 264px;
     display: flex;
@@ -360,7 +365,241 @@
     align-items: center;
     background-color: white;
 }
+
+.thing_rank_list ul li button {
+    margin: 0 auto;
+    display: block;
+    width: 90px;
+    height: 29px;
+    background-position: 0 -463px;
+    line-height: 28px;
+    color: #333;
+    text-align: center;
+    background-color: #ebebeb;
+}
+
+.thing_rank_list ul li :nth-child(3) {
+    font-size: 15px;
+}
+
 .thing_rank_list ul li img{
     width: 115px;
     height: 115px;
+}
+
+#rank_category ul {
+    display: flex;
+    margin: 10px 0;
+    background-color: #fafafa;
+    border: 1px solid #e5e5e5;
+}
+
+#rank_category ul li {
+    width: 111px;
+    height: 42px;
+    background-color: #e60012;
+    color: white !important;
+    position: relative;
+    top: -1px;
+    left: -1px;
+    float: left;
+    width: 120px;
+    border-right: 1px solid #e1e1e1;
+    height: 42px;
+    line-height: 40px;
+    text-align: center;
+    color: #333;
+    font-family: 'microsoft yahei';
+    font-size: 14px;
+    outline: 0;
+    z-index: 30;
+}
+
+#parameter_specification {
+    background-color: #f7f7f7;
+    font-size: 12px;
+    font-family: simsun;
+    border: 1px solid #eaeaea;
+    margin-top: 12px;
+    padding: 10px;
+    overflow: hidden;
+    height: 112px;
+}
+
+#parameter_specification :first-child {
+    float: left;
+}
+
+#parameter_specification :nth-child(2) {
+    float: right;
+}
+
+#parameter_specification dt {
+    position: relative;
+    height: 30px;
+    display: block;
+    width: 100%;
+    font-size: 14px !important;
+    font-family: '\5FAE\8F6F\96C5\9ED1';
+    line-height: 30px;
+}
+
+#parameter_specification dd {
+    margin-right: 1%;
+    height: 30px;
+    line-height: 30px;
+    width: 32.3%;
+    float: left;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+#ad_list img {
+    display: block !important;
+}
+
+#side_list_pro ul li {
+    border-bottom: 0.5px darkblue solid;
+}
+
+.notification {
+    margin-bottom: 12px;
+    padding: 12px;
+    border: 1px solid #eaeaea;
+    background-color: #f7f7f7;
+    color: #555;
+    width: 880px;
+    height: 380px;
+    margin-top: 20px;
+}
+
+.tit {
+    padding-bottom: 12px;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 20px;
+}
+
+.con {
+    padding-bottom: 12px;
+    line-height: 20px;
+    font: 12px Arial, Helvetica, sans-serif;
+}
+
+.rate {
+    display: flex;
+    min-height: 154px;
+    width: 880px;
+    background-color: #fbfbfb;
+    border: 1px solid #e2e2e2;
+}
+
+.rate_left {
+    width: 164px;
+    height: 154px;
+    position: relative;
+    text-align: center;
+    border-right: 1px solid #ececec;
+}
+
+.rate_left :first-child {
+    position: absolute;
+    top: 31px;
+    left: 60px;
+}
+
+.rate_left :nth-child(2) {
+    position: absolute;
+    top: 61px;
+    left: 50px;
+}
+
+.rate_left :last-child {
+    position: absolute;
+    bottom: 31px;
+    left: 40px;
+}
+
+.rate_right {
+    width: 716px;
+    height: 154px;
+    position: relative;
+    padding: 30px;
+}
+
+.rate_right span {
+    display: inline-block;
+    height: 24px;
+    margin: 0 5px 10px 0;
+    padding: 0 10px;
+    border: 1px solid #dadada;
+    background: #fff;
+    color: #666;
+    outline: 0;
+    border-radius: 24px;
+    line-height: 24px;
+}
+
+.rate_list {
+    margin: 10px 0;
+    float: left;
+    border-bottom: 1px solid #e2e2e2;
+    width: 880px;
+}
+
+.rate_list ul li {
+    margin: 0 10px;
+    font-size: 14px;
+}
+
+#rate_detail {
+    position: relative;
+    width: 844px;
+    height: 30px;
+}
+
+#rate_detail img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+#rate_detail ul li {
+    display: flex;
+    border-bottom: 1px solid #e2e2e2;
+    padding-bottom: 10px;
+}
+
+.rate_detail_right {
+    width: 810px;
+}
+
+.flex_center_center {
+    display: flex;
+    flex-direction: row;
+    align-items: center
+}
+
+.upload_photo {
+    width: 46px;
+    height: 46px;
+    border: 1px solid red;
+    border-radius: 0px !important;
+    padding: 2px;
+    margin: 2px;
+}
+
+.user_comment {
+    left: 5px;
+    display: block;
+    width: 80px;
+    position: absolute;
+    top: 72px;
+}
+
+.user_img {
+    position: absolute;
+    top: 11px;
+    left: 8px;
 }
