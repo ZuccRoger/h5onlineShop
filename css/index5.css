@@ -1,0 +1,14 @@
+#p5_top_ul  {
+    display: flex;
+    justify-content: space-around;
+    width: 910px;
+}
+
+#p5_top_ul li {
+    width: 100px;
+    height: 36px;
+    padding: 0 10px;
+    font-family: "microsoft yahei";
+    font-size: 16px;
+    line-height: 36px;
+}

@@ -814,8 +814,8 @@ ul li img {
     position: absolute;
     text-align: center;
     border: none;
-    margin: 0 auto;
     margin-left: 64px;
+	left: 0px;
 }
 
 #bottom_span a {

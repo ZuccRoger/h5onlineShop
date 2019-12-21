@@ -603,3 +603,16 @@
     top: 11px;
     left: 8px;
 }
+
+.demo_desc_2 {
+    height: 36px;
+    font-size: 12px;
+    line-height: 18px;
+    display: block;
+    width: 100%;
+    font-size: 12px;
+    font-weight: normal;
+    word-break: break-all;
+    word-wrap: break-word;
+    overflow: hidden;
+}
