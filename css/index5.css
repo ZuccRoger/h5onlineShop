@@ -12,3 +12,136 @@
     font-size: 16px;
     line-height: 36px;
 }
+
+.bg_p1 {
+    width: 252px;
+    height: 472px;
+    background-color: rgba(255, 255, 255, 0.6);
+    top: 35px;
+    position: relative;
+    text-align: center;
+}
+
+.bg_p1 > span {
+    color: #333;
+    font-family: "microsoft yahei";
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 28px;
+    position: absolute;
+    left: 81px;
+    top: 28px;
+}
+
+.bg_p1 > img {
+    position: absolute;
+    top: 111px;
+    left: 120px;
+    height: 76px;
+    margin: -38px 0 0 -38px;
+    transition: all .3s ease;
+    border-radius: 50%;
+    border: 1px solid white;
+}
+
+.bg_p1_3 {
+    position: absolute !important;
+    left: 66px !important;
+    top: 170px !important;
+}
+
+.bg_p1 > div > img {
+    width: 38px;
+    height: 38px;
+}
+
+.bg_p1_img1 {
+    position: absolute;
+    top: 232px;
+    left: 60px;
+}
+
+.bg_p1_img1_span {
+    position: absolute;
+    left: 70px;
+    top: 280px;
+    max-width: 106px;
+    overflow: hidden;
+    font-family: "Tahoma";
+    font-size: 24px;
+    font-weight: bold;
+    padding-top: 22px;
+    display: block;
+    color: #6d6b96;
+}
+
+.bg_p1_img1_span1 {
+    position: absolute;
+    left: 57px;
+    top: 278px;
+}
+
+.bg_p1_img2 {
+    position: absolute;
+    top: 230px;
+    left: 160px;
+}
+
+.bg_p1_img2_span {
+    position: absolute;
+    left: 173px;
+    top: 280px;
+    max-width: 106px;
+    overflow: hidden;
+    font-family: "Tahoma";
+    font-size: 24px;
+    font-weight: bold;
+    padding-top: 22px;
+    display: block;
+    color: #6d6b96;
+}
+
+.bg_p1_img2_span1 {
+    position: absolute;
+    left: 157px;
+    top: 278px;
+}
+
+.bg_span_bottom_2 {
+    border: 1px solid #ff4f3c;
+    background-color: #ff7364;
+    display: inline-block;
+    position: absolute;
+    margin: 0 auto;
+    padding: 10px;
+    color: #fff !important;
+    border-radius: 20px;
+    font-size: 12px !important;
+    top: 351px !important;
+    left: 56px !important;
+}
+
+.bg_span_bottom_last {
+    position: absolute;
+    top: 422px;
+    left: 54px;
+}
+
+.bg_p2 {
+    width: 770px;
+    height: 282px;
+    background-color: #3c8020;
+    position: absolute;
+    top: 35px;
+    right: 40px;
+}
+
+.bg_p3 {
+    position: absolute;
+    top: 330px;
+    width: 770px;
+    height: 177px;
+    right: 40px;
+    background-color: #b12ab6;
+}
