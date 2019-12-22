@@ -1,13 +1,66 @@
 <!DOCTYPE html>
 <html>
-<!--	TODO 页面下滑至按需加载、锚点回到顶部-->
+<!--	TODO 页面下滑至按需加载 、 轮播图
+			 -->
 	<head>
 		<meta charset="utf-8" />
 		<title></title>
 		<link rel="stylesheet" type="text/css" href="../css/index.css">
-		<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+		<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+		<script type="text/javascript">
+			// 返回顶部
+			$(function () {
+				$('#sticky2').click(function () {
+					console.log("222");
+					$('html,body').animate({
+						scrollTop: 0
+					}, 500)
+				})
+			})
+
+			function countTime() {
+				//获取当前时间
+				var date = new Date();
+				var now = date.getTime();
+				//设置截止时间
+				var str = "2019/12/25 00:00:00";
+				var endDate = new Date(str);
+				var end = endDate.getTime();
+
+				//时间差
+				var leftTime = end - now;
+				//定义变量 d,h,m,s保存倒计时的时间
+				var d, h, m, s;
+				if (leftTime >= 0) {
+					d = Math.floor(leftTime / 1000 / 60 / 60 / 24);
+					h = Math.floor(leftTime / 1000 / 60 / 60 % 24);
+					m = Math.floor(leftTime / 1000 / 60 % 60);
+					s = Math.floor(leftTime / 1000 % 60);
+				}
+				//将倒计时赋值到div中
+				if (h < 10) {
+					h = "0" + h;
+				}
+				;
+				document.getElementById("_h").innerHTML = h;
+				console.log(m);
+				if (m < 10) {
+					m = "0" + m;
+				}
+				;
+				document.getElementById("_m").innerHTML = m;
+				if (s < 10) {
+					s = "0" + s;
+				}
+				;
+				document.getElementById("_s").innerHTML = s;
+				//递归每秒调用countTime方法，显示动态时间效果
+				setTimeout(countTime, 1000);
+			}
+
+		</script>
 	</head>
-	<body>
+<body onload="countTime()">
 		<!-- 顶部条 -->
 		<div style="display: flex;flex-direction: column" id="top">
 			<div class="hd_header_wrap">
@@ -311,7 +364,8 @@
 				</a>
 			</div>
 
-			<a id="sticky2" href="#top">
+			<!--			<a id="sticky2" href="#top">-->
+			<a id="sticky2">
 				<img src="../img/up.png" alt="" style="width: 20px;height: 20px">
 			</a>
 
@@ -322,7 +376,7 @@
 				<div class="superThing">
 					<ul id="single">
 						<div style="margin-top: 10px;">
-							<li style="position:relative;transform: none" id="s">
+							<li style="position:relative;transform: none;padding: 15px" id="s">
 								<img id="superlogo" src="../img/single/supersolo.png" alt="">
 								<span class="font2">限时 限量 品质 超值</span>
 								<span class="separator"></span>
@@ -331,11 +385,11 @@
 									<span class="font2">距结束仅剩</span>
 								</div>
 								<div id="timeline2">
-									<span class="time">01</span>
+									<span id="_h" class="time">00</span>
 									<i>:</i>
-									<span class="time">22</span>
+									<span id="_m" class="time">00</span>
 									<i>:</i>
-									<span class="time">59</span>
+									<span id="_s" class="time">00</span>
 								</div>
 							</li>
 							<li class="big_more">
@@ -867,19 +921,72 @@
 
 				<div id="intro_ad">
 					<img src="../img/intro5/index.png" alt="">
-					<div style="width: 1480px">
-						<ul style="margin: 0 auto;width: 1080px;">
+					<div style="width: 1080px;margin: 0 auto;">
+						<ul style="width: 1080px;display: flex;flex-wrap: wrap">
 							<li>
 								<img src="../img/intro5/thing1.jpg" alt="">
 								<span>防水双肩包 男电脑背包多功能商务潮书包 黑色</span>
 								<span>￥229</span>
-								<div class="p1_img_bottom">
-									<img src="../img/ad_cart.png" alt="">
-									<div>
-										找相似
-									</div>
-								</div>
-
+							</li>
+							<li>
+								<img src="../img/intro5/thing2.jpg" alt="">
+								<span>免打孔厨房置物架壁挂五金刀架调料收纳挂架挂钩厨卫用品厨房挂件 80cm双杯(免打孔)</span>
+								<span>￥157</span>
+							</li>
+							<li>
+								<img src="../img/intro5/thing3.jpg" alt="">
+								<span>汽车套装封釉水晶纳米液体玻璃喷雾镀膜剂包施工镀金漆面镀晶 120ML镀膜剂()</span>
+								<span>￥70</span>
+							</li>
+							<li>
+								<img src="../img/intro5/thing4.jpg" alt="">
+								<span>美的（Midea）M1-L213C 快捷微波炉 微电脑操控 360°转盘加热 智能蒸煮菜单 21升</span>
+								<span>￥335</span>
+							</li>
+							<li>
+								<img src="../img/intro5/thing5.png" alt="">
+								<span>【张二嫂直播专属】MENOW美诺独角兽哑光口红礼盒套装4支装滋润保湿哑光雾面唇膏 01#挚爱女神</span>
+								<span>￥89.9</span>
+							</li>
+							<li>
+								<img src="../img/intro5/thing6.jpg" alt="">
+								<span>（3瓶装）南京同仁堂100g 维生素E乳液 身体乳男女身体面部护肤保湿乳 缓解皮肤干燥瘙痒滋润</span>
+								<span>￥59.9</span>
+							</li>
+							<li>
+								<img src="../img/intro5/thing1.jpg" alt="">
+								<span>防水双肩包 男电脑背包多功能商务潮书包 黑色</span>
+								<span>￥229</span>
+							</li>
+							<li>
+								<img src="../img/intro5/thing2.jpg" alt="">
+								<span>免打孔厨房置物架壁挂五金刀架调料收纳挂架挂钩厨卫用品厨房挂件 80cm双杯(免打孔)</span>
+								<span>￥157</span>
+							</li>
+							<li>
+								<img src="../img/intro5/thing3.jpg" alt="">
+								<span>汽车套装封釉水晶纳米液体玻璃喷雾镀膜剂包施工镀金漆面镀晶 120ML镀膜剂()</span>
+								<span>￥70</span>
+							</li>
+							<li>
+								<img src="../img/intro5/thing4.jpg" alt="">
+								<span>美的（Midea）M1-L213C 快捷微波炉 微电脑操控 360°转盘加热 智能蒸煮菜单 21升</span>
+								<span>￥335</span>
+							</li>
+							<li>
+								<img src="../img/intro5/thing5.png" alt="">
+								<span>【张二嫂直播专属】MENOW美诺独角兽哑光口红礼盒套装4支装滋润保湿哑光雾面唇膏 01#挚爱女神</span>
+								<span>￥89.9</span>
+							</li>
+							<li>
+								<img src="../img/intro5/thing6.jpg" alt="">
+								<span>（3瓶装）南京同仁堂100g 维生素E乳液 身体乳男女身体面部护肤保湿乳 缓解皮肤干燥瘙痒滋润</span>
+								<span>￥59.9</span>
+							</li>
+							<li>
+								<img src="../img/intro5/thing1.jpg" alt="">
+								<span>防水双肩包 男电脑背包多功能商务潮书包 黑色</span>
+								<span>￥229</span>
 							</li>
 							<li>
 								<img src="../img/intro5/thing2.jpg" alt="">
@@ -1010,5 +1117,6 @@
 			</div>
 		</div>
 		</div>
-	</body>
+
+</body>
 </html>
