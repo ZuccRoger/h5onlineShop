@@ -5,18 +5,20 @@
 		<meta charset="utf-8" />
 		<title></title>
 		<link rel="stylesheet" type="text/css" href="../css/index.css">
+		<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
 	</head>
 	<body>
 		<!-- 顶部条 -->
-		<div style="display: flex;flex-direction: column">
+		<div style="display: flex;flex-direction: column" id="top">
 			<div class="hd_header_wrap">
 				<div style="width: 1070px;height: 13.75rem;">
 					<div class="hd_header_bar">
 						<div>
 							<div class="flex">
-								<img src="../img/index.png" class="location">
-								<span style="padding-left: 3px;">首页:</span>
-								<em>杭州</em>
+								<a href="./index.html" style="display: flex">
+									<img src="../img/index.png" class="location">
+									<span style="padding-left: 3px;">首页</span>
+								</a>
 							</div>
 							<div class="flex" style="margin-left: 20px;">
 								<img src="../img/location.png" class="location">
@@ -46,15 +48,17 @@
 						</div>
 						<div>
 							<div class="flex">
-								<span style="padding-left: 3px;">晚上好，请 </span>
-								<span style="color: red;">登录</span>
+								<span style="padding-left: 3px;">晚上好， </span>
+								<span style="color: red;">骆佳俊</span>
 							</div>
 							<div class="flex" style="margin-left: 20px;">
-								<span style="padding-left: 3px;color: #AAAAAA;">注册</span>
+								<span style="padding-left: 3px;color: #AAAAAA;">充值</span>
 							</div>
-							<div class="flex" style="margin-left: 20px;">
-								<img src="../img/membership.png" class="location">
-								<span style="padding-left: 3px;">会员俱乐部</span>
+							<div class="flex" style="margin-left: 20px">
+								<a href="./index5.html" style="display: flex">
+									<img src="../img/membership.png" class="location">
+									<span style="padding-left: 3px;">会员俱乐部</span>
+								</a>
 							</div>
 							<div class="flex" style="margin-left: 20px;">
 								<img src="../img/order.png" class="location">
@@ -71,8 +75,8 @@
 										   placeholder="MacBook Pro 16寸">
 									<img style="position: absolute;right: 4.6875rem;top: 0.625rem;" src="../img/cart.png" id="search" class="location">
 									<input id="cart" type="text"
-										   style="width: 100px;height: 38px;cursor: pointer;margin-left: 30px;"
-										   class="input_circle" placeholder="购物车">
+										   style="width: 100px;height: 38px;cursor: pointer;margin-left: 30px;padding-left: -15px"
+										   class="input_circle" placeholder="购物车" disabled>
 									<button type="button" class="search"><img src="../img/search.png" style="width: 22px;"></button>
 								</div>
 								<div id="goods">
@@ -87,10 +91,195 @@
 							</div>
 						</div>
 					<div class="flex">
-						<div style="width: 140px;height: 40px;background-color: red;opacity:0.8;display: flex;align-items: center;padding: 0 10px;cursor: pointer;">
+						<div id="p1_uname">
 							<img src="../img/menu.png" alt="" style="width: 17%;">
-							<li id="category" class="font" style="color: white;">全部类目</li>
-							<img src="../img/down.png" alt="" style="width: 12%;">
+							<li id="category" class="font" style="color: white;">
+								全部类目
+								<div class="hidden_category" style="padding: 20px 10px">
+									<div style="width: 150px">
+										<div>
+											<p>全球进口</p>
+											<ul style="display: flex;flex-wrap: wrap;">
+												<li>乳品生鲜</li>
+												<li>饼干糕点</li>
+												<li>酒水饮料</li>
+												<li>休闲零食</li>
+												<li>糖果巧克</li>
+												<li>粮油调味</li>
+												<li>咖啡冲饮</li>
+												<li>麦片冲饮</li>
+												<li>母婴玩具</li>
+												<li>美妆个护</li>
+												<li>家居清洁</li>
+											</ul>
+										</div>
+										<div style="width: 150px">
+											<p>食品/酒/生鲜</p>
+											<ul style="display: flex;flex-wrap: wrap;">
+												<li>饮料</li>
+												<li>酒类</li>
+												<li>休闲零食</li>
+												<li>粮油干货</li>
+												<li>厨房调料</li>
+												<li>饼干糕点</li>
+												<li>牛奶乳品</li>
+												<li>茶冲咖啡</li>
+												<li>肉蛋海鲜</li>
+												<li>新鲜蔬果</li>
+												<li>方便速食</li>
+												<li>乳品速食</li>
+											</ul>
+										</div>
+									</div>
+									<div style="width: 150px">
+										<div>
+											<p>母婴/玩具/童装</p>
+											<ul style="display: flex;flex-wrap: wrap;">
+												<li>奶粉</li>
+												<li>营养辅物</li>
+												<li>尿裤湿巾</li>
+												<li>洗护用品</li>
+												<li>喂养用品</li>
+												<li>妈妈专区</li>
+												<li>寝具服饰</li>
+												<li>童车童床</li>
+												<li>玩具</li>
+												<li>乐器</li>
+												<li>童装/童鞋</li>
+											</ul>
+										</div>
+										<div style="width: 150px">
+											<p>纸巾/厨卫清洁/宠物</p>
+											<ul style="display: flex;flex-wrap: wrap;">
+												<li>纸品湿巾</li>
+												<li>衣物清洁</li>
+												<li>家庭清洁</li>
+												<li>清洁用具</li>
+												<li>驱虫除湿</li>
+												<li>皮具护理</li>
+												<li>宠物生活</li>
+												<li>绿植园艺</li>
+											</ul>
+										</div>
+									</div>
+									<div style="width: 150px">
+										<div>
+											<p>家居家纺/厨物/家具</p>
+											<ul style="display: flex;flex-wrap: wrap;">
+												<li>床上用品</li>
+												<li>生活用品</li>
+												<li>锅具水具</li>
+												<li>厨具刀具</li>
+												<li>茶具餐具</li>
+												<li>家庭软饰</li>
+												<li>品质家居</li>
+												<li>家庭建材</li>
+											</ul>
+										</div>
+										<div style="width: 150px">
+											<p>美妆/个人清洁</p>
+											<ul style="display: flex;flex-wrap: wrap;">
+												<li>美发护发</li>
+												<li>女性护理</li>
+												<li>沐浴清洁</li>
+												<li>口腔护理</li>
+												<li>面部护理</li>
+												<li>缤纷彩妆</li>
+												<li>身体护理</li>
+												<li>男士护理</li>
+												<li>美容工具</li>
+											</ul>
+										</div>
+									</div>
+									<div style="width: 150px">
+										<div>
+											<p>女装/男装/内衣</p>
+											<ul style="display: flex;flex-wrap: wrap;">
+												<li>时尚裙裤</li>
+												<li>女士上衣</li>
+												<li>女士裤子</li>
+												<li>品质内衣</li>
+												<li>型格男装</li>
+												<li>珠宝首饰</li>
+												<li>钟表/眼镜</li>
+											</ul>
+										</div>
+										<div style="width: 150px">
+											<p>鞋靴/箱包/户外</p>
+											<ul style="display: flex;flex-wrap: wrap;">
+												<li>时尚女鞋</li>
+												<li>潮流女包</li>
+												<li>奢侈大牌</li>
+												<li>功能箱包</li>
+												<li>品质男鞋</li>
+												<li>精品男包</li>
+												<li>运动服饰</li>
+												<li>健身器材</li>
+												<li>户外装备</li>
+											</ul>
+										</div>
+									</div>
+									<div style="width: 150px">
+										<div>
+											<p>手机/数码/电脑办公</p>
+											<ul style="display: flex;flex-wrap: wrap;">
+												<li>手机</li>
+												<li>手机配件</li>
+												<li>摄影影响</li>
+												<li>影音电教</li>
+												<li>智能设备</li>
+												<li>数码配件</li>
+												<li>电脑整机</li>
+												<li>网络外设</li>
+												<li>办公设计</li>
+											</ul>
+										</div>
+										<div style="width: 150px">
+											<p>家用电器/汽车用品</p>
+											<ul style="display: flex;flex-wrap: wrap;">
+												<li>厨房小电</li>
+												<li>生活电器</li>
+												<li>个护健康</li>
+												<li>电视空调</li>
+												<li>厨卫大电</li>
+												<li>冰箱</li>
+												<li>洗衣机</li>
+												<li>维修保养</li>
+												<li>汽车装饰</li>
+												<li>车载产品</li>
+											</ul>
+										</div>
+									</div>
+									<div style="width: 150px">
+										<div>
+											<p>医药/滋补</p>
+											<ul style="display: flex;flex-wrap: wrap;">
+												<li>营养健康</li>
+												<li>营养成分</li>
+												<li>传统滋补</li>
+												<li>成儿用品</li>
+												<li>家用器械</li>
+												<li>隐形眼镜</li>
+											</ul>
+										</div>
+										<div style="width: 150px">
+											<p>图片</p>
+											<ul style="display: flex;flex-wrap: wrap;">
+												<li>女儿</li>
+												<li>教育</li>
+												<li>文艺</li>
+												<li>经管励志</li>
+												<li>人文社科</li>
+												<li>生活</li>
+												<li>科技</li>
+												<li>刊/原版</li>
+												<li>音像</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</li>
+							<img src="../img/drop-down.png" alt="" style="width: 12%;">
 						</div>
 						<ul class="font">
 							<li style="margin-left: 6.25rem;">金币签到</li>
@@ -103,7 +292,7 @@
 			<div style="height: 180px;">
 			</div>
 			<div style="float: left;">
-				<img src="../img/lunbo/lunbo1.jpg" style="width: 1483px">
+				<img src="../img/lunbo/lunbo1.jpg" style="width: 1483px;height: 400px" id="p1_lunbo">
 				<div class="lunboparrent">
 					<div class="lunbodiv">进口食品</div>
 					<div class="lunbodiv">大牌美妆</div>
@@ -114,21 +303,26 @@
 				<span>下载APP</span>
 				<img src="../img/intro/code.jpg" alt="">
 				<img src="../img/intro/sticky2.jpg" alt="">
-				<div>
-					<img src="../img/intro/cargo.png" alt="">
-					<span>购物车</span>
-				</div>
-
-
+				<a href="./page4.html">
+					<div style="display: flex">
+						<img src="../img/intro/cargo.png" alt="">
+						<span>购物车</span>
+					</div>
+				</a>
 			</div>
-			<div style="background-color: #f5f5f5;margin-top: -155px">
+
+			<a id="sticky2" href="#top">
+				<img src="../img/up.png" alt="" style="width: 20px;height: 20px">
+			</a>
+
+			<div style="background-color: #f5f5f5;margin-top: -200px">
 				<div style="text-align: center">
 					<img src="../img/customerAd.png" alt="">
 				</div>
 				<div class="superThing">
 					<ul id="single">
 						<div style="margin-top: 10px;">
-							<li style="position:relative;" id="s">
+							<li style="position:relative;transform: none" id="s">
 								<img id="superlogo" src="../img/single/supersolo.png" alt="">
 								<span class="font2">限时 限量 品质 超值</span>
 								<span class="separator"></span>
@@ -144,17 +338,18 @@
 									<span class="time">59</span>
 								</div>
 							</li>
-							<li>
-								<a href="" title=""></a>
-								<img src="../img/single/1.jpg" alt="">
-								<div>培蒙 貂皮大衣男中长款连帽风衣外套水貂皮草整貂冬装厚青年P-19059 灰色 L (170/48)</div>
-								<div class="s_bar">
-									<div class="s_progress"></div>
-								</div>
-								<div style="display: inline;">
-									<span>￥</span>
-									<span>88</span>
-									<span class="underline">198</span>
+							<li class="big_more">
+								<div>
+									<img src="../img/single/1.jpg" alt="">
+									<div>培蒙 貂皮大衣男中长款连帽风衣外套水貂皮草整貂冬装厚青年P-19059 灰色 L (170/48)</div>
+									<div class="s_bar">
+										<div class="s_progress"></div>
+									</div>
+									<div style="display: inline;">
+										<span>￥</span>
+										<span>88</span>
+										<span class="underline">198</span>
+									</div>
 								</div>
 							</li>
 							<li>
@@ -196,79 +391,82 @@
 									<span class="underline">198</span>
 								</div>
 							</li>
+
+							<li>
+								<a href="" title=""></a>
+								<img src="../img/single/single5.jpg" alt="">
+								<div>森马senma老爹鞋男鞋休闲风潮流2019新款秋季低帮增高休闲鞋男 黑色 41</div>
+								<div class="s_bar">
+									<div class="s_progress"></div>
+								</div>
+								<div style="display: inline;">
+									<span>￥</span>
+									<span>88</span>
+									<span class="underline">198</span>
+								</div>
+							</li>
+							<li>
+								<a href="" title=""></a>
+								<img src="../img/single/single6.jpg" alt="">
+								<div>才子男装牛仔裤男士2019新款猫须舒适柔软商务休闲直筒微弹修身牛仔裤男 黑蓝色2320 33/84cm</div>
+								<div class="s_bar">
+									<div class="s_progress"></div>
+								</div>
+								<div style="display: inline;">
+									<span>￥</span>
+									<span>88</span>
+									<span class="underline">198</span>
+								</div>
+							</li>
+							<li>
+								<a href="" title=""></a>
+								<img src="../img/single/single7.jpg" alt="">
+								<div>yaloo/雅鹿短款羽绒服女2019冬白鸭绒轻薄宽松韩版羊羔毛羽绒外套潮 黑色 155/S</div>
+								<div class="s_bar">
+									<div class="s_progress"></div>
+								</div>
+								<div style="display: inline;">
+									<span>￥</span>
+									<span>88</span>
+									<span class="underline">198</span>
+								</div>
+							</li>
+							<li>
+								<a href="" title=""></a>
+								<img src="../img/single/single8.jpg" alt="">
+								<div>莫代尔大码男士内裤男平角裤中腰四季短裤兰精粘纤透气纯色四角裤头4条装 绅士款 2XL(180/100)</div>
+								<div class="s_bar">
+									<div class="s_progress"></div>
+								</div>
+								<div style="display: inline;">
+									<span>￥</span>
+									<span>88</span>
+									<span class="underline">198</span>
+								</div>
+							</li>
+							<li>
+								<a href="" title=""></a>
+								<img src="../img/single/single9.jpg" alt="">
+								<div>JEEP/吉普男士休闲松身版间棉外套 JW16WJ221 R9 185/100B(56)</div>
+								<div class="s_bar">
+									<div class="s_progress"></div>
+								</div>
+								<div style="display: inline;">
+									<span>￥</span>
+									<span>88</span>
+									<span class="underline">198</span>
+								</div>
+							</li>
 						</div>
-						<li>
-							<a href="" title=""></a>
-							<img src="../img/single/single5.jpg" alt="">
-							<div>森马senma老爹鞋男鞋休闲风潮流2019新款秋季低帮增高休闲鞋男 黑色 41</div>
-							<div class="s_bar">
-								<div class="s_progress"></div>
-							</div>
-							<div style="display: inline;">
-								<span>￥</span>
-								<span>88</span>
-								<span class="underline">198</span>
-							</div>
-						</li>
-						<li>
-							<a href="" title=""></a>
-							<img src="../img/single/single6.jpg" alt="">
-							<div>才子男装牛仔裤男士2019新款猫须舒适柔软商务休闲直筒微弹修身牛仔裤男 黑蓝色2320 33/84cm</div>
-							<div class="s_bar">
-								<div class="s_progress"></div>
-							</div>
-							<div style="display: inline;">
-								<span>￥</span>
-								<span>88</span>
-								<span class="underline">198</span>
-							</div>
-						</li>
-						<li>
-							<a href="" title=""></a>
-							<img src="../img/single/single7.jpg" alt="">
-							<div>yaloo/雅鹿短款羽绒服女2019冬白鸭绒轻薄宽松韩版羊羔毛羽绒外套潮 黑色 155/S</div>
-							<div class="s_bar">
-								<div class="s_progress"></div>
-							</div>
-							<div style="display: inline;">
-								<span>￥</span>
-								<span>88</span>
-								<span class="underline">198</span>
-							</div>
-						</li>
-						<li>
-							<a href="" title=""></a>
-							<img src="../img/single/single8.jpg" alt="">
-							<div>莫代尔大码男士内裤男平角裤中腰四季短裤兰精粘纤透气纯色四角裤头4条装 绅士款 2XL(180/100)</div>
-							<div class="s_bar">
-								<div class="s_progress"></div>
-							</div>
-							<div style="display: inline;">
-								<span>￥</span>
-								<span>88</span>
-								<span class="underline">198</span>
-							</div>
-						</li>
-						<li>
-							<a href="" title=""></a>
-							<img src="../img/single/single9.jpg" alt="">
-							<div>JEEP/吉普男士休闲松身版间棉外套 JW16WJ221 R9 185/100B(56)</div>
-							<div class="s_bar">
-								<div class="s_progress"></div>
-							</div>
-							<div style="display: inline;">
-								<span>￥</span>
-								<span>88</span>
-								<span class="underline">198</span>
-							</div>
-						</li>
 					</ul>
 				</div>
 
 				<div class="intro_div">
 					<div style="width: 900px;height:100%;">
 					<span>
-						<span class="intro">品质进口</span>
+						<a href="./exaple2.html">
+							<span class="intro">品质进口</span>
+						</a>
 						<span class="intro2">/ 给你完美生活</span>
 					</span>
 						<div class="introdiv" style="display:flex;">
@@ -666,6 +864,7 @@
 						</div>
 					</div>
 				</div>
+
 				<div id="intro_ad">
 					<img src="../img/intro5/index.png" alt="">
 					<div style="width: 1480px">
@@ -674,6 +873,13 @@
 								<img src="../img/intro5/thing1.jpg" alt="">
 								<span>防水双肩包 男电脑背包多功能商务潮书包 黑色</span>
 								<span>￥229</span>
+								<div class="p1_img_bottom">
+									<img src="../img/ad_cart.png" alt="">
+									<div>
+										找相似
+									</div>
+								</div>
+
 							</li>
 							<li>
 								<img src="../img/intro5/thing2.jpg" alt="">

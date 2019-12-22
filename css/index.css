@@ -70,7 +70,11 @@ em {
 	padding-left: 32px;
 }
 
-.input_circle :hover {
+.input_circle:active {
+	border: 1px solid red;
+}
+
+.input_circle:focus {
 	border: 1px solid red;
 }
 
@@ -103,25 +107,26 @@ em {
 	position: absolute;
 	top: 0.5rem;
 	right: 9rem;
+	border: none;
+	background: transparent;
 }
 
 .font {
 	font: 16px "Microsoft YaHei", Helvetica Neue, tahoma, Arial, Verdana, "Hiragino Sans GB", "\5b8b\4f53";
 	color: #333;
 }
+
 .font li :hover {
     color: red;
     cursor: pointer;
 }
 
-
-.font :hover {
-	color: red;
-    cursor: pointer;
-}
-
 #cart::-webkit-input-placeholder {
 	color: black;
+}
+
+#cart:hover {
+	border: 1px solid #e2e2e2;
 }
 
 ul li {
@@ -216,8 +221,8 @@ ul li img {
 	background-color: transparent !important;
 }
 
-#single li :hover {
-	transform: scale(1.2);
+#single > div > li:hover {
+	transform: scale(1.2, 1.2);
 }
 
 #single li div {
@@ -229,7 +234,6 @@ ul li img {
 
 .s_bar {
 	margin-top: 0.625rem;
-	;
 	background-color: #E2E2E2;
 	border-radius: 100px;
 	width: 9.375rem;
@@ -372,7 +376,7 @@ ul li img {
 }
 
 #intro1 {
-	background-image: url("../img/intro/index.jpg");
+	/*background-image: url("../img/intro/index.jpg");*/
 	width: 189px;
 }
 
@@ -598,7 +602,12 @@ ul li img {
 	margin: 0 auto;
 	display: flex;
 	margin-top: 100px;
-	background-color: white
+	background-color: white;
+}
+
+.intro_div img:hover {
+	transform: translateX(-10px);
+	transition: transform .4s ease, -webkit-transform .4s ease, -moz-transform .4s ease, -o-transform .4s ease;
 }
 
 .intro_a1 {
@@ -633,6 +642,20 @@ ul li img {
 	background-color: white;
 	z-index: 99;
 }
+
+#sticky2 {
+	text-align: center;
+	position: sticky;
+	top: 800px;
+	left: 1290px;
+	height: 30px;
+	width: 100px;
+	background-color: white;
+	z-index: 99;
+	line-height: 40px;
+	cursor: pointer;
+}
+
 
 #sticky span {
 	height: 30px;
@@ -689,11 +712,13 @@ ul li img {
 #intro_ad ul li {
 	background-color: white;
 	width: 100%;
-	height: 236px;
+	height: 240px;
 	margin: 5px;
 	display: flex;
 	justify-content: center;
 	flex-direction: column;
+	transition: all .3s ease;
+	line-height: 20px;
 }
 
 #intro_ad ul li img {
@@ -869,4 +894,64 @@ ul li img {
 	font-size: 16px;
 	text-align: center;
 	line-height: 14px;
+}
+
+.hidden_category {
+	visibility: hidden;
+	position: absolute;
+	top: 210px;
+	width: 1040px;
+	height: 410px;
+	background-color: white;
+	left: 207px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	z-index: 99;
+	border: 1px solid red;
+}
+
+.hidden_category > div {
+}
+
+
+.hidden_category p {
+	color: #000;
+	font-size: 14px;
+	line-height: 19px;
+	font-weight: bold;
+	margin-left: 4px;
+}
+
+.hidden_category ul li {
+	font: 12px "Microsoft YaHei", Helvetica Neue, tahoma, Arial, Verdana, "Hiragino Sans GB", "\5b8b\4f53";
+	margin: 5px;
+	color: #000;
+}
+
+#p1_uname {
+	width: 140px;
+	height: 40px;
+	background-color: red;
+	opacity: 0.8;
+	display: flex;
+	align-items: center;
+	padding: 0 10px;
+	cursor: pointer;
+}
+
+#p1_uname:hover .hidden_category {
+	visibility: visible;
+}
+
+.p1_img_bottom img{
+	width: 48px;
+	height: 48px;
+}
+
+.p1_img_bottom>div{
+	width: 48px;
+	height: 48px;
+	border: 1px solid #ff4040;
+	border-radius: 50%;
 }

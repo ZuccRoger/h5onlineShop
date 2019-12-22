@@ -264,17 +264,20 @@ body {
     font-size: 16px;
 }
 
+#recommend {
+    position: relative;
+}
 #recommend ul {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: center;
     flex-wrap: wrap;
 }
 
 #recommend ul li {
     width: 150px;
     height: 210px;
-    margin: 0 30px;
+    margin: 0 40px;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -306,4 +309,20 @@ body {
     white-space: nowrap;
     color: #666;
     display: block;
+}
+
+.slide_left {
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    left: 30px;
+    top: 250px;
+}
+
+.slide_right {
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    right: 30px;
+    top: 250px;
 }
