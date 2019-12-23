@@ -66,7 +66,7 @@
 }
 
 .order_demo_item ul {
-    min-height: 205px;
+    min-height: 125px;
     height: auto;
     display: flex;
     flex-direction: column;
@@ -194,15 +194,19 @@
     right: 220px;
 }
 
+.number_add_minus input {
+    background-color: transparent;
+}
+
 .number_add_minus :first-child {
     position: absolute;
     color: #dfdfdf;
-    cursor: default;
     width: 20px;
     text-align: center;
     font-family: 'Tahoma';
     font-size: 14px;
     overflow: hidden;
+    cursor: pointer;
 }
 
 .number_add_minus :last-child {
@@ -213,6 +217,7 @@
     font-family: 'Tahoma';
     font-size: 14px;
     overflow: hidden;
+    cursor: pointer;
 }
 
 .number_input {
@@ -254,6 +259,7 @@
     width: 20px !important;
     height: 20px !important;
 }
+
 
 .operation :first-child {
     position: absolute;

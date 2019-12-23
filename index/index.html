@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html>
-<!--	TODO 页面下滑至按需加载 、 轮播图
-			 -->
+<!--	TODO 页面下滑至按需加载  -->
 	<head>
 		<meta charset="utf-8" />
 		<title></title>
 		<link rel="stylesheet" type="text/css" href="../css/index.css">
+		<script src="../js/index.js"></script>
 		<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
 		<script type="text/javascript">
 			// 返回顶部
+
 			$(function () {
 				$('#sticky2').click(function () {
 					console.log("222");
@@ -26,7 +27,6 @@
 				var str = "2019/12/25 00:00:00";
 				var endDate = new Date(str);
 				var end = endDate.getTime();
-
 				//时间差
 				var leftTime = end - now;
 				//定义变量 d,h,m,s保存倒计时的时间
@@ -43,7 +43,6 @@
 				}
 				;
 				document.getElementById("_h").innerHTML = h;
-				console.log(m);
 				if (m < 10) {
 					m = "0" + m;
 				}
@@ -58,11 +57,33 @@
 				setTimeout(countTime, 1000);
 			}
 
+			$(window).load(function () {
+				var tray = document.getElementById("p1_lunbo");   //获取id为try的文件
+				var is = tray.getElementsByTagName('img');    //获取try中的图片
+				var lunbodiv = tray.getElementsByClassName('lunbodiv');
+				var c = 0;
+				setInterval(function () {            //设置计时器，格式为setInterval（function(）{}，time）
+					c++;                          //因为获取到的图片是一个数组，为显示后续图片，数组编号+1
+					if (c == 3) {                 //本例中只设置了3个图片，所以第三张图片之后，数组编码重新归零
+						c = 0;
+					}
+					for (var i = 0; i < is.length; i++) {     //做一个for循环，使每一个图片的display属性为none，隐藏图
+						is[i].style.display = 'none';
+						lunbodiv[i].style.backgroundColor = "white";
+						lunbodiv[i].style.color = "black";
+					}
+					is[c].style.display = 'block';          //显示第c张图片
+					lunbodiv[c].style.backgroundColor = "#333";
+					lunbodiv[c].style.color = "#fff";
+				}, 3000)
+			})
+
+
 		</script>
 	</head>
 <body onload="countTime()">
 		<!-- 顶部条 -->
-		<div style="display: flex;flex-direction: column" id="top">
+		<div style="display: flex;flex-direction: column" id="top" onload="cc()">
 			<div class="hd_header_wrap">
 				<div style="width: 1070px;height: 13.75rem;">
 					<div class="hd_header_bar">
@@ -344,12 +365,14 @@
 			</div>
 			<div style="height: 180px;">
 			</div>
-			<div style="float: left;">
-				<img src="../img/lunbo/lunbo1.jpg" style="width: 1483px;height: 400px" id="p1_lunbo">
+			<div style="float: left;" id="p1_lunbo">
+				<img src="../img/lunbo/lunbo1.jpg" style="width: 1483px;height: 400px;">
+				<img src="../img/lunbo/lunbo2.jpg" style="width: 1483px;height: 400px;display: none;">
+				<img src="../img/lunbo/lunbo3.jpg" style="width: 1483px;height: 400px;display: none">
 				<div class="lunboparrent">
-					<div class="lunbodiv">进口食品</div>
-					<div class="lunbodiv">大牌美妆</div>
-					<div class="lunbodiv">冬季畅饮</div>
+					<div class="lunbodiv" style="background-color: #333;color: white">大牌美妆</div>
+					<div class="lunbodiv">运动户外</div>
+					<div class="lunbodiv">个人护理</div>
 				</div>
 			</div>
 			<div id="sticky">

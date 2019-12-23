@@ -5,6 +5,103 @@
     <title></title>
     <link rel="stylesheet" type="text/css" href="../css/index.css">
     <link rel="stylesheet" type="text/css" href="../css/index4.css">
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script type="text/javascript">
+
+        var input_item, li_list, total_money, money_item, weight_item, img_2_list;
+        let price = [0, 99, 39, 109];
+        let weight = [0, 8.4, 0.4, 2.1];
+        let amount = [0, 1, 1, 1];
+        let select_array = [0, 1, 1, 1];
+
+        $(window).load(function () {
+            li_list = document.querySelectorAll("#cart_1");
+            input_item = document.querySelectorAll('.number_input');
+            money_item = document.querySelectorAll('.money_item_sum');
+            weight_item = document.querySelectorAll('.weight_item_sum');
+            total_money = document.querySelector("#total_money");
+            img_2_list = document.querySelectorAll(".operation_first")
+            console.log(input_item);
+        })
+
+        function add(x) {
+            amount[x]++;
+            input_item[x - 1].value = amount[x];
+            money_item[x - 1].innerHTML = amount[x] * price[x];
+            weight_item[x - 1].innerHTML = (amount[x] * weight[x]).toFixed(2) + "kg";
+            let sum = 0;
+            for (let i = 0; i < price.length; i++) {
+                if (select_array[i] > 0) {
+                    sum += price[i] * amount[i];
+                }
+            }
+            total_money.innerHTML = sum;
+        }
+
+        function minus(x) {
+            amount[x]--;
+            input_item[x - 1].value = amount[x];
+            money_item[x - 1].innerHTML = amount[x] * price[x];
+            weight_item[x - 1].innerHTML = (amount[x] * weight[x]).toFixed(2) + "kg";
+            let sum = 0;
+            for (let i = 0; i < price.length; i++) {
+                if (select_array[i] > 0) {
+                    sum += price[i] * amount[i];
+                }
+            }
+            total_money.innerHTML = sum;
+        }
+
+        function p4_cart_changeimg(x) {
+            let temp = '.operation_first_' + x;
+            console.log(temp);
+            if ($(temp).attr('src') == '../img/page4/love.png') {
+                $(temp).attr('src', '../img/page4/love-Selecetd.png');
+
+            } else {
+                $(temp).attr('src', '../img/page4/love.png');
+            }
+
+        }
+
+        function onclick_cart_changeimg(x) {
+            console.log("1");
+            let temp = '#frame_gou_' + x;
+            if ($(temp).attr('src') == '../img/page4/frame_gou.png') {
+                $(temp).attr('src', '../img/page4/gou_frame_false.png');
+                select_array[x] = 0;
+            } else {
+                select_array[x] = 1;
+                $(temp).attr('src', '../img/page4/frame_gou.png');
+            }
+            let sum = 0;
+            for (let i = 0; i < price.length; i++) {
+                if (select_array[i] > 0) {
+                    sum += price[i] * amount[i];
+                }
+            }
+            total_money.innerHTML = sum;
+        }
+
+
+        function p4_cart_delete(x) {
+            li_list[x - 1].style.display = "none";
+            select_array[x] = 0;
+            alert("移除成功！");
+            let sum = 0;
+            for (let i = 0; i < price.length; i++) {
+                if (select_array[i] > 0) {
+                    sum += price[i] * amount[i];
+                }
+            }
+            total_money.innerHTML = sum;
+        }
+
+        $("#select_all").change(function () {
+            alert("checked");
+        });
+
+    </script>
 </head>
 <body>
 <!-- 顶部条 -->
@@ -72,7 +169,7 @@
                 </div>
 
                 <div style="height: 20px;display: flex;align-items: center" id="order_title_all">
-                    <input type="checkbox">
+                    <input type="checkbox" id="select_all">
                     <ul>
                         <li>全选</li>
                         <li>商品信息</li>
@@ -104,76 +201,85 @@
 
                     <div class="order_demo_item">
                         <ul>
-                            <li>
-                                <img src="../img/page4/frame_gou.png" alt="" class="frame_gou">
+                            <li id="cart_1">
+                                <img src="../img/page4/frame_gou.png" alt="" class="frame_gou" id="frame_gou_1"
+                                     onclick="onclick_cart_changeimg(1)">
                                 <img src="../img/page4/order/order_thing_1.jpg" alt="">
                                 <span>【24盒整箱+6盒单支】安佳牛奶 纯牛奶进口 全脂牛奶250ml*30盒 </span>
                                 <span class="seven_day">7</span>
                                 <span>99.00</span>
                                 <div class="number_add_minus">
-                                    <a href="">-</a>
-                                    <input type="text" value="1" class="number_input">
-                                    <a href="">+</a>
+                                    <span onclick="minus(1)" class="minus">-</span>
+                                    <input disabled type="text" value="1" class="number_input"
+                                           min="0">
+                                    <span onclick="add(1)" class="add">+</span>
                                 </div>
                                 <div class="money">
-                                    <span>
+                                    <span class="money_item_sum">
                                     99
                                     </span>
-                                    <span>
+                                    <span class="weight_item_sum">
                                     8.4kg
-                                </span>
+                                    </span>
                                 </div>
                                 <div class="operation">
-                                    <img src="../img/page4/love.png" alt="">
-                                    <img src="../img/page4/delete.png" alt="">
+                                    <img src="../img/page4/love.png" alt="" class="operation_first_1"
+                                         onclick="p4_cart_changeimg(1)">
+                                    <img src="../img/page4/delete.png" alt="" onclick="p4_cart_delete(1)">
                                 </div>
                             </li>
-                            <li>
-                                <img src="../img/page4/frame_gou.png" alt="" class="frame_gou">
-                                <img src="../img/page4/order/order_thing_1.jpg" alt="">
-                                <span>【24盒整箱+6盒单支】安佳牛奶 纯牛奶进口 全脂牛奶250ml*30盒 </span>
+                            <li id="cart_1">
+                                <img src="../img/page4/frame_gou.png" alt="" class="frame_gou" id="frame_gou_2"
+                                     onclick="onclick_cart_changeimg(2)">
+                                <img src="../img/page4/order/order_thing_2.jpg" alt="">
+                                <span>    卡通可爱毛绒小包包女包新款2019秋冬韩版百搭单肩斜挎包 米色</span>
                                 <span class="seven_day">7</span>
-                                <span>99.00</span>
+                                <span>39.00</span>
                                 <div class="number_add_minus">
-                                    <a href="">-</a>
-                                    <input type="text" value="1" class="number_input">
-                                    <a href="">+</a>
+                                    <span onclick="minus(2)" class="minus">-</span>
+                                    <input disabled type="text" value="1" class="number_input" id="cart_input_1"
+                                           min="0">
+                                    <span onclick="add(2)" class="add">+</span>
                                 </div>
                                 <div class="money">
-                                    <span>
-                                    99
+                                    <span class="money_item_sum">
+                                    39
                                     </span>
-                                    <span>
-                                    8.4kg
-                                </span>
+                                    <span class="weight_item_sum">
+                                    0.4kg
+                                    </span>
                                 </div>
                                 <div class="operation">
-                                    <img src="../img/page4/love.png" alt="">
-                                    <img src="../img/page4/delete.png" alt="">
+                                    <img src="../img/page4/love.png" alt="" class="operation_first_2"
+                                         onclick="p4_cart_changeimg(2)">
+                                    <img src="../img/page4/delete.png" alt="" onclick="p4_cart_delete(2)">
                                 </div>
                             </li>
-                            <li>
-                                <img src="../img/page4/frame_gou.png" alt="" class="frame_gou">
-                                <img src="../img/page4/order/order_thing_1.jpg" alt="">
-                                <span>【24盒整箱+6盒单支】安佳牛奶 纯牛奶进口 全脂牛奶250ml*30盒 </span>
+                            <li id="cart_1">
+                                <img src="../img/page4/frame_gou.png" alt="" class="frame_gou" id="frame_gou_3"
+                                     onclick="onclick_cart_changeimg(3)">
+                                <img src=" ../img/page4/order/order_thing_3.jpg" alt="">
+                                <span>     装手机的小包包妈妈款 2019新款中老女包妈妈手拎包单肩斜挎包</span>
                                 <span class="seven_day">7</span>
-                                <span>99.00</span>
+                                <span>109.00</span>
                                 <div class="number_add_minus">
-                                    <a href="">-</a>
-                                    <input type="text" value="1" class="number_input">
-                                    <a href="">+</a>
+                                    <span onclick="minus(3)" class="minus">-</span>
+                                    <input disabled type="text" value="1" class="number_input" id="cart_input_1"
+                                           min="0">
+                                    <span onclick="add(3)" class="add">+</span>
                                 </div>
                                 <div class="money">
-                                    <span>
-                                    99
+                                    <span class="money_item_sum">
+                                    109
                                     </span>
-                                    <span>
-                                    8.4kg
-                                </span>
+                                    <span class="weight_item_sum">
+                                    2.1kg
+                                    </span>
                                 </div>
                                 <div class="operation">
-                                    <img src="../img/page4/love.png" alt="">
-                                    <img src="../img/page4/delete.png" alt="">
+                                    <img src="../img/page4/love.png" alt="" class="operation_first_3"
+                                         onclick="p4_cart_changeimg(3)">
+                                    <img src="../img/page4/delete.png" alt="" onclick="p4_cart_delete(3)">
                                 </div>
                             </li>
                         </ul>
@@ -183,7 +289,7 @@
                         <span>已选商品 <b>2</b> 件            |</span>
                         <div style="display: inline;position: absolute;top: 12px;right: 140px;">
                             <span>合计</span>
-                            <span> ￥<b style="font-size: 20px;color: red">188</b> </span>
+                            <span> ￥<b style="font-size: 20px;color: red" id="total_money">247</b> </span>
                         </div>
                         <div class="calculate">去结算</div>
                     </div>
