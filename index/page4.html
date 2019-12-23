@@ -97,9 +97,34 @@
             total_money.innerHTML = sum;
         }
 
-        $("#select_all").change(function () {
-            alert("checked");
-        });
+
+        function checkboxOnclick(checkbox) {
+            if (checkbox.checked == true) {
+                for (let i = 0; i < 4; i++) {
+                    let temp = '#frame_gou_' + i;
+                    $(temp).attr('src', '../img/page4/frame_gou.png');
+                    select_array[i] = 1;
+                }
+                let sum = 0;
+                for (let i = 0; i < price.length; i++) {
+                    if (select_array[i] > 0) {
+                        sum += price[i] * amount[i];
+                    }
+                }
+                total_money.innerHTML = sum;
+            } else {
+                for (let i = 0; i < 4; i++) {
+                    let temp = '#frame_gou_' + i;
+                    $(temp).attr('src', '../img/page4/gou_frame_false.png');
+                    select_array[i] = 0;
+                }
+                total_money.innerHTML = 0;
+            }
+        }
+
+        function a() {
+            console.log("22");
+        }
 
     </script>
 </head>
@@ -169,7 +194,7 @@
                 </div>
 
                 <div style="height: 20px;display: flex;align-items: center" id="order_title_all">
-                    <input type="checkbox" id="select_all">
+                    <input type="checkbox" id="select_all" onclick="checkboxOnclick(this)">
                     <ul>
                         <li>全选</li>
                         <li>商品信息</li>
@@ -182,7 +207,7 @@
 
                 <div style="position: relative;border: 1px solid #dcdcdc;border-radius: 3px;">
                     <div class="order_demo_title" style="height: 56px;">
-                        <img src="../img/page4/frame_gou.png" alt="" class="frame_gou">
+                        <img src="../img/page4/frame_gou.png" alt="" class="frame_gou" style="visibility: hidden">
                         <span>安佳官方旗舰店</span>
                         <img src="../img/page4/icon_ali.png" alt="" class="ali_icon">
                         <img src="../img/page4/ticket.png" alt="">
@@ -190,7 +215,8 @@
 
                     <div class="order_demo_content" style="height: 50px;">
                         <div class="order_demo_content_top">
-                            <img src="../img/page4/frame_gou.png" alt="" class="frame_gou">
+                            <img src="../img/page4/frame_gou.png" alt="" class="frame_gou" id="frame_gou_0"
+                                 onclick="onclick_cart_changeimg(0)">
                             <span>换购</span>
                             <span>指定商品满59元加49元可换购商品 </span>
                             <span></span>
