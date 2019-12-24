@@ -13,6 +13,39 @@
     font-family: "Microsoft Yahei";
 }
 
+#brand_list li {
+    width: 92px;
+    height: 42px;
+}
+
+#brand_list li a {
+    display: flex;
+    width: 92px;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+#brand_list li:hover {
+    border: 1px solid red;
+}
+
+#brand_list li:hover img {
+    display: none;
+}
+
+#brand_list li:hover p {
+    display: inline;
+    color: #ff4040;
+    font-size: 12px;
+}
+
+#brand_list li a p {
+    display: none;
+}
+
+
+
 #brand2 {
     border-top: 5px #e5e5e5 solid;
     border-left: 2px solid #e5e5e5;
@@ -49,6 +82,7 @@
     flex-direction: row;
     align-items: center;
 }
+
 
 #tab_control li img {
     width: 9.6px;

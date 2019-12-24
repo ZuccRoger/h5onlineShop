@@ -27,26 +27,25 @@
 			top_li_list[x].style.color = "#ff4040";
 			top_li_list[x].style.color = "#ff4040";
 			top_li_list[x].style.backgroundColor = "white";
-			top_li_list[x].style.border = "1px solid #e2e2e2";
+			top_li_list[x].style.borderTop = "1px solid #e2e2e2";
+			top_li_list[x].style.borderLeft = "1px solid #e2e2e2";
+			top_li_list[x].style.borderRight = "1px solid #e2e2e2";
 		}
 
-		function brand_hover(x) {
-			console.log(brand_list_array[x]);
-			for (let i = 0; i < 20; i++) {
-				brand_list_array[i].style.border = '1px solid #e2e2e2';
-				brand_list_array[i].querySelector("img").style.visibility = "visible";
-			}
-			brand_list_array[x].style.border = '1px solid red';
-			brand_list_array[x].style.width = '92px';
-			brand_list_array[x].style.height = '42px';
-			brand_list_array[x].style.display = 'flex';
-			brand_list_array[x].style.justifyContent = 'center';
-			brand_list_array[x].style.alignItems = 'center';
-			brand_list_array[x].querySelector("img").style.visibility = "hidden";
-			brand_list_array[x].querySelector("a").innerText = brand_list_name[x];
-			brand_list_array[x].querySelector("a").style.color = '#ff4040';
-			brand_list_array[x].querySelector("a").style.fontSize = "12px"
-		}
+		// function brand_hover(x) {
+		// 	for (let i = 0; i < 20; i++) {
+		// 		brand_list_array[i].querySelector("img").style.visibility = "visible";
+		// 	}
+		// 	brand_list_array[x].style.width = '92px';
+		// 	brand_list_array[x].style.height = '42px';
+		// 	brand_list_array[x].style.display = 'flex';
+		// 	brand_list_array[x].style.justifyContent = 'center';
+		// 	brand_list_array[x].style.alignItems = 'center';
+		// 	brand_list_array[x].querySelector("img").style.visibility = "hidden";
+		// 	brand_list_array[x].querySelector("a").innerText = brand_list_name[x];
+		// 	brand_list_array[x].querySelector("a").style.color = '#ff4040';
+		// 	brand_list_array[x].querySelector("a").style.fontSize = "12px"
+		// }
 
 	</script>
 </head>
@@ -174,36 +173,127 @@
 				</div>
 				<div style="height:125px;width: 950px;border-left:1px #e2e2e2 dashed;display: flex;align-items: center;">
 					<ul id="brand_list">
-						<li onmouseover="brand_hover(0)"><a href=""><img src="../img/page2/brand1.jpg" alt=""></a></li>
-						<li onmouseover="brand_hover(1)"><a href=""><img src="../img/page2/brand2.jpg" alt=""></a></li>
-						<li onmouseover="brand_hover(2)"><a href=""><img src="../img/page2/brand3.jpg" alt=""></a></li>
-						<li onmouseover="brand_hover(3)"><a href=""><img src="../img/page2/brand4.jpg" alt=""></a></li>
-						<li onmouseover="brand_hover(4)"><a href=""><img src="../img/page2/brand5.jpg" alt=""></a></li>
-						<li onmouseover="brand_hover(5)"><a href=""><img src="../img/page2/brand6.jpg" alt=""></a></li>
-						<li onmouseover="brand_hover(6)"><a href=""><img src="../img/page2/brand7.jpg" alt=""></a></li>
-						<li onmouseover="brand_hover(7)"><a href=""><img src="../img/page2/brand8.jpg" alt=""></a></li>
-						<li onmouseover="brand_hover(8)"><a href=""><img src="../img/page2/brand9.jpg" alt=""></a></li>
-						<li onmouseover="brand_hover(9)"><a href=""><img src="../img/page2/brand10.jpg" alt=""></a></li>
-						<li onmouseover="brand_hover(10)"><a href=""><img src="../img/page2/brand11.jpg" alt=""></a>
+						<li>
+							<a href="">
+								<img src="../img/page2/brand1.jpg" alt="">
+								<p>丽芝士</p>
+							</a>
 						</li>
-						<li onmouseover="brand_hover(11)"><a href=""><img src="../img/page2/brand12.png" alt=""></a>
+						<li>
+							<a href="">
+								<img src="../img/page2/brand2.jpg" alt="">
+								<p>白色恋人</p>
+							</a>
 						</li>
-						<li onmouseover="brand_hover(12)"><a href=""><img src="../img/page2/brand13.jpg" alt=""></a>
+						<li>
+							<a href="">
+								<img src="../img/page2/brand3.jpg" alt="">
+								<p>丹麦饼干</p>
+							</a>
 						</li>
-						<li onmouseover="brand_hover(13)"><a href=""><img src="../img/page2/brand14.jpg" alt=""></a>
+						<li>
+							<a href="">
+								<img src="../img/page2/brand4.jpg" alt="">
+								<p>朱莉</p>
+							</a>
 						</li>
-						<li onmouseover="brand_hover(14)"><a href=""><img src="../img/page2/brand15.jpg" alt=""></a>
+						<li>
+							<a href="">
+								<img src="../img/page2/brand5.jpg" alt="">
+								<p>皇室</p>
+							</a>
 						</li>
-						<li onmouseover="brand_hover(15)"><a href=""><img src="../img/page2/brand16.jpg" alt=""></a>
+						<li>
+							<a href="">
+								<img src="../img/page2/brand6.jpg" alt="">
+								<p>Tango</p>
+							</a>
 						</li>
-						<li onmouseover="brand_hover(16)"><a href=""><img src="../img/page2/brand17.jpg" alt=""></a>
+						<li>
+							<a href="">
+								<img src="../img/page2/brand7.jpg" alt="">
+								<p>皇家</p>
+							</a>
 						</li>
-						<li onmouseover="brand_hover(17)"><a href=""><img src="../img/page2/brand18.jpg" alt=""></a>
+						<li>
+							<a href="">
+								<img src="../img/page2/brand8.jpg" alt="">
+								<p>拉丁</p>
+							</a>
 						</li>
-						<li onmouseover="brand_hover(18)"><a href=""><img src="../img/page2/brand19.png" alt=""></a>
+						<li>
+							<a href="">
+								<img src="../img/page2/brand9.jpg" alt="">
+								<p>丽芝士</p>
+							</a>
 						</li>
-						<li onmouseover="brand_hover(19)"><a href=""><img src="../img/page2/brand20.jpg" alt=""></a>
+						<li>
+							<a href="">
+								<img src="../img/page2/brand10.jpg" alt="">
+								<p>丽芝士</p>
+							</a>
 						</li>
+						<li>
+							<a href="">
+								<img src="../img/page2/brand11.jpg" alt="">
+								<p>维也纳</p>
+							</a>
+						</li>
+						<li>
+							<a href="">
+								<img src="../img/page2/brand12.png" alt="">
+								<p>Lipo</p>
+							</a>
+						</li>
+						<li>
+							<a href="">
+								<img src="../img/page2/brand13.jpg" alt="">
+								<p>Joon</p>
+							</a>
+						</li>
+						<li>
+							<a href="">
+								<img src="../img/page2/brand14.jpg" alt="">
+								<p>美心</p>
+							</a>
+						</li>
+						<li>
+							<a href="">
+								<img src="../img/page2/brand15.jpg" alt="">
+								<p>谷优</p>
+							</a>
+						</li>
+						<li>
+							<a href="">
+								<img src="../img/page2/brand16.jpg" alt="">
+								<p>Loacker</p>
+							</a>
+						</li>
+						<li>
+							<a href="">
+								<img src="../img/page2/brand17.jpg" alt="">
+								<p>过山车</p>
+							</a>
+						</li>
+						<li>
+							<a href="">
+								<img src="../img/page2/brand18.jpg" alt="">
+								<p>Knoppers</p>
+							</a>
+						</li>
+						<li>
+							<a href="">
+								<img src="../img/page2/brand19.png" alt="">
+								<p>小狗狗</p>
+							</a>
+						</li>
+						<li>
+							<a href="">
+								<img src="../img/page2/brand20.jpg" alt="">
+								<p>TIPO</p>
+							</a>
+						</li>
+
 					</ul>
 				</div>
 			</div>
@@ -254,7 +344,6 @@
 								<span>星七自营旗舰店</span>
 								<img src="../img/rigt.png" alt="">
 							</div>
-
 						</div>
 					</li>
 					<li>
@@ -335,7 +424,6 @@
 								<span>倍乐思Beryl's自营旗舰店</span>
 								<img src="../img/rigt.png" alt="">
 							</div>
-
 						</div>
 					</li>
 					<li>
