@@ -24,25 +24,33 @@
             console.log(input_item);
         })
 
+        function re_calculate_number(x, item) {
+            amount[x] = parseInt(item.value);
+            sum_money();
+            console.log(amount);
+            money_item[x - 1].innerHTML = amount[x] * price[x];
+            weight_item[x - 1].innerHTML = (amount[x] * weight[x]).toFixed(2) + "kg";
+        }
+
         function add(x) {
             amount[x]++;
             input_item[x - 1].value = amount[x];
             money_item[x - 1].innerHTML = amount[x] * price[x];
             weight_item[x - 1].innerHTML = (amount[x] * weight[x]).toFixed(2) + "kg";
-            let sum = 0;
-            for (let i = 0; i < price.length; i++) {
-                if (select_array[i] > 0) {
-                    sum += price[i] * amount[i];
-                }
-            }
-            total_money.innerHTML = sum;
+            sum_money();
         }
 
         function minus(x) {
-            amount[x]--;
-            input_item[x - 1].value = amount[x];
-            money_item[x - 1].innerHTML = amount[x] * price[x];
-            weight_item[x - 1].innerHTML = (amount[x] * weight[x]).toFixed(2) + "kg";
+            if (amount[x] > 0) {
+                amount[x]--;
+                input_item[x - 1].value = amount[x];
+                money_item[x - 1].innerHTML = amount[x] * price[x];
+                weight_item[x - 1].innerHTML = (amount[x] * weight[x]).toFixed(2) + "kg";
+                sum_money();
+            }
+        }
+
+        function sum_money() {
             let sum = 0;
             for (let i = 0; i < price.length; i++) {
                 if (select_array[i] > 0) {
@@ -61,7 +69,6 @@
             } else {
                 $(temp).attr('src', '../img/page4/love.png');
             }
-
         }
 
         function onclick_cart_changeimg(x) {
@@ -236,8 +243,11 @@
                                 <span>99.00</span>
                                 <div class="number_add_minus">
                                     <span onclick="minus(1)" class="minus">-</span>
-                                    <input disabled type="text" value="1" class="number_input"
-                                           min="0">
+                                    <input oninput="value=value.replace(/[^\d]/g,'')"
+                                           value="1"
+                                           class="number_input"
+                                           min="0"
+                                           onchange="re_calculate_number(1,this)">
                                     <span onclick="add(1)" class="add">+</span>
                                 </div>
                                 <div class="money">
@@ -263,8 +273,11 @@
                                 <span>39.00</span>
                                 <div class="number_add_minus">
                                     <span onclick="minus(2)" class="minus">-</span>
-                                    <input disabled type="text" value="1" class="number_input" id="cart_input_1"
-                                           min="0">
+                                    <input oninput="value=value.replace(/[^\d]/g,'')"
+                                           value="1"
+                                           class="number_input"
+                                           min="0"
+                                           onchange="re_calculate_number(2,this)">
                                     <span onclick="add(2)" class="add">+</span>
                                 </div>
                                 <div class="money">
@@ -290,8 +303,11 @@
                                 <span>109.00</span>
                                 <div class="number_add_minus">
                                     <span onclick="minus(3)" class="minus">-</span>
-                                    <input disabled type="text" value="1" class="number_input" id="cart_input_1"
-                                           min="0">
+                                    <input oninput="value=value.replace(/[^\d]/g,'')"
+                                           value="1"
+                                           class="number_input"
+                                           min="0"
+                                           onchange="re_calculate_number(3,this)">
                                     <span onclick="add(3)" class="add">+</span>
                                 </div>
                                 <div class="money">

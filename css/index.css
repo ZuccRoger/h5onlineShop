@@ -257,13 +257,17 @@ ul li img {
 }
 
 #single div li :hover {
-	background-color: transparent;
+	/*background-color: transparent;*/
 }
 
 #superlogo {
 	width: 129px;
 	height: 36px;
 	cursor: pointer;
+}
+
+.font > li:hover {
+	color: red;
 }
 
 .font2 {

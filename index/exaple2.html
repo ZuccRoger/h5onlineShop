@@ -5,6 +5,50 @@
 	<title></title>
 	<link rel="stylesheet" type="text/css" href="../css/index.css">
 	<link rel="stylesheet" type="text/css" href="../css/index2.css">
+	<script type="text/javascript">
+
+		let top_li_list, brand_list_array;
+		let brand_list_name = [
+			"丽芝士", "白色恋人", "皇冠", "茱蒂丝", "丹麦蓝罐", "Tango", "马奇新新", "麦维他", "和情", "LIPO"
+		]
+
+
+		window.onload = function () {
+			top_li_list = document.querySelectorAll('#tab_control li');
+			brand_list_array = document.querySelectorAll('#brand_list li');
+		}
+
+		function change_focus(x) {
+			for (let i = 0; i < 5; i++) {
+				top_li_list[i].style.color = "black";
+				top_li_list[i].style.backgroundColor = "#f5f5f5";
+				top_li_list[i].style.border = "none";
+			}
+			top_li_list[x].style.color = "#ff4040";
+			top_li_list[x].style.color = "#ff4040";
+			top_li_list[x].style.backgroundColor = "white";
+			top_li_list[x].style.border = "1px solid #e2e2e2";
+		}
+
+		function brand_hover(x) {
+			console.log(brand_list_array[x]);
+			for (let i = 0; i < 20; i++) {
+				brand_list_array[i].style.border = '1px solid #e2e2e2';
+				brand_list_array[i].querySelector("img").style.visibility = "visible";
+			}
+			brand_list_array[x].style.border = '1px solid red';
+			brand_list_array[x].style.width = '92px';
+			brand_list_array[x].style.height = '42px';
+			brand_list_array[x].style.display = 'flex';
+			brand_list_array[x].style.justifyContent = 'center';
+			brand_list_array[x].style.alignItems = 'center';
+			brand_list_array[x].querySelector("img").style.visibility = "hidden";
+			brand_list_array[x].querySelector("a").innerText = brand_list_name[x];
+			brand_list_array[x].querySelector("a").style.color = '#ff4040';
+			brand_list_array[x].querySelector("a").style.fontSize = "12px"
+		}
+
+	</script>
 </head>
 <body>
 <!-- 顶部条 -->
@@ -129,27 +173,37 @@
 					<span style="margin-left: 10px">品牌</span>
 				</div>
 				<div style="height:125px;width: 950px;border-left:1px #e2e2e2 dashed;display: flex;align-items: center;">
-					<ul>
-						<li><a href=""><img src="../img/page2/brand1.jpg" alt=""></a></li>
-						<li><a href=""><img src="../img/page2/brand2.jpg" alt=""></a></li>
-						<li><a href=""><img src="../img/page2/brand3.jpg" alt=""></a></li>
-						<li><a href=""><img src="../img/page2/brand4.jpg" alt=""></a></li>
-						<li><a href=""><img src="../img/page2/brand5.jpg" alt=""></a></li>
-						<li><a href=""><img src="../img/page2/brand6.jpg" alt=""></a></li>
-						<li><a href=""><img src="../img/page2/brand7.jpg" alt=""></a></li>
-						<li><a href=""><img src="../img/page2/brand8.jpg" alt=""></a></li>
-						<li><a href=""><img src="../img/page2/brand9.jpg" alt=""></a></li>
-						<li><a href=""><img src="../img/page2/brand10.jpg" alt=""></a></li>
-						<li><a href=""><img src="../img/page2/brand11.jpg" alt=""></a></li>
-						<li><a href=""><img src="../img/page2/brand12.png" alt=""></a></li>
-						<li><a href=""><img src="../img/page2/brand13.jpg" alt=""></a></li>
-						<li><a href=""><img src="../img/page2/brand14.jpg" alt=""></a></li>
-						<li><a href=""><img src="../img/page2/brand15.jpg" alt=""></a></li>
-						<li><a href=""><img src="../img/page2/brand16.jpg" alt=""></a></li>
-						<li><a href=""><img src="../img/page2/brand17.jpg" alt=""></a></li>
-						<li><a href=""><img src="../img/page2/brand18.jpg" alt=""></a></li>
-						<li><a href=""><img src="../img/page2/brand19.png" alt=""></a></li>
-						<li><a href=""><img src="../img/page2/brand20.jpg" alt=""></a></li>
+					<ul id="brand_list">
+						<li onmouseover="brand_hover(0)"><a href=""><img src="../img/page2/brand1.jpg" alt=""></a></li>
+						<li onmouseover="brand_hover(1)"><a href=""><img src="../img/page2/brand2.jpg" alt=""></a></li>
+						<li onmouseover="brand_hover(2)"><a href=""><img src="../img/page2/brand3.jpg" alt=""></a></li>
+						<li onmouseover="brand_hover(3)"><a href=""><img src="../img/page2/brand4.jpg" alt=""></a></li>
+						<li onmouseover="brand_hover(4)"><a href=""><img src="../img/page2/brand5.jpg" alt=""></a></li>
+						<li onmouseover="brand_hover(5)"><a href=""><img src="../img/page2/brand6.jpg" alt=""></a></li>
+						<li onmouseover="brand_hover(6)"><a href=""><img src="../img/page2/brand7.jpg" alt=""></a></li>
+						<li onmouseover="brand_hover(7)"><a href=""><img src="../img/page2/brand8.jpg" alt=""></a></li>
+						<li onmouseover="brand_hover(8)"><a href=""><img src="../img/page2/brand9.jpg" alt=""></a></li>
+						<li onmouseover="brand_hover(9)"><a href=""><img src="../img/page2/brand10.jpg" alt=""></a></li>
+						<li onmouseover="brand_hover(10)"><a href=""><img src="../img/page2/brand11.jpg" alt=""></a>
+						</li>
+						<li onmouseover="brand_hover(11)"><a href=""><img src="../img/page2/brand12.png" alt=""></a>
+						</li>
+						<li onmouseover="brand_hover(12)"><a href=""><img src="../img/page2/brand13.jpg" alt=""></a>
+						</li>
+						<li onmouseover="brand_hover(13)"><a href=""><img src="../img/page2/brand14.jpg" alt=""></a>
+						</li>
+						<li onmouseover="brand_hover(14)"><a href=""><img src="../img/page2/brand15.jpg" alt=""></a>
+						</li>
+						<li onmouseover="brand_hover(15)"><a href=""><img src="../img/page2/brand16.jpg" alt=""></a>
+						</li>
+						<li onmouseover="brand_hover(16)"><a href=""><img src="../img/page2/brand17.jpg" alt=""></a>
+						</li>
+						<li onmouseover="brand_hover(17)"><a href=""><img src="../img/page2/brand18.jpg" alt=""></a>
+						</li>
+						<li onmouseover="brand_hover(18)"><a href=""><img src="../img/page2/brand19.png" alt=""></a>
+						</li>
+						<li onmouseover="brand_hover(19)"><a href=""><img src="../img/page2/brand20.jpg" alt=""></a>
+						</li>
 					</ul>
 				</div>
 			</div>
@@ -157,11 +211,11 @@
 		<div style="margin-top: 20px">
 			<div style="width: 100%;height: 42px;background-color: #f5f5f5;display: flex;">
 				<ul id="tab_control">
-					<li>综合</li>
-					<li>销量<img src="../img/page2/down.png" alt=""></li>
-					<li>新品<img src="../img/page2/down.png" alt=""></li>
-					<li>评论<img src="../img/page2/down.png" alt=""></li>
-					<li>价格<img src="../img/page2/adjust1.png" alt=""></li>
+					<li onclick="change_focus(0)">综合</li>
+					<li onclick="change_focus(1)">销量<img src="../img/page2/down.png" alt=""></li>
+					<li onclick="change_focus(2)">新品<img src="../img/page2/down.png" alt=""></li>
+					<li onclick="change_focus(3)">评论<img src="../img/page2/down.png" alt=""></li>
+					<li onclick="change_focus(4)">价格<img src="../img/page2/adjust1.png" alt=""></li>
 				</ul>
 				<div id="search">
 					<input class="input_circle" type="text">
