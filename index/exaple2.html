@@ -8,15 +8,14 @@
 	<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
 	<script type="text/javascript">
 
-		let top_li_list, brand_list_array;
-		let brand_list_name = [
-			"丽芝士", "白色恋人", "皇冠", "茱蒂丝", "丹麦蓝罐", "Tango", "马奇新新", "麦维他", "和情", "LIPO"
-		]
-
+		let top_li_list, brand_list_array, list_input;
 
 		window.onload = function () {
 			top_li_list = document.querySelectorAll('#tab_control li');
 			brand_list_array = document.querySelectorAll('#brand_list li');
+			list_input = document.querySelectorAll('.number_up')
+			list_input_down = document.querySelectorAll('.number_down');
+			console.log(list_input);
 		}
 
 		function change_focus(x) {
@@ -60,8 +59,8 @@
 		// 	brand_list_array[x].querySelector("a").style.fontSize = "12px"
 		// }
 
+
 		$(function () {
-			//第一种方法
 			$(".page :nth-child(2)").each(function () {
 				$(this).click(function () {
 					console.log("22");
@@ -71,9 +70,6 @@
 					}
 				})
 			})
-		})
-
-		$(function () {
 			$(".page :nth-child(1)").each(function () {
 				$(this).click(function () {
 					for (let i = 0; i < 20; i = i + 2) {
@@ -82,7 +78,45 @@
 					}
 				})
 			})
-		})
+			$(".page li").click(function () {
+				$(this).siblings('li').removeClass('current');  // 删除其他兄弟元素的样式
+				$(this).addClass('current');                            // 添加当前元素的样式
+			})
+			$(".number_up").click(function () {
+				let i = 0;
+				for (i = 0; i < 10; i++) {
+					if ($(this).context == list_input[i]) {
+						console.log("找到了" + i);
+						break;
+					}
+				}
+				console.log(i);
+				let temp = $("#list ul li div input").eq(i).val();
+				debugger;
+				temp = parseInt(temp);
+				temp += 1;
+				$("#list ul li div input").eq(i).val(temp);
+			})
+			$(".number_down").click(function () {
+				let i = 0;
+				for (i = 0; i < 10; i++) {
+					if ($(this).context == list_input_down[i]) {
+						console.log("找到了" + i);
+						break;
+					}
+				}
+				let temp = $("#list ul li div input").eq(i).val();
+				if (temp > 0) {
+					temp = parseInt(temp);
+					temp -= 1;
+					$("#list ul li div input").eq(i).val(temp);
+				}
+			})
+		});
+
+
+
+
 
 	</script>
 </head>
@@ -96,8 +130,7 @@
 					<div class="flex">
 						<a href="./index.html" style="display: flex">
 							<img src="../img/index.png" class="location">
-							<span style="padding-left: 3px;">首页:</span>
-							<em>杭州</em>
+							<span style="padding-left: 3px;">首页</span>
 						</a>
 					</div>
 					<div class="flex" style="margin-left: 20px;">
@@ -107,36 +140,34 @@
 					</div>
 					<div class="flex" style="margin-left: 20px;">
 						<img src="../img/notification.png" class="location">
-						<!-- <span style="padding-left: 3px;">送货地址:</span> -->
-						<ul>
-							<a href="" title="防范金融诈骗提示">
-								<li>
-											<span class="spanleft">
-												防范金融诈骗提示
-											</span>
-								</li>
-							</a>
-							<!-- <a href="" title="1号店配送费调整公告">
+						<marquee direction="left" scrollamount="1" loop="-1">
+							<ul style="display: flex;flex-direction: column;top: 0px" id="top_lunbo">
 
-                            <li><span>1号店配送费调整公告</span></li>
-                        </a>
-                        <a href="" title="1金融下线公告">
-                            <li><span>1金融下线公告</span></li>
-                        </a> -->
-						</ul>
+								<a href="" title="防范金融诈骗提示">
+									<li>
+											<span class="spanleft">
+												防范金融诈骗提示 1号店配送费调整公告 金融下线公告
+											</span>
+										<br>
+									</li>
+								</a>
+							</ul>
+						</marquee>
 					</div>
 				</div>
 				<div>
 					<div class="flex">
-						<span style="padding-left: 3px;">晚上好，请 </span>
-						<span style="color: red;">登录</span>
+						<span style="padding-left: 3px;">晚上好， </span>
+						<span style="color: red;">骆佳俊</span>
 					</div>
 					<div class="flex" style="margin-left: 20px;">
-						<span style="padding-left: 3px;color: #AAAAAA;">注册</span>
+						<span style="padding-left: 3px;color: #AAAAAA;">充值</span>
 					</div>
-					<div class="flex" style="margin-left: 20px;">
-						<img src="../img/membership.png" class="location">
-						<span style="padding-left: 3px;">会员俱乐部</span>
+					<div class="flex" style="margin-left: 20px">
+						<a href="./index5.html" style="display: flex">
+							<img src="../img/membership.png" class="location">
+							<span style="padding-left: 3px;">会员俱乐部</span>
+						</a>
 					</div>
 					<div class="flex" style="margin-left: 20px;">
 						<img src="../img/order.png" class="location">
@@ -152,9 +183,13 @@
 						<input type="text" class="input_circle" style="width: 500px;height: 38px;" placeholder="性感内衣">
 						<img style="position: absolute;right: 4.6875rem;top: 0.625rem;" src="../img/cart.png"
 							 class="location">
-						<input id="cart" type="text"
-							   style="width: 100px;height: 38px;cursor: pointer;margin-left: 30px;" class="input_circle"
-							   placeholder="购物车">
+						<a href="./page4.html">
+							<input id="cart" type="text"
+								   style="width: 100px;height: 38px;cursor: pointer;margin-left: 30px;"
+								   class="input_circle"
+								   placeholder="购物车"
+								   disabled>
+						</a>
 						<button type="button" class="search"><img src="../img/search.png" style="width: 22px;"></button>
 					</div>
 					<div id="goods">
@@ -169,15 +204,201 @@
 				</div>
 			</div>
 			<div class="flex" style="border-bottom: 2px solid red">
-				<div style="width: 140px;height: 40px;background-color: red;opacity:0.8;display: flex;align-items: center;padding: 0 10px;cursor: pointer;">
+				<div id="p1_uname">
 					<img src="../img/menu.png" alt="" style="width: 17%;">
-					<li id="category" class="font" style="color: white;">全部类目</li>
-					<img src="../img/down.png" alt="" style="width: 12%;">
+					<li id="category" class="font" style="color: white;">
+						全部类目
+						<div class="hidden_category"
+							 style="padding: 20px 10px;cursor: auto;width: 1070px;border-top: 2px solid red">
+							<div style="width: 150px">
+								<div>
+									<p>全球进口</p>
+									<ul style="display: flex;flex-wrap: wrap;">
+										<li>乳品生鲜</li>
+										<li>饼干糕点</li>
+										<li>酒水饮料</li>
+										<li>休闲零食</li>
+										<li>糖果巧克</li>
+										<li>粮油调味</li>
+										<li>咖啡冲饮</li>
+										<li>麦片冲饮</li>
+										<li>母婴玩具</li>
+										<li>美妆个护</li>
+										<li>家居清洁</li>
+									</ul>
+								</div>
+								<div style="width: 150px">
+									<p>食品/酒/生鲜</p>
+									<ul style="display: flex;flex-wrap: wrap;">
+										<li>饮料</li>
+										<li>酒类</li>
+										<li>休闲零食</li>
+										<li>粮油干货</li>
+										<li>厨房调料</li>
+										<li>饼干糕点</li>
+										<li>牛奶乳品</li>
+										<li>茶冲咖啡</li>
+										<li>肉蛋海鲜</li>
+										<li>新鲜蔬果</li>
+										<li>方便速食</li>
+										<li>乳品速食</li>
+									</ul>
+								</div>
+							</div>
+							<div style="width: 150px">
+								<div>
+									<p>母婴/玩具/童装</p>
+									<ul style="display: flex;flex-wrap: wrap;">
+										<li>奶粉</li>
+										<li>营养辅物</li>
+										<li>尿裤湿巾</li>
+										<li>洗护用品</li>
+										<li>喂养用品</li>
+										<li>妈妈专区</li>
+										<li>寝具服饰</li>
+										<li>童车童床</li>
+										<li>玩具</li>
+										<li>乐器</li>
+										<li>童装/童鞋</li>
+									</ul>
+								</div>
+								<div style="width: 150px">
+									<p>纸巾/厨卫清洁/宠物</p>
+									<ul style="display: flex;flex-wrap: wrap;">
+										<li>纸品湿巾</li>
+										<li>衣物清洁</li>
+										<li>家庭清洁</li>
+										<li>清洁用具</li>
+										<li>驱虫除湿</li>
+										<li>皮具护理</li>
+										<li>宠物生活</li>
+										<li>绿植园艺</li>
+									</ul>
+								</div>
+							</div>
+							<div style="width: 150px">
+								<div>
+									<p>家居家纺/厨物/家具</p>
+									<ul style="display: flex;flex-wrap: wrap;">
+										<li>床上用品</li>
+										<li>生活用品</li>
+										<li>锅具水具</li>
+										<li>厨具刀具</li>
+										<li>茶具餐具</li>
+										<li>家庭软饰</li>
+										<li>品质家居</li>
+										<li>家庭建材</li>
+									</ul>
+								</div>
+								<div style="width: 150px">
+									<p>美妆/个人清洁</p>
+									<ul style="display: flex;flex-wrap: wrap;">
+										<li>美发护发</li>
+										<li>女性护理</li>
+										<li>沐浴清洁</li>
+										<li>口腔护理</li>
+										<li>面部护理</li>
+										<li>缤纷彩妆</li>
+										<li>身体护理</li>
+										<li>男士护理</li>
+										<li>美容工具</li>
+									</ul>
+								</div>
+							</div>
+							<div style="width: 150px">
+								<div>
+									<p>女装/男装/内衣</p>
+									<ul style="display: flex;flex-wrap: wrap;">
+										<li>时尚裙裤</li>
+										<li>女士上衣</li>
+										<li>女士裤子</li>
+										<li>品质内衣</li>
+										<li>型格男装</li>
+										<li>珠宝首饰</li>
+										<li>钟表/眼镜</li>
+									</ul>
+								</div>
+								<div style="width: 150px">
+									<p>鞋靴/箱包/户外</p>
+									<ul style="display: flex;flex-wrap: wrap;">
+										<li>时尚女鞋</li>
+										<li>潮流女包</li>
+										<li>奢侈大牌</li>
+										<li>功能箱包</li>
+										<li>品质男鞋</li>
+										<li>精品男包</li>
+										<li>运动服饰</li>
+										<li>健身器材</li>
+										<li>户外装备</li>
+									</ul>
+								</div>
+							</div>
+							<div style="width: 150px">
+								<div>
+									<p>手机/数码/电脑办公</p>
+									<ul style="display: flex;flex-wrap: wrap;">
+										<li>手机</li>
+										<li>手机配件</li>
+										<li>摄影影响</li>
+										<li>影音电教</li>
+										<li>智能设备</li>
+										<li>数码配件</li>
+										<li>电脑整机</li>
+										<li>网络外设</li>
+										<li>办公设计</li>
+									</ul>
+								</div>
+								<div style="width: 150px">
+									<p>家用电器/汽车用品</p>
+									<ul style="display: flex;flex-wrap: wrap;">
+										<li>厨房小电</li>
+										<li>生活电器</li>
+										<li>个护健康</li>
+										<li>电视空调</li>
+										<li>厨卫大电</li>
+										<li>冰箱</li>
+										<li>洗衣机</li>
+										<li>维修保养</li>
+										<li>汽车装饰</li>
+										<li>车载产品</li>
+									</ul>
+								</div>
+							</div>
+							<div style="width: 150px">
+								<div>
+									<p>医药/滋补</p>
+									<ul style="display: flex;flex-wrap: wrap;">
+										<li>营养健康</li>
+										<li>营养成分</li>
+										<li>传统滋补</li>
+										<li>成儿用品</li>
+										<li>家用器械</li>
+										<li>隐形眼镜</li>
+									</ul>
+								</div>
+								<div style="width: 150px">
+									<p>图片</p>
+									<ul style="display: flex;flex-wrap: wrap;">
+										<li>女儿</li>
+										<li>教育</li>
+										<li>文艺</li>
+										<li>经管励志</li>
+										<li>人文社科</li>
+										<li>生活</li>
+										<li>科技</li>
+										<li>刊/原版</li>
+										<li>音像</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</li>
+					<img src="../img/drop-down.png" alt="" style="width: 12%;">
 				</div>
-				<ul class="font">
-					<li style="margin-left: 6.25rem;">金币签到</li>
-					<li style="margin-left: 6.25rem;">充值</li>
-					<li style="margin-left: 6.25rem;">领券中心</li>
+				<ul class="font" style="z-index: 999;">
+					<li style="margin-left: 6.25rem;cursor: pointer;">金币签到</li>
+					<li style="margin-left: 6.25rem;cursor: pointer;">充值</li>
+					<li style="margin-left: 6.25rem;cursor: pointer;">领券中心</li>
 				</ul>
 			</div>
 		</div>
@@ -199,7 +420,6 @@
 					<span style="margin-left: 20px">进口食品</span>
 				</div>
 			</div>
-
 			<div style="display: flex;height: 130px;">
 				<div style="width: 130px;
     height: 123px;
@@ -208,6 +428,8 @@
     background-color: #f5f5f5;">
 					<span style="margin-left: 10px">品牌</span>
 				</div>
+
+
 				<div style="height:125px;width: 950px;border-left:1px #e2e2e2 dashed;display: flex;align-items: center;">
 					<ul id="brand_list">
 						<li>
@@ -363,10 +585,14 @@
 						<em class="p_money_page2">￥27.90</em>
 						<span class="description">日本进口 星七 STARS SEVEN 奶油味 夹心小蛋卷 早餐下午茶 休闲食品 办公室零食小吃 123g/袋</span>
 						<div style="position:relative;">
-							<input type="text" style="width: 30px;height: 28px;text-align: center" value="1">
+							<input type="text"
+								   style="width: 30px;height: 28px;text-align: center"
+								   value="1"
+								   oninput="value=value.replace(/[^\d]/g,'')"
+							>
 							<div class="demo">
-								<img src="../img/up.png" alt="" style="width: 16px;height: 14px;">
-								<img src="../img/down.png" alt="" style="width: 16px;height: 14px">
+								<img src="../img/up.png" alt="" style="width: 16px;height: 14px;" class="number_up">
+								<img src="../img/down.png" alt="" style="width: 16px;height: 14px" class="number_down">
 								<div class="add_cart">
 									加入购物车
 								</div>
@@ -394,8 +620,8 @@
 						<div style="position:relative;">
 							<input type="text" style="width: 30px;height: 28px;text-align: center" value="1">
 							<div class="demo">
-								<img src="../img/up.png" alt="" style="width: 16px;height: 14px;">
-								<img src="../img/down.png" alt="" style="width: 16px;height: 14px">
+								<img src="../img/up.png" alt="" style="width: 16px;height: 14px;" class="number_up">
+								<img src="../img/down.png" alt="" style="width: 16px;height: 14px" class="number_down">
 								<div class="add_cart">
 									加入购物车
 								</div>
@@ -424,8 +650,8 @@
 						<div style="position:relative;">
 							<input type="text" style="width: 30px;height: 28px;text-align: center" value="1">
 							<div class="demo">
-								<img src="../img/up.png" alt="" style="width: 16px;height: 14px;">
-								<img src="../img/down.png" alt="" style="width: 16px;height: 14px">
+								<img src="../img/up.png" alt="" style="width: 16px;height: 14px;" class="number_up">
+								<img src="../img/down.png" alt="" style="width: 16px;height: 14px" class="number_down">
 								<div class="add_cart">
 									加入购物车
 								</div>
@@ -454,8 +680,8 @@
 						<div style="position:relative;">
 							<input type="text" style="width: 30px;height: 28px;text-align: center" value="1">
 							<div class="demo">
-								<img src="../img/up.png" alt="" style="width: 16px;height: 14px;">
-								<img src="../img/down.png" alt="" style="width: 16px;height: 14px">
+								<img src="../img/up.png" alt="" style="width: 16px;height: 14px;" class="number_up">
+								<img src="../img/down.png" alt="" style="width: 16px;height: 14px" class="number_down">
 								<div class="add_cart">
 									加入购物车
 								</div>
@@ -483,8 +709,8 @@
 						<div style="position:relative;">
 							<input type="text" style="width: 30px;height: 28px;text-align: center" value="1">
 							<div class="demo">
-								<img src="../img/up.png" alt="" style="width: 16px;height: 14px;">
-								<img src="../img/down.png" alt="" style="width: 16px;height: 14px">
+								<img src="../img/up.png" alt="" style="width: 16px;height: 14px;" class="number_up">
+								<img src="../img/down.png" alt="" style="width: 16px;height: 14px" class="number_down">
 								<div class="add_cart">
 									加入购物车
 								</div>
@@ -513,8 +739,8 @@
 						<div style="position:relative;">
 							<input type="text" style="width: 30px;height: 28px;text-align: center" value="1">
 							<div class="demo">
-								<img src="../img/up.png" alt="" style="width: 16px;height: 14px;">
-								<img src="../img/down.png" alt="" style="width: 16px;height: 14px">
+								<img src="../img/up.png" alt="" style="width: 16px;height: 14px;" class="number_up">
+								<img src="../img/down.png" alt="" style="width: 16px;height: 14px" class="number_down">
 								<div class="add_cart">
 									加入购物车
 								</div>
@@ -543,8 +769,8 @@
 						<div style="position:relative;">
 							<input type="text" style="width: 30px;height: 28px;text-align: center" value="1">
 							<div class="demo">
-								<img src="../img/up.png" alt="" style="width: 16px;height: 14px;">
-								<img src="../img/down.png" alt="" style="width: 16px;height: 14px">
+								<img src="../img/up.png" alt="" style="width: 16px;height: 14px;" class="number_up">
+								<img src="../img/down.png" alt="" style="width: 16px;height: 14px" class="number_down">
 								<div class="add_cart">
 									加入购物车
 								</div>
@@ -572,8 +798,8 @@
 						<div style="position:relative;">
 							<input type="text" style="width: 30px;height: 28px;text-align: center" value="1">
 							<div class="demo">
-								<img src="../img/up.png" alt="" style="width: 16px;height: 14px;">
-								<img src="../img/down.png" alt="" style="width: 16px;height: 14px">
+								<img src="../img/up.png" alt="" style="width: 16px;height: 14px;" class="number_up">
+								<img src="../img/down.png" alt="" style="width: 16px;height: 14px" class="number_down">
 								<div class="add_cart">
 									加入购物车
 								</div>
@@ -602,8 +828,8 @@
 						<div style="position:relative;">
 							<input type="text" style="width: 30px;height: 28px;text-align: center" value="1">
 							<div class="demo">
-								<img src="../img/up.png" alt="" style="width: 16px;height: 14px;">
-								<img src="../img/down.png" alt="" style="width: 16px;height: 14px">
+								<img src="../img/up.png" alt="" style="width: 16px;height: 14px;" class="number_up">
+								<img src="../img/down.png" alt="" style="width: 16px;height: 14px" class="number_down">
 								<div class="add_cart">
 									加入购物车
 								</div>
@@ -632,8 +858,8 @@
 						<div style="position:relative;">
 							<input type="text" style="width: 30px;height: 28px;text-align: center" value="1">
 							<div class="demo">
-								<img src="../img/up.png" alt="" style="width: 16px;height: 14px;">
-								<img src="../img/down.png" alt="" style="width: 16px;height: 14px">
+								<img src="../img/up.png" alt="" style="width: 16px;height: 14px;" class="number_up">
+								<img src="../img/down.png" alt="" style="width: 16px;height: 14px" class="number_down">
 								<div class="add_cart">
 									加入购物车
 								</div>
@@ -652,12 +878,13 @@
 						</div>
 					</li>
 				</ul>
+
 				<ul class="page">
-					<li>1</li>
+					<li class="current">1</li>
 					<li>2</li>
 					<li>3</li>
-					<span class="ellipsis">...</span>
-					<li>50</li>
+					<li>...</li>
+					<li >50</li>
 				</ul>
 			</div>
 		</div>

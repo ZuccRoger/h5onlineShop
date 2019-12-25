@@ -9,10 +9,8 @@
 		<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
 		<script type="text/javascript">
 			// 返回顶部
-
 			$(function () {
 				$('#sticky2').click(function () {
-					console.log("222");
 					$('html,body').animate({
 						scrollTop: 0
 					}, 500)
@@ -24,7 +22,7 @@
 				var date = new Date();
 				var now = date.getTime();
 				//设置截止时间
-				var str = "2019/12/25 00:00:00";
+				var str = "2019/12/28 00:00:00";
 				var endDate = new Date(str);
 				var end = endDate.getTime();
 				//时间差
@@ -77,8 +75,6 @@
 					lunbodiv[c].style.color = "#fff";
 				}, 3000)
 			})
-
-
 		</script>
 	</head>
 <body onload="countTime()">
@@ -99,17 +95,6 @@
 								<span style="padding-left: 3px;">送货地址:</span>
 								<em>杭州</em>
 							</div>
-							<!--							<marquee direction="up" scrollamount="1" loop="-1">-->
-							<!--								<p>-->
-							<!--									我来回滚动1-->
-							<!--								</p>-->
-							<!--								<p>-->
-							<!--									我来回滚动1-->
-							<!--								</p>-->
-							<!--								<p>-->
-							<!--									我来回滚动2-->
-							<!--								</p>-->
-							<!--							</marquee>-->
 							<div class="flex" style="margin-left: 20px;">
 								<img src="../img/notification.png" class="location">
 								<marquee direction="left" scrollamount="1" loop="-1">
@@ -123,18 +108,6 @@
 											<br>
 										</li>
 									</a>
-										<!--										<a href="" title="1号店配送费调整公告">-->
-										<!--											<li>-->
-										<!--												<span></span>-->
-										<!--												<br>-->
-										<!--											</li>-->
-										<!--										</a>-->
-										<!--										<a href="" title="1金融下线公告">-->
-										<!--											<li>-->
-										<!--												<span></span>-->
-										<!--											</li>-->
-										<!--											<br>-->
-										<!--										</a>-->
 								</ul>
 								</marquee>
 							</div>
@@ -375,7 +348,9 @@
 							<img src="../img/drop-down.png" alt="" style="width: 12%;">
 						</div>
 						<ul class="font" style="z-index: 999;">
-							<li style="margin-left: 6.25rem;cursor: pointer;">金币签到</li>
+							<a href="./index5.html" style="color: black;">
+								<li style="margin-left: 6.25rem;cursor: pointer;">金币签到</li>
+							</a>
 							<li style="margin-left: 6.25rem;cursor: pointer;">充值</li>
 							<li style="margin-left: 6.25rem;cursor: pointer;">领券中心</li>
 						</ul>
@@ -394,6 +369,7 @@
 					<div class="lunbodiv">个人护理</div>
 				</div>
 			</div>
+
 			<div id="sticky">
 				<span>下载APP</span>
 				<img src="../img/intro/code.jpg" alt="">
@@ -406,7 +382,6 @@
 				</a>
 			</div>
 
-			<!--			<a id="sticky2" href="#top">-->
 			<a id="sticky2">
 				<img src="../img/up.png" alt="" style="width: 20px;height: 20px">
 			</a>

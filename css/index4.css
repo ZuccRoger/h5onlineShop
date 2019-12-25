@@ -304,4 +304,5 @@
     text-align: center;
     line-height: 60px;
     float: right;
+    cursor: pointer;
 }

@@ -369,6 +369,7 @@
 }
 
 .thing_rank_list ul li button {
+    border-radius: 42px;
     margin: 0 auto;
     display: block;
     width: 90px;
@@ -377,7 +378,7 @@
     line-height: 28px;
     color: #333;
     text-align: center;
-    background-color: #ebebeb;
+    border: 1px solid #e2e2e2;
 }
 
 .thing_rank_list ul li :nth-child(3) {

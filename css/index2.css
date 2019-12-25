@@ -222,4 +222,25 @@
     left: 120px;
 }
 
+.page {
+    margin-top: 20px;
+}
 
+.page li:hover {
+    border: 1px solid #F2855F;
+    background: #ff8c64;
+    color: #fff;
+}
+
+.page li.current {
+    border: 1px solid #F2855F;
+    background: #ff8c64;
+    color: #fff;
+}
+
+
+.page li {
+    border: 1px solid #F2F2F2;
+    background: #fafafa;
+    color: #999;
+}
