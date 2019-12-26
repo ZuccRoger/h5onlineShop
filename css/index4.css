@@ -306,3 +306,11 @@
     float: right;
     cursor: pointer;
 }
+
+#p4_title li {
+    cursor: auto;
+}
+
+#p4_title li :hover {
+    color: black !important;
+}

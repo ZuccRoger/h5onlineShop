@@ -125,6 +125,7 @@ body {
     font-size: 12px !important;
     top: 351px !important;
     left: 56px !important;
+    cursor: pointer;
 }
 
 .bg_span_bottom_last {

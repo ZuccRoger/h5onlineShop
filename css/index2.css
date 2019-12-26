@@ -244,3 +244,11 @@
     background: #fafafa;
     color: #999;
 }
+
+.none {
+    display: none !important;
+}
+
+.visible {
+    display: block;
+}

@@ -819,6 +819,10 @@ ul li img {
     font-size: 12px;
 }
 
+#bottom dl dd:hover {
+	cursor: pointer;
+	color: red;
+}
 .bottom_code {
     display: flex;
     flex-direction: column;
@@ -851,6 +855,11 @@ ul li img {
     margin: 0px 3px;
     font: 12px "Microsoft YaHei", Helvetica Neue, tahoma, Arial, Verdana, "Hiragino Sans GB", "\5b8b\4f53";
 }
+
+#bottom_span a:hover {
+	color: red;
+}
+
 
 #bottom_span span {
     display: block;
@@ -959,3 +968,5 @@ ul li img {
 	border: 1px solid #ff4040;
 	border-radius: 50%;
 }
+
+

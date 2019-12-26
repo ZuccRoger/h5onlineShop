@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
-<!--	TODO 页面下滑至按需加载  -->
+<!--	TODO 1.页面下滑至按需加载  -->
+<!--	TODO 2.热销榜的左右可以点击、并且能够翻页。  -->
 	<head>
 		<meta charset="utf-8" />
 		<title></title>
@@ -15,6 +16,7 @@
 						scrollTop: 0
 					}, 500)
 				})
+
 			})
 
 			function countTime() {
@@ -140,19 +142,36 @@
 									<input class="input_circle" type="text" style="width: 500px;height: 38px;"
 										   placeholder="MacBook Pro 16寸">
 									<img style="position: absolute;right: 4.6875rem;top: 0.625rem;" src="../img/cart.png" id="search" class="location">
-									<input id="cart" type="text"
-										   style="width: 100px;height: 38px;cursor: pointer;margin-left: 30px;padding-left: -15px"
-										   class="input_circle" placeholder="购物车" disabled>
+									<a href="page4.html">
+										<input id="cart" type="text"
+											   style="width: 100px;height: 38px;cursor: pointer;margin-left: 30px;padding-left: -15px"
+											   class="input_circle" placeholder="购物车" disabled>
+									</a>
+
 									<button type="button" class="search"><img src="../img/search.png" style="width: 22px;"></button>
 								</div>
-								<div id="goods">
-									<li>纸巾卷纸</li>
-									<li>花生油</li>
-									<li>金纺</li>
-									<li>矿泉水</li>
-									<li>海飞丝洗发水</li>
-									<li>抽纸</li>
-									<li>威露士</li>
+								<div id="goods" style="cursor:pointer">
+									<a href="./exaple2.html">
+										<li>纸巾卷纸</li>
+									</a>
+									<a href="./exaple2.html">
+										<li>花生油</li>
+									</a>
+									<a href="./exaple2.html">
+										<li>金纺</li>
+									</a>
+									<a href="./exaple2.html">
+										<li>矿泉水</li>
+									</a>
+									<a href="./exaple2.html">
+										<li>海飞丝洗发水</li>
+									</a>
+									<a href="./exaple2.html">
+										<li>抽纸</li>
+									</a>
+									<a href="./exaple2.html">
+										<li>威露士</li>
+									</a>
 								</div>
 							</div>
 						</div>
@@ -357,7 +376,7 @@
 					</div>
 				</div>
 			</div>
-			<div style="height: 180px;">
+			<div style="height: 180px;z-index: -20;">
 			</div>
 			<div style="float: left;" id="p1_lunbo">
 				<img src="../img/lunbo/lunbo1.jpg" style="width: 1483px;height: 400px;">
@@ -1044,24 +1063,24 @@
 								</div>
 							</li>
 							<li>
-								<img src="../img/bottom/bottom1.jpg" alt="">
+								<img src="../img/bottom/bottom2.jpg" alt="">
 								<div style="display: flex;flex-direction: column;">
-									<b>正品保证</b>
-									<span>正品行货 放心选购</span>
+									<b>满99包邮</b>
+									<span>满99元 免运费</span>
 								</div>
 							</li>
 							<li>
-								<img src="../img/bottom/bottom1.jpg" alt="">
+								<img src="../img/bottom/bottom3.jpg" alt="">
 								<div style="display: flex;flex-direction: column;">
-									<b>正品保证</b>
-									<span>正品行货 放心选购</span>
+									<b>售后无忧</b>
+									<span>7天无理由退货</span>
 								</div>
 							</li>
 							<li>
-								<img src="../img/bottom/bottom1.jpg" alt="">
+								<img src="../img/bottom/bottom4.jpg" alt="">
 								<div style="display: flex;flex-direction: column;">
-									<b>正品保证</b>
-									<span>正品行货 放心选购</span>
+									<b>准时送达</b>
+									<span>收货时间由你做主</span>
 								</div>
 							</li>
 						</ul>
@@ -1129,7 +1148,6 @@
 						<a href="">增值电信业务经营许可证</a>
 						<span>Copyright© 1号店网上超市 2007-2019，All Rights Reserved</span>
 					</div>
-
 				</div>
 			</div>
 		</div>

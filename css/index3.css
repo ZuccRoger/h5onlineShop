@@ -314,7 +314,6 @@
 }
 
 #side_rank ul li :nth-child(2) {
-    display: flex;
     flex-direction: column;
     height: 24px;
     line-height: 24px;
@@ -323,7 +322,6 @@
     white-space: nowrap;
     width: 124px;
     justify-content: center;
-    /*align-items: center;*/
 }
 
 #side_rank ul li :nth-child(3) {
@@ -366,6 +364,12 @@
     justify-content: center;
     align-items: center;
     background-color: white;
+
+}
+
+.thing_rank_list ul li:hover {
+    border: 1px solid #ffc8c8;
+    box-shadowl: inset 0px 0px 6px #ffc8c8;
 }
 
 .thing_rank_list ul li button {
@@ -390,6 +394,18 @@
     height: 115px;
 }
 
+.thing_rank_list ul li :nth-child(2) {
+    height: 36px;
+    font-size: 12px;
+    line-height: 18px;
+    display: block;
+    width: 100%;
+    font-size: 12px;
+    font-weight: normal;
+    word-break: break-all;
+    word-wrap: break-word;
+    overflow: hidden;
+}
 #rank_category ul {
     display: flex;
     margin: 10px 0;
@@ -531,6 +547,10 @@
     padding: 30px;
 }
 
+.rate_list label {
+    margin-left: 10px;
+}
+
 .rate_right span {
     display: inline-block;
     height: 24px;
@@ -545,19 +565,56 @@
 }
 
 .rate_list {
+    padding-left: 10px;
+    position: relative;
+    display: inline-block;
+    height: 40px;
+    line-height: 40px;
     margin: 10px 0;
     float: left;
     border-bottom: 1px solid #e2e2e2;
     width: 880px;
 }
 
-.rate_list ul li {
-    margin: 0 10px;
-    font-size: 14px;
+.rate_list input[type="radio"]::before {
+    content: '';
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 1px solid #0069AB;
+    margin-right: 15px;
+    position: absolute;
+    top: 15px;
+    left: 0;
 }
 
+.rate_list input[type="radio"]:checked::before {
+    background-clip: content-box;
+    background-color: #0069AB;
+    width: 6px;
+    height: 6px;
+    padding: 2px;
+}
+
+.rate_list input[type="radio"] {
+    width: 0;
+    height: 0;
+}
+
+/*.rate_list {*/
+/*    margin: 10px 0;*/
+/*    float: left;*/
+/*    border-bottom: 1px solid #e2e2e2;*/
+/*    width: 880px;*/
+/*}*/
+
+/*.rate_list ul li {*/
+/*    margin: 0 10px;*/
+/*    font-size: 14px;*/
+/*}*/
+
 #rate_detail {
-    position: relative;
     width: 844px;
     height: 30px;
 }
@@ -647,4 +704,9 @@
     overflow: hidden;
     border: 1px solid yellow;
     display: none;
+}
+
+button {
+    cursor: pointer;
+    outline: none;
 }

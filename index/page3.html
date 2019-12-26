@@ -13,6 +13,10 @@
         let temp = 1;
         let number = 1;
 
+       // TODO 1. 评论页面选择功能
+
+
+
         // var addBtnDom = document.querySelector("#add_cart");
         // var shopCarDom = document.querySelector("#cart");
         //
@@ -111,6 +115,15 @@
             console.log(choose_list_array[0]);
         })
 
+        $(function () {
+            $('#sticky2').click(function () {
+                $('html,body').animate({
+                    scrollTop: 0
+                }, 500)
+            })
+        })
+
+
 
         function hover(x) {
             console.log(x);
@@ -158,8 +171,7 @@
                     <div class="flex">
                         <a href="./index.html" style="display: flex">
                             <img src="../img/index.png" class="location">
-                            <span style="padding-left: 3px;">首页:</span>
-                            <em>杭州</em>
+                            <span style="padding-left: 3px;">首页</span>
                         </a>
                     </div>
                     <div class="flex" style="margin-left: 20px;">
@@ -169,36 +181,34 @@
                     </div>
                     <div class="flex" style="margin-left: 20px;">
                         <img src="../img/notification.png" class="location">
-                        <!-- <span style="padding-left: 3px;">送货地址:</span> -->
-                        <ul>
-                            <a href="" title="防范金融诈骗提示">
-                                <li>
-											<span class="spanleft">
-												防范金融诈骗提示
-											</span>
-                                </li>
-                            </a>
-                            <!-- <a href="" title="1号店配送费调整公告">
+                        <marquee direction="left" scrollamount="1" loop="-1">
+                            <ul style="display: flex;flex-direction: column;top: 0px" id="top_lunbo">
 
-                            <li><span>1号店配送费调整公告</span></li>
-                        </a>
-                        <a href="" title="1金融下线公告">
-                            <li><span>1金融下线公告</span></li>
-                        </a> -->
-                        </ul>
+                                <a href="" title="防范金融诈骗提示">
+                                    <li>
+											<span class="spanleft">
+												防范金融诈骗提示 1号店配送费调整公告 金融下线公告
+											</span>
+                                        <br>
+                                    </li>
+                                </a>
+                            </ul>
+                        </marquee>
                     </div>
                 </div>
                 <div>
                     <div class="flex">
-                        <span style="padding-left: 3px;">晚上好，请 </span>
-                        <span style="color: red;">登录</span>
+                        <span style="padding-left: 3px;">晚上好， </span>
+                        <span style="color: red;">骆佳俊</span>
                     </div>
                     <div class="flex" style="margin-left: 20px;">
-                        <span style="padding-left: 3px;color: #AAAAAA;">注册</span>
+                        <span style="padding-left: 3px;color: #AAAAAA;">充值</span>
                     </div>
-                    <div class="flex" style="margin-left: 20px;">
-                        <img src="../img/membership.png" class="location">
-                        <span style="padding-left: 3px;">会员俱乐部</span>
+                    <div class="flex" style="margin-left: 20px">
+                        <a href="./index5.html" style="display: flex">
+                            <img src="../img/membership.png" class="location">
+                            <span style="padding-left: 3px;">会员俱乐部</span>
+                        </a>
                     </div>
                     <div class="flex" style="margin-left: 20px;">
                         <img src="../img/order.png" class="location">
@@ -234,7 +244,7 @@
                     </div>
                 </div>
             </div>
-            <div class="flex" style="border-bottom: 2px solid red">
+            <div class="flex">
                 <div id="p1_uname">
                     <img src="../img/menu.png" alt="" style="width: 17%;">
                     <li id="category" class="font" style="color: white;">
@@ -433,7 +443,11 @@
             </div>
         </div>
     </div>
-    <div style="height: 180px"></div>
+    <a id="sticky2" style="left: 1300px;">
+        <img src="../img/up.png" alt="" style="width: 20px;height: 20px">
+    </a>
+
+    <div style="height: 150px;border-bottom: 2px solid red;"></div>
     <div style="width: 1080px;margin: 0 auto">
         <div id="brand">
             <img src="../img/page2/category.png" alt="">
@@ -597,8 +611,10 @@
                     <ul style="display: flex;flex-direction: column">
                         <li>
                             <img src="../img/page3/rank_list/rank1.jpg" alt="">
-                            <span>捷森（jason）全麦面包 黑麦面包 500g  德国进口 吐司 营养早餐 粗粮低脂 健身餐面包</span>
-                            <!--                            TODO 尾部省略号-->
+                            <div>
+                                <span>捷森（jason）全麦面包 黑麦面包 500g  德国进口 吐司 营养早餐 粗粮低脂 健身餐面包</span>
+                            </div>
+
                             <span class="p_money_page2">￥29.9</span>
                         </li>
                         <li>
@@ -614,11 +630,10 @@
                     </ul>
                 </div>
             </div>
-
         </div>
 
 
-        <div style="height: 30px;width: 100%;margin-top: 100px;display: flex">
+        <div style="height: 30px;width: 100%;margin-top: 130px;display: flex">
             <div class="thing_rank_list" id="side_list_pro">
                 <ul style="display: flex;justify-content: space-between;flex-direction: column;border: 1px solid #e2e2e2">
                     <li>
@@ -708,7 +723,7 @@
 
                 <div id="parameter_specification">
                     <span>规格参数</span>
-                    <span style="color: #0066cc">查看更多>></span>
+                    <span style="color: #0066cc;cursor: pointer">查看更多>></span>
                     <dt>
                     <dd>品牌：星七</dd>
                     <dd>商品名称：日本进口 星七 STARS SEVEN 奶油味 夹心小蛋卷 早餐下午茶 休闲食品 办公室零食小吃 123g/袋</dd>
@@ -717,6 +732,20 @@
                     <dd>商品产地：日本</dd>
                     </dt>
                 </div>
+
+                <div style="width: 880px;display: flex;align-items: center;flex-direction: column;flex-wrap: wrap;margin-top: 20px">
+                    <div style="background-image: url(../img/page3/ad/p4_big_ad_0.jpg);
+                                width: 750px;
+                                height: 365px;
+                                background-repeat:no-repeat;">
+                    </div>
+                    <div style="background-image: url(../img/page3/ad/p4_big_ad_1.jpg);
+                                width: 750px;
+                                height: 890px;
+                                background-repeat:no-repeat;">
+                    </div>
+                </div>
+
                 <div class="notification">
                     <p class="tit">1号店承诺</p>
                     <p class="con">1号店平台卖家销售并发货的商品，由平台卖家提供发票和相应的售后服务。请您放心购买！
@@ -765,16 +794,27 @@
                         <span>营养丰富(1)</span>
                     </div>
                 </div>
-                <div class="rate_list">
-                    <ul>
-                        <li><input type="radio">全部(5万+)</li>
-                        <li><input type="radio">晒单(700+)</li>
-                        <li><input type="radio">追评(50+)</li>
-                        <li><input type="radio">好评(1.3万+)</li>
-                        <li><input type="radio">中评(80+)</li>
-                        <li><input type="radio">差评(40+)</li>
-                    </ul>
+                <div style="display: flex" id="rate_list">
+                    <div class="rate_list">
+                        <label for="rate_1"><input type="radio" id="rate_1" name="rate">全部(5万+)</label>
+                    </div>
+                    <div class="rate_list">
+                        <label for="rate_2"><input type="radio" id="rate_2" name="rate">晒单(700+)</label>
+                    </div>
+                    <div class="rate_list">
+                        <label for="rate_3"><input type="radio" id="rate_3" name="rate">追评(50+)</label>
+                    </div>
+                    <div class="rate_list">
+                        <label for="rate_4"><input type="radio" id="rate_4" name="rate">好评(1.3万+)</label>
+                    </div>
+                    <div class="rate_list">
+                        <label for="rate_5"><input type="radio" id="rate_5" name="rate">中评(80+)</label>
+                    </div>
+                    <div class="rate_list">
+                        <label for="rate_6"><input type="radio" id="rate_6" name="rate">差评(40+)</label>
+                    </div>
                 </div>
+
                 <div id="rate_detail">
                     <ul>
                         <li>
@@ -791,7 +831,6 @@
                                         <img src="../img/page3/star.png" alt="">
                                          <img src="../img/page3/star.png" alt="">
                                          <img src="../img/page3/star.png" alt="">
-                                         <img src="../img/page3/star.png" alt="">
                                     </span>
                                 </div>
                                 <div class="flex_center_center">
@@ -807,9 +846,35 @@
                         </li>
                         <li>
                             <div style="position:relative;width: 80px">
-                                <img src="../img/page3/portraits/icon.jpg" alt=""
+                                <img src="../img/page3/portraits/icon2.jpg" alt=""
                                      class="user_img">
-                                <span class="user_comment">用户Roger</span>
+                                <span class="user_comment">ed5555</span>
+                            </div>
+                            <div class="rate_detail_right">
+                                <div class="flex_center_center">
+                                    <span>评分:</span>
+                                    <span style="display: flex;flex-direction: row">
+                                        <img src="../img/page3/star.png" alt="">
+                                        <img src="../img/page3/star.png" alt="">
+                                         <img src="../img/page3/star.png" alt="">
+                                    </span>
+                                </div>
+                                <div class="flex_center_center">
+                                    <span style="width: 80px;">内容:</span>
+                                    <span>包装精美，高端大气上档次;看得出来商家很用心。宝贝真心不错，与图片相符，没有任何差异，真的是物超所宝贝收到了，卖家发货很快，物流也非常给力,客服服务态度极好，很有耐心、给人一种亲切感，好喜欢。还有包装精美，高端大气上档次;看得出来商家很用心。宝贝真心不错，与图片相符，没有任何差异，真的是物超所值，物美价廉啊。质量很好，下次还会再关顾!，</span>
+                                </div>
+                                <div class="flex_center_center">
+                                    <span style="margin-right: 10px">晒单:</span>
+                                    <img class="upload_photo" src="../img/page3/upload_photo/upload_photo3.jpg" alt="">
+                                    <img class="upload_photo" src="../img/page3/upload_photo/upload_photo4.jpg" alt="">
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div style="position:relative;width: 80px">
+                                <img src="../img/page3/portraits/icon3.jpg" alt=""
+                                     class="user_img">
+                                <span class="user_comment">a***e</span>
                             </div>
                             <div class="rate_detail_right">
                                 <div class="flex_center_center">
@@ -824,20 +889,45 @@
                                 </div>
                                 <div class="flex_center_center">
                                     <span style="width: 80px;">内容:</span>
-                                    <span>这个小蛋卷有点贵，但是确实好吃！一个大包里面有25个左右，大包也不大，也很轻，毕竟小蛋卷就很小。半个手掌的长度，一个全部放在嘴里也没有问题。邮寄过来的箱子很大，估计是怕压碎了。也确实没有挤压坏的。味道很好，里面有夹心，吃着有点甜，不是很腻，个人还是很喜欢的！</span>
+                                    <span>很小巧，外皮酥酥脆脆，内心香甜奶油，还不错。</span>
                                 </div>
                                 <div class="flex_center_center">
                                     <span style="margin-right: 10px">晒单:</span>
-                                    <img class="upload_photo" src="../img/page3/upload_photo/upload_photo1.jpg" alt="">
-                                    <img class="upload_photo" src="../img/page3/upload_photo/upload_photo2.jpg" alt="">
+                                    <img class="upload_photo" src="../img/page3/upload_photo/upload_photo5.jpg" alt="">
                                 </div>
                             </div>
                         </li>
                         <li>
                             <div style="position:relative;width: 80px">
-                                <img src="../img/page3/portraits/icon.jpg" alt=""
+                                <img src="../img/page3/portraits/icon4.jpg" alt=""
                                      class="user_img">
-                                <span class="user_comment">用户Roger</span>
+                                <span class="user_comment">l***1</span>
+                            </div>
+                            <div class="rate_detail_right">
+                                <div class="flex_center_center">
+                                    <span>评分:</span>
+                                    <span style="display: flex;flex-direction: row">
+                                        <img src="../img/page3/star.png" alt="">
+                                        <img src="../img/page3/star.png" alt="">
+                                         <img src="../img/page3/star.png" alt="">
+                                         <img src="../img/page3/star.png" alt="">
+                                    </span>
+                                </div>
+                                <div class="flex_center_center">
+                                    <span style="width: 80px;">内容:</span>
+                                    <span>每一个都是小包装，稍微有点甜，味道还可以！</span>
+                                </div>
+                                <div class="flex_center_center">
+                                    <span style="margin-right: 10px">晒单:</span>
+                                    <img class="upload_photo" src="../img/page3/upload_photo/upload_photo6.jpg" alt="">
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div style="position:relative;width: 80px">
+                                <img src="../img/page3/portraits/icon5.jpg" alt=""
+                                     class="user_img">
+                                <span class="user_comment">兰***洋</span>
                             </div>
                             <div class="rate_detail_right">
                                 <div class="flex_center_center">
@@ -852,76 +942,20 @@
                                 </div>
                                 <div class="flex_center_center">
                                     <span style="width: 80px;">内容:</span>
-                                    <span>这个小蛋卷有点贵，但是确实好吃！一个大包里面有25个左右，大包也不大，也很轻，毕竟小蛋卷就很小。半个手掌的长度，一个全部放在嘴里也没有问题。邮寄过来的箱子很大，估计是怕压碎了。也确实没有挤压坏的。味道很好，里面有夹心，吃着有点甜，不是很腻，个人还是很喜欢的！</span>
+                                    <span>没有吃过，看着图片很好吃的样子钱就买了，比想象中的还要好吃，哈哈。 有一种蛋卷的味道 中间的夹心奶味很香，味道不是很甜，一口气能吃好几个，陪着牛奶 或者咖啡。 包装是一小个一小个的独立包装，很精致，价格也不是很贵，推荐大家尝尝！</span>
                                 </div>
                                 <div class="flex_center_center">
                                     <span style="margin-right: 10px">晒单:</span>
-                                    <img class="upload_photo" src="../img/page3/upload_photo/upload_photo1.jpg" alt="">
-                                    <img class="upload_photo" src="../img/page3/upload_photo/upload_photo2.jpg" alt="">
+                                    <img class="upload_photo" src="../img/page3/upload_photo/upload_photo7.jpg" alt="">
+                                    <img class="upload_photo" src="../img/page3/upload_photo/upload_photo8.jpg" alt="">
                                 </div>
                             </div>
                         </li>
                         <li>
                             <div style="position:relative;width: 80px">
-                                <img src="../img/page3/portraits/icon.jpg" alt=""
+                                <img src="../img/page3/portraits/icon6.jpg" alt=""
                                      class="user_img">
-                                <span class="user_comment">用户Roger</span>
-                            </div>
-                            <div class="rate_detail_right">
-                                <div class="flex_center_center">
-                                    <span>评分:</span>
-                                    <span style="display: flex;flex-direction: row">
-                                        <img src="../img/page3/star.png" alt="">
-                                        <img src="../img/page3/star.png" alt="">
-                                         <img src="../img/page3/star.png" alt="">
-                                         <img src="../img/page3/star.png" alt="">
-                                         <img src="../img/page3/star.png" alt="">
-                                    </span>
-                                </div>
-                                <div class="flex_center_center">
-                                    <span style="width: 80px;">内容:</span>
-                                    <span>这个小蛋卷有点贵，但是确实好吃！一个大包里面有25个左右，大包也不大，也很轻，毕竟小蛋卷就很小。半个手掌的长度，一个全部放在嘴里也没有问题。邮寄过来的箱子很大，估计是怕压碎了。也确实没有挤压坏的。味道很好，里面有夹心，吃着有点甜，不是很腻，个人还是很喜欢的！</span>
-                                </div>
-                                <div class="flex_center_center">
-                                    <span style="margin-right: 10px">晒单:</span>
-                                    <img class="upload_photo" src="../img/page3/upload_photo/upload_photo1.jpg" alt="">
-                                    <img class="upload_photo" src="../img/page3/upload_photo/upload_photo2.jpg" alt="">
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div style="position:relative;width: 80px">
-                                <img src="../img/page3/portraits/icon.jpg" alt=""
-                                     class="user_img">
-                                <span class="user_comment">用户Roger</span>
-                            </div>
-                            <div class="rate_detail_right">
-                                <div class="flex_center_center">
-                                    <span>评分:</span>
-                                    <span style="display: flex;flex-direction: row">
-                                        <img src="../img/page3/star.png" alt="">
-                                        <img src="../img/page3/star.png" alt="">
-                                         <img src="../img/page3/star.png" alt="">
-                                         <img src="../img/page3/star.png" alt="">
-                                         <img src="../img/page3/star.png" alt="">
-                                    </span>
-                                </div>
-                                <div class="flex_center_center">
-                                    <span style="width: 80px;">内容:</span>
-                                    <span>这个小蛋卷有点贵，但是确实好吃！一个大包里面有25个左右，大包也不大，也很轻，毕竟小蛋卷就很小。半个手掌的长度，一个全部放在嘴里也没有问题。邮寄过来的箱子很大，估计是怕压碎了。也确实没有挤压坏的。味道很好，里面有夹心，吃着有点甜，不是很腻，个人还是很喜欢的！</span>
-                                </div>
-                                <div class="flex_center_center">
-                                    <span style="margin-right: 10px">晒单:</span>
-                                    <img class="upload_photo" src="../img/page3/upload_photo/upload_photo1.jpg" alt="">
-                                    <img class="upload_photo" src="../img/page3/upload_photo/upload_photo2.jpg" alt="">
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div style="position:relative;width: 80px">
-                                <img src="../img/page3/portraits/icon.jpg" alt=""
-                                     class="user_img">
-                                <span class="user_comment">用户Roger</span>
+                                <span class="user_comment">_-Michelle-_</span>
                             </div>
                             <div class="rate_detail_right">
                                 <div class="flex_center_center">
@@ -953,7 +987,7 @@
         </div>
 
 
-        <div id="bottom_parent" style="margin-top: 2000px">
+        <div id="bottom_parent" style="margin-top: 3200px">
             <div id="bottom">
                 <ul>
                     <li>
@@ -1051,6 +1085,7 @@
             </div>
 
         </div>
+
     </div>
 </div>
 </div>
