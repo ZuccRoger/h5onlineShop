@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../css/login.css">
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $('#switch').click(function () {
+                if ($('#switch').attr('src') == "../img/login/computer.png") {
+                    $('#switch').attr('src', '../img/login/qrcode.png');
+                    $('#qr').addClass('current');
+                    // $('#index_right').removeClass('current')
+                } else {
+                    //qrcode
+                    $('#switch').attr('src', '../img/login/computer.png');
+                    // $('#switch').attr('display', 'block');
+                    // $('#index_right').addClass('none');
+                    // $('#qr').removeClass('current');
+                }
+            })
+        })
+
+    </script>
+</head>
+
+<body>
+<div id="top">
+    <img src="../img/login/login_top.jpg" alt="">
+    <span>欢迎登陆一号店！请 <b style="color: blue;cursor: pointer">登录</b></span>
+</div>
+
+<div id="main">
+    <img id="index_left" src="../img/login/login.png" alt="">
+
+    <div class="border">
+        <div class="borderInner">
+            <div class="none" id="qr">
+                <img src="../img/login/qrcode.png" alt="" style="width: 200px;
+    height: 200px;
+    position: absolute;
+    right: 80px;
+    top: 80px;
+}">
+            </div>
+            <div id="index_right" >
+                <div style="height: 20px">
+                    <span style="float: left"><b>1号店用户登录</b></span>
+                    <span style="float: right;color:#06c;line-height: 2;">注册新账号</span>
+                </div>
+                <div style="margin-top: 20px">
+                    <div class="input_1">
+                        <img src="../img/login/account.png"/>
+                        <input type="text" placeholder="邮箱/手机号">
+                    </div>
+                    <div class="input_2">
+                        <img src="../img/login/password.png"/>
+                        <input type="password" placeholder="密码">
+                    </div>
+                    <div style="height: 24px">
+                        <div style="float: left">
+                            <input type="checkbox">
+                            <span class="font_999">自动登录</span>
+                        </div>
+                        <div style="float: right">
+                            <span class="font_999">忘记密码?</span>
+                        </div>
+                    </div>
+                </div>
+                <img src="../img/login/qrcode.png"
+                     id="switch"
+                     alt="" style="    position: absolute;
+    width: 20px;
+    height: 20px;
+    right: -13px;
+    bottom: 10px;
+    z-index: 10;
+    cursor:pointer;
+">
+                <div id="login_btn">
+                    登录
+                </div>
+                <div>
+                    <span style="padding: 15px 0;color: #666;display: block;font: 12px Arial,Helvetica,sans-serif;">更多合作网站账号登录</span>
+                    <div style="width: 170px;height: 35px;display: flex;justify-content: space-between">
+                        <img src="../img/login/QQ.png" alt="" class="index_icon">
+                        <img src="../img/login/JD.png" alt="" class="index_icon">
+                        <img src="../img/login/wechat.png" alt="" class="index_icon">
+                        <img src="../img/login/Weibo.png" alt="" class="index_icon">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="a1">
+            <div class="triangle_left">
+                <div class="triangle_left_span"></div>
+                <div class="borderLeft"></div>
+            </div>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>
