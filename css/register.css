@@ -1,0 +1,128 @@
+#p2_main {
+    background-image: url(../img/register/register_bg.png);
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    background-color: #fcfcfc;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+
+}
+
+#register_div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
+}
+
+#register_div ul {
+    margin-top: 20px;
+}
+
+
+.rgs_input_1 {
+    height: 34px;
+    width: 306px;
+    border: 1px solid #dedede;
+    background: white;
+    line-height: 24px;
+    outline: none;
+    border: none;
+    position: absolute;
+    left: 20px;
+}
+
+
+li {
+    width: 328px;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    border: 1px solid #dedede;
+    border-radius: 3px;
+    margin: 8px;
+    position: relative;
+    cursor: text;
+}
+
+li:focus {
+    border: 1px solid #ff3c3c;
+}
+
+label {
+    position: absolute;
+    left: 20px;
+    top: 0px;
+    display: inline-block;
+    height: 50px;
+    font-size: 14px;
+    line-height: 50px;
+    color: #666;
+}
+
+#username_div {
+    width: 170px;
+    height: 50px;
+    position: absolute;
+    right: -190px;
+    padding: 7px;
+    background: #fff4d7;
+    color: #666;
+    display: none;
+}
+
+.cus_div {
+    width: 170px;
+    height: 50px;
+    position: absolute;
+    right: -190px;
+    padding: 7px;
+    background: #fff4d7;
+    color: #666;
+    display: none;
+}
+
+#phone_div {
+    width: 170px;
+    height: 50px;
+    position: absolute;
+    right: -190px;
+    padding: 7px;
+    background: #fff4d7;
+    color: #666;
+    display: none;
+}
+
+.current {
+    display: block !important;
+}
+
+.none {
+    display: none;
+}
+
+.get_text_phone {
+    z-index: 20;
+    background-color: #57565f;
+    width: 126px;
+    height: 50px;
+    border-radius: 3px;
+    position: absolute;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+label {
+    z-index: 20;
+}

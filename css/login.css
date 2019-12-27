@@ -342,6 +342,8 @@ body {
 .index_icon {
     width: 32px;
     height: 35px;
+    z-index: 2;
+    cursor: pointer;
 }
 
 #bottom_span {
@@ -358,3 +360,4 @@ body {
 .none{
     display: none;
 }
+

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="../css/register.css">
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script type="text/javascript">
+        var countdown = 60;
+
+        function settime(val) {
+            if (countdown == 0) {
+                val.innerText = "获取验证码";
+                countdown = 60;
+            } else {
+                val.innerText = countdown;
+                countdown--;
+                setTimeout(function () {
+                    settime(val)
+                }, 1000)
+            }
+        }
+
+        $(function () {
+            $('#username_input').focus(function () {
+                $('#username_label').animate({left: '-80px'}, "slow");
+                $('#username_div').css('display', 'block');
+            })
+            $("#username_input").blur(function () {
+                $('#username_div').css("display", "none");
+            });
+            $('#phone_input').focus(function () {
+                $('#phone_label').animate({left: '-80px'}, "slow");
+                $('#phone_div').css('display', 'block');
+            })
+            $("#phone_input").blur(function () {
+                $('#phone_div').css("display", "none");
+            });
+            $('#password_input').focus(function () {
+                $('#password_label').animate({left: '-80px'}, "slow");
+                $('#password_div').css('display', 'block');
+            })
+            $("#password_input").blur(function () {
+                $('#password_div').css("display", "none");
+            });
+            $('#password2_input').focus(function () {
+                $('#password2_label').animate({left: '-80px'}, "slow");
+                $('#password2_div').css('display', 'block');
+            })
+            $("#password2_input").blur(function () {
+                $('#password2_div').css("display", "none");
+            });
+            $('#text_input').focus(function () {
+                $('#text_label').animate({left: '-80px'}, "slow");
+                $('#text_div').css('display', 'block');
+            })
+            $("#text_input").blur(function () {
+                $('#text_div').css("display", "none");
+            });
+            $(".get_text_phone").click(function () {
+                alert("短信发送成功！注意接收！");
+                settime(document.querySelector("#cc_60"));
+            })
+            $("#login_btn").click(function () {
+                alert("注册成功！");
+                window.location.href = "http://localhost:63342/h5onlineShop/index/login.html?_ijt=fm37b333m2b3f1hcsjhp5qojp6"
+            })
+        })
+    </script>
+</head>
+<body>
+<div id="top">
+    <img src="../img/login/login_top.jpg" alt="">
+    <span>欢迎登陆一号店！请 <b style="color: blue;cursor: pointer">登录</b></span>
+</div>
+<div id="p2_main">
+    <div id="register_div">
+        <h1>1号店注册</h1>
+        <ul>
+            <li>
+                <label id="username_label">用户名</label>
+                <input type="text" class="rgs_input_1" id="username_input">
+                <div id="username_div" class="cus_div">
+                    4-20位字符，可由中文、英文、数字或符号"_"组成
+                </div>
+            </li>
+            <li>
+                <label id="phone_label">手机号</label>
+                <input type="text" class="rgs_input_1" id="phone_input">
+                <div id="phone_div" class="cus_div">
+                    请填写正确的手机号码，以便接收订单通知，找回密码
+                </div>
+            </li>
+            <li>
+                <label id="text_label">短信验证码</label>
+                <input type="text" class="rgs_input_1" id="text_input" style="width: 146px;">
+                <div class="get_text_phone">
+                    <span id="cc_60">获取验证码</span>
+                </div>
+                <div id="text_div" class="cus_div">
+                    若无法接受验证码，请重启手机并确认短信未被拦截
+                </div>
+            </li>
+            <li>
+                <label id="password_label">设置密码</label>
+                <input type="text" class="rgs_input_1" id="password_input">
+                <div id="password_div" class="cus_div">
+                    6-20个大小写英语字母、符号或数字组合
+                </div>
+            </li>
+            <li>
+                <label id="password2_label">确认密码</label>
+                <input type="text" class="rgs_input_1" id="password2_input">
+                <div id="password2_div" class="cus_div">
+                    6-20个大小写英语字母、符号或数字组合
+                </div>
+            </li>
+        </ul>
+        <span style="font: 12px Arial, Helvetica, sans-serif;margin: 10px 0">
+            点击注册，表示您同意1号店  <b style="color: blue">《服务协议及隐私声明》</b>
+        </span>
+
+        <div id="login_btn">
+            同意协议并注册
+        </div>
+    </div>
+</div>
+</body>
+</html>
