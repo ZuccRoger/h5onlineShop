@@ -10,14 +10,22 @@
             $('#switch').click(function () {
                 if ($('#switch').attr('src') == "../img/login/computer.png") {
                     $('#switch').attr('src', '../img/login/qrcode.png');
-                    $('#qr').addClass('current');
+                    $('#computer_0').removeClass('none');
+                    $('#computer_1').removeClass('none');
+                    $('#login_btn').removeClass('none');
+                    $('#computer_3').removeClass('none');
+                    $('#qr').addClass('none');
                     // $('#index_right').removeClass('current')
                 } else {
                     //qrcode
                     $('#switch').attr('src', '../img/login/computer.png');
+                    $('#computer_0').addClass('none');
+                    $('#computer_1').addClass('none');
+                    $('#login_btn').addClass('none');
+                    $('#computer_3').addClass('none');
                     // $('#switch').attr('display', 'block');
                     // $('#index_right').addClass('none');
-                    // $('#qr').removeClass('current');
+                    $('#qr').removeClass('none');
                 }
             })
         })
@@ -45,11 +53,11 @@
 }">
             </div>
             <div id="index_right" >
-                <div style="height: 20px">
+                <div style="height: 20px" id="computer_0">
                     <span style="float: left"><b>1号店用户登录</b></span>
                     <span style="float: right;color:#06c;line-height: 2;">注册新账号</span>
                 </div>
-                <div style="margin-top: 20px">
+                <div style="margin-top: 20px" id="computer_1">
                     <div class="input_1">
                         <img src="../img/login/account.png"/>
                         <input type="text" placeholder="邮箱/手机号">
@@ -81,7 +89,7 @@
                 <div id="login_btn">
                     登录
                 </div>
-                <div>
+                <div id="computer_3">
                     <span style="padding: 15px 0;color: #666;display: block;font: 12px Arial,Helvetica,sans-serif;">更多合作网站账号登录</span>
                     <div style="width: 170px;height: 35px;display: flex;justify-content: space-between">
                         <img src="../img/login/QQ.png" alt="" class="index_icon">
@@ -90,7 +98,6 @@
                         <img src="../img/login/Weibo.png" alt="" class="index_icon">
                     </div>
                 </div>
-
             </div>
         </div>
         <div class="a1">

@@ -353,7 +353,7 @@ body {
 }
 
 .current{
-    display: block;
+    display: block !important;
 }
 .none{
     display: none;
