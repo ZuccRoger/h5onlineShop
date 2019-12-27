@@ -26,120 +26,6 @@ body {
     right: 80px;
 }
 
-/*#main {*/
-/*    background-color: #e2e2e2;*/
-/*    position: relative;*/
-/*}*/
-
-/*#index_left {*/
-/*    position: absolute;*/
-/*    left: 220px;*/
-/*    top: 100px;*/
-/*}*/
-
-/*#index_right {*/
-/*    position: absolute;*/
-/*    width: 330px;*/
-/*    height: 360px;*/
-/*    background-color: #3c8020;*/
-/*    right: 240px;*/
-/*    top: 80px;*/
-/*    padding: 45px 35px 0 35px;*/
-/*}*/
-
-/*#index_right b {*/
-/*    font-size: 14px;*/
-/*    color: #666;*/
-/*    font-weight: bold;*/
-/*    line-height: 30px;*/
-/*}*/
-
-/*.input_1 {*/
-/*    position: relative;*/
-/*    z-index: 100;*/
-/*    height: 24px;*/
-/*    margin-bottom: 10px;*/
-/*    padding: 14px 18px;*/
-/*    border: 1px solid #dedede;*/
-/*    background: #FFF;*/
-/*    line-height: 24px;*/
-/*}*/
-
-/*.input_1 input {*/
-/*    outline: none;*/
-/*    border: none;*/
-/*    width: 230px;*/
-/*    color: #ccc;*/
-/*    height: 24px;*/
-/*    padding-left: 3px;*/
-/*    border: 0 none;*/
-/*    line-height: 24px;*/
-/*    vertical-align: middle;*/
-/*    font-family: "Microsoft YaHei";*/
-/*    font-size: 14px;*/
-/*}*/
-
-/*.input_1 img {*/
-/*    width: 20px;*/
-/*    height: 20px;*/
-/*}*/
-
-/*.input_2 {*/
-/*    position: relative;*/
-/*    z-index: 100;*/
-/*    height: 24px;*/
-/*    margin-bottom: 10px;*/
-/*    padding: 14px 18px;*/
-/*    border: 1px solid #dedede;*/
-/*    background: #FFF;*/
-/*    line-height: 24px;*/
-/*}*/
-
-/*.input_2 input {*/
-/*    outline: none;*/
-/*    border: none;*/
-/*    width: 230px;*/
-/*    color: #ccc;*/
-/*    height: 24px;*/
-/*    padding-left: 3px;*/
-/*    border: 0 none;*/
-/*    line-height: 24px;*/
-/*    vertical-align: middle;*/
-/*    font-family: "Microsoft YaHei";*/
-/*    font-size: 14px;*/
-/*}*/
-
-/*.input_2 img {*/
-/*    width: 20px;*/
-/*    height: 20px;*/
-/*}*/
-
-/*.font_999 {*/
-/*    font: 12px Arial, Helvetica, sans-serif;*/
-/*    color: #999;*/
-/*}*/
-
-/*#login_btn {*/
-/*    width: 330px;*/
-/*    height: 52px;*/
-/*    border: 0 none;*/
-/*    border-radius: 3px;*/
-/*    background: #ff3c3c;*/
-/*    font-size: 16px;*/
-/*    color: #FFF;*/
-/*    cursor: pointer;*/
-/*    text-shadow: 1px 1px 1px #ff7373;*/
-/*    font-family: "Microsoft YaHei";*/
-/*    line-height: 52px;*/
-/*    text-align: center;*/
-/*}*/
-
-/*.index_icon {*/
-/*    width: 32px;*/
-/*    height: 35px;*/
-/*}*/
-
-
 .border {
     position: absolute;
     width: 360px;
@@ -236,7 +122,7 @@ body {
 #main {
     background-color: #fafafa;
     position: relative;
-    height: 774px;
+    height: 690px;
 }
 
 #index_left {
@@ -361,3 +247,7 @@ body {
     display: none;
 }
 
+
+#bottom_login {
+    text-align: center;
+}
