@@ -273,6 +273,7 @@ body {
     flex-direction: row;
     justify-content: center;
     flex-wrap: wrap;
+    margin-top: 10px;
 }
 
 #recommend ul li {
@@ -318,6 +319,7 @@ body {
     position: absolute;
     left: 30px;
     top: 250px;
+    cursor: pointer;
 }
 
 .slide_right {
@@ -326,4 +328,24 @@ body {
     position: absolute;
     right: 30px;
     top: 250px;
+    cursor: pointer;
+}
+
+.bg_p2 img:hover {
+    cursor: pointer;
+    transition: all .3s ease;
+    transform: scale(1.2, 1.2);
+}
+
+.bg_p3_div_div:hover {
+    transform: translate(0, -10px);
+    transition: all .3s ease;
+}
+
+.none {
+    display: none !important;
+}
+
+.current {
+    display: block;
 }

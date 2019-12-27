@@ -1,148 +1,70 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <link rel="stylesheet" type="text/css" href="../css/index6.css">
-    <script>
+    <meta charset=" utf-8">
+    <meta name="author" content="//www.jb51.net/"/>
+    <title>CSS如何实现弹出一个全屏灰黑色透明遮罩效果-脚本之家</title>
+    <style type="text/css">
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .zhezhao {
+            width: 100%;
+            height: 100%;
+            background-color: #000;
+            filter: alpha(opacity=50);
+            -moz-opacity: 0.5;
+            opacity: 0.5;
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            display: none;
+            z-index: 1000;
+        }
+
+        .login {
+        / / 内容物品 width: 280 px;
+            height: 180px;
+            position: absolute;
+            top: 200px;
+            left: 50%;
+            background-color: #000;
+            margin-left: -140px;
+            display: none;
+            z-index: 1500;
+        }
+
+
+        .content {
+            margin-top: 50px;
+            color: red;
+            line-height: 200px;
+            height: 200px;
+            text-align: center;
+        }
+    </style>
+    <script type="text/javascript">
         window.onload = function () {
-            small = document.getElementById("small");
-            shadow = document.getElementById("shadow");
-            shadowWH = shadow.style.width ? shadow.style.width : document.defaultView.getComputedStyle(shadow, null).width;
-            shadowWH = parseInt(shadowWH);
-            smallW = small.style.width ? small.style.width : document.defaultView.getComputedStyle(small, null).width;
-            smallW = parseInt(smallW);
-//	smallML=small.style.marginLeft?small.style.marginLeft:document.defaultView.getComputedStyle(small,null).marginLeft;
-//	smallML=parseInt(smallML);
+            var zhezhao = document.getElementById("zhezhao");
+            var login = document.getElementById("login");
+            var bt = document.getElementById("bt");
+            var btclose = document.getElementById("btclose");
 
-            smallMT = small.style.marginTop ? small.style.marginTop : document.defaultView.getComputedStyle(small, null).marginTop;
-            smallMT = parseInt(smallMT);
-            big = document.getElementById("big");
-            bigW = big.style.width ? big.style.width : document.defaultView.getComputedStyle(big, null).width;
-            bigW = parseInt(bigW);
-//	console.log(smallW);
-//	console.log(shadowWH)
-//console.log("smallML="+smallML);
-//console.log("smallMT="+smallMT);
-//console.log("bigw="+bigW);
-            bigImg = big.getElementsByTagName("img")[0];
-            move();
-        }
-
-        function move() {
-            small.onmouseover = function () {
-                shadow.style.display = "block";
-                big.style.display = "block";
-                change(event);
-            }
-            small.onmouseout = function () {
-                shadow.style.display = "none";
-                big.style.display = "none";
-            }
-            small.onmousemove = function () {
-                change(event);
-            }
-        }
-
-        function change(event) {
-            var evt = event ? event : window.event;
-//	var moveL=evt.pageX;
-//	var moveT=evt.pageY;
-            var moveL = evt.layerX - shadowWH / 2;
-            var moveT = evt.layerY - shadowWH / 2;
-
-//	console.log("moveL="+moveL+":  moveT="+moveT);
-
-            if (moveL < 0) {
-                moveL = 0;
-            }
-            if (moveL > smallW - shadowWH) {
-                moveL = smallW - shadowWH;
+            bt.onclick = function () {
+                zhezhao.style.display = "block";
+                login.style.display = "block";
             }
 
-            if (moveT < 0) {
-                moveT = 0;
-            }
-            if (moveT > smallW - shadowWH) {
-                moveT = smallW - shadowWH;
-            }
-
-            shadow.style.left = moveL + "px";
-            shadow.style.top = moveT + "px";
-            /**
-             * 图片放大
-             */
-//	big.style.left=smallW+smallML+50+"px";
-            big.style.left = 50 + "px";
-            big.style.top = smallMT + "px";
-            bigImgW = bigImg.offsetWidth;
-//	console.log("bigImgW="+bigImgW);
-            var scale = bigImgW / bigW;
-            bigImg.style.top = -moveT * scale + "px";
-            bigImg.style.left = -moveL * scale + "px";
         }
     </script>
 </head>
 <body>
-<!--<div id="all">-->
-<!--    <div id="small">-->
-<!--        <img src="../img/page3/big/1/big_5.jpg"/>-->
-<!--        <div id="shadow"></div>-->
-<!--        <div id="cover"></div>-->
-<!--    </div>-->
-<!--    <div id="big">-->
-<!--        <img src="../img/page3/big/big_true.jpg"/>-->
-<!--    </div>-->
-<!--</div>-->
+<div class="zhezhao" id="zhezhao"></div>
 
-
-<div class="border">
-    <div class="borderInner">
-        <div id="index_right">
-            <div style="height: 20px">
-                <span style="float: left"><b>1号店用户注册</b></span>
-                <span style="float: right;color:#06c;">注册新账号</span>
-            </div>
-            <div>
-                <div class="input_1">
-                    <img src="../img/login/account.png"/>
-                    <input type="text" placeholder="邮箱/手机号">
-                </div>
-                <div class="input_2">
-                    <img src="../img/login/password.png"/>
-                    <input type="password" placeholder="密码">
-                </div>
-                <div style="height: 24px">
-                    <div style="float: left">
-                        <input type="checkbox">
-                        <span class="font_999">自动登录</span>
-                    </div>
-                    <div style="float: right">
-                        <span class="font_999">忘记密码?</span>
-                    </div>
-                </div>
-            </div>
-            <div id="login_btn">
-                登录
-            </div>
-            <div>
-                <span style="padding: 15px 0;color: #666;display: block">更多合作网站账号登录</span>
-                <div style="width: 230px;height: 35px;display: flex;justify-content: space-between">
-                    <img src="../img/login/QQ.png" alt="" class="index_icon">
-                    <img src="../img/login/JD.png" alt="" class="index_icon">
-                    <img src="../img/login/wechat.png" alt="" class="index_icon">
-                    <img src="../img/login/Weibo.png" alt="" class="index_icon">
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="a1">
-        <div class="triangle_left">
-            <span class="triangle_left_span"></span>
-            <div class="borderLeft"></div>
-        </div>
-    </div>
+<div class="content">脚本之家欢迎您，
+    <button id="bt">点击弹出遮罩</button>
 </div>
 </body>
 </html>

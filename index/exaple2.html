@@ -7,15 +7,25 @@
 	<link rel="stylesheet" type="text/css" href="../css/index2.css">
 	<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
 	<script type="text/javascript">
-		// TODO 1. 点赞和评论数目需要改一些
-		let top_li_list, brand_list_array, list_input;
+		// TODO  tabbar pointer
+		let top_li_list, brand_list_array, list_input, zhezhao;
 
 		window.onload = function () {
 			top_li_list = document.querySelectorAll('#tab_control li');
 			brand_list_array = document.querySelectorAll('#brand_list li');
-			list_input = document.querySelectorAll('.number_up')
+			list_input = document.querySelectorAll('.number_up');
 			list_input_down = document.querySelectorAll('.number_down');
-			console.log(list_input);
+			zhezhao = document.getElementById("zhezhao");
+		}
+
+		function add_cart_dia() {
+			$('#add_success').css('display', 'flex');
+			zhezhao.style.display = "block";
+		}
+
+		function cancel_dia() {
+			$('#add_success').css('display', 'none');
+			zhezhao.style.display = "none";
 		}
 
 		function change_focus(x) {
@@ -30,18 +40,18 @@
 			top_li_list[x].style.borderTop = "1px solid #e2e2e2";
 			top_li_list[x].style.borderLeft = "1px solid #e2e2e2";
 			top_li_list[x].style.borderRight = "1px solid #e2e2e2";
-			if (x != 0) {
-				for (let i = 0; i < 20; i = i + 2) {
-					$("#list ul li a img").eq(i).css("display", "none");
-					$("#list ul li a img").eq(i + 1).css({"display": "block", "width": "184px", "height": "184px"});
-				}
-			}
-			if (x == 0) {
-				for (let i = 0; i < 20; i = i + 2) {
-					$("#list ul li a img").eq(i).css("display", "block");
-					$("#list ul li a img").eq(i + 1).css("display", "none");
-				}
-			}
+			// if (x != 0) {
+			// 	for (let i = 0; i < 20; i = i + 2) {
+			// 		$("#list ul li a img").eq(i).css("display", "none");
+			// 		$("#list ul li a img").eq(i + 1).css({"display": "block", "width": "184px", "height": "184px"});
+			// 	}
+			// }
+			// if (x == 0) {
+			// 	for (let i = 0; i < 20; i = i + 2) {
+			// 		$("#list ul li a img").eq(i).css("display", "block");
+			// 		$("#list ul li a img").eq(i + 1).css("display", "none");
+			// 	}
+			// }
 		}
 
 		// function brand_hover(x) {
@@ -61,46 +71,66 @@
 
 
 		$(function () {
-			$(".page :nth-child(2)").each(function () {
-				$(this).click(function () {
-					console.log("22");
-					for (let i = 0; i < 20; i = i + 2) {
-						$("#list ul li a img").eq(i).css("display", "none");
-						$("#list ul li a img").eq(i + 1).css({"display": "block", "width": "184px", "height": "184px"});
-					}
-				})
-			})
-			$(".page :nth-child(1)").each(function () {
-				$(this).click(function () {
-					for (let i = 0; i < 20; i = i + 2) {
-						$("#list ul li a img").eq(i).css("display", "block");
-						$("#list ul li a img").eq(i + 1).css("display", "none");
-					}
-				})
+			// $(".page :nth-child(2)").each(function () {
+			// 	$(this).click(function () {
+			// 		console.log("22");
+			// 		for (let i = 0; i < 20; i = i + 2) {
+			// 			$("#list ul li a img").eq(i).css("display", "none");
+			// 			$("#list ul li a img").eq(i + 1).css({"display": "block", "width": "184px", "height": "184px"});
+			// 		}
+			// 	})
+			// })
+			// $(".page :nth-child(1)").each(function () {
+			// 	$(this).click(function () {
+			// 		for (let i = 0; i < 20; i = i + 2) {
+			// 			$("#list ul li a img").eq(i).css("display", "block");
+			// 			$("#list ul li a img").eq(i + 1).css("display", "none");
+			// 		}
+			// 	})
+			// })
+			$(".add_cart").click(function () {
+				add_cart_dia();
 			})
 			$(".page li").click(function () {
 				$(this).siblings('li').removeClass('current');  // 删除其他兄弟元素的样式
 				$(this).addClass('current');                            // 添加当前元素的样式
-				$('#list ul').addClass('visible');
+				if (this.innerText == 2) {
+					$('#list ul').eq(0).addClass('none');
+					$('#list ul').eq(1).removeClass('none');
+				} else {
+					$('#list ul').eq(0).removeClass('none');
+					$('#list ul').eq(1).addClass('none');
+				}
 			})
+
+			$("#tab_control li").click(function () {
+				if (this.innerText == '销量') {
+					$('#list ul').eq(0).addClass('none');
+					$('#list ul').eq(1).removeClass('none');
+				} else {
+					$('#list ul').eq(0).removeClass('none');
+					$('#list ul').eq(1).addClass('none');
+				}
+			})
+
+
 			$(".number_up").click(function () {
 				let i = 0;
-				for (i = 0; i < 10; i++) {
+				for (i = 0; i < 20; i++) {
 					if ($(this).context == list_input[i]) {
-						console.log("找到了" + i);
 						break;
 					}
 				}
 				console.log(i);
 				let temp = $("#list ul li div input").eq(i).val();
-				debugger;
 				temp = parseInt(temp);
 				temp += 1;
 				$("#list ul li div input").eq(i).val(temp);
 			})
+
 			$(".number_down").click(function () {
 				let i = 0;
-				for (i = 0; i < 10; i++) {
+				for (i = 0; i < 20; i++) {
 					if ($(this).context == list_input_down[i]) {
 						console.log("找到了" + i);
 						break;
@@ -119,6 +149,17 @@
 <body>
 <!-- 顶部条 -->
 <div style="display: flex;flex-direction: column">
+	<div class="zhezhao" id="zhezhao"></div>
+	<div id="add_success">
+		<div style="text-align: center;    display: flex;    justify-content: center;    margin: 30px;">
+			<img src="../img/page3/gou.png" alt="" style="width: 23px;height: 23px">
+			<h3 style="display: inline">已成功加入购物车</h3>
+		</div>
+		<div id="add_success_2">
+			<a href="" onclick="cancel_dia()">继续购物</a>
+			<a href="./page4.html">查看购物车</a>
+		</div>
+	</div>
 	<div class="hd_header_wrap">
 		<div style="width: 1070px;height: 13.75rem;">
 			<div class="hd_header_bar">
@@ -176,7 +217,7 @@
 				<img src="../img/desc1.jpg" alt="" style="height: 90px;width: 160px;">
 				<div style="margin-left: 100px;">
 					<div class="reletive">
-						<input type="text" class="input_circle" style="width: 500px;height: 38px;" placeholder="性感内衣">
+						<input type="text" class="input_circle" style="width: 500px;height: 38px;" placeholder="OPPO手机">
 						<img style="position: absolute;right: 4.6875rem;top: 0.625rem;" src="../img/cart.png"
 							 class="location">
 						<a href="./page4.html">
@@ -574,12 +615,9 @@
 					<li>
 						<a href="./page3.html">
 							<img src="../img/page2/img/img1.jpg" alt="">
-							<img src="../img/page2/t/p2_t_1.jpg" alt="" style="display: none">
 						</a>
 						<em class="p_money_page2">￥27.90</em>
-						<em class="p_money_page2" style="display: none">￥22.90</em>
 						<span class="description">日本进口 星七 STARS SEVEN 奶油味 夹心小蛋卷 早餐下午茶 休闲食品 办公室零食小吃 123g/袋</span>
-						<span class="description" style="display: none">韩国进口 星七 STARS SEVEN 奶油味 夹心小蛋卷 早餐下午茶 休闲食品 办公室零食小吃 123g/袋</span>
 						<div style="position:relative;">
 							<input type="text"
 								   style="width: 30px;height: 28px;text-align: center"
@@ -589,15 +627,15 @@
 							<div class="demo">
 								<img src="../img/up.png" alt="" style="width: 16px;height: 14px;" class="number_up">
 								<img src="../img/down.png" alt="" style="width: 16px;height: 14px" class="number_down">
-								<div class="add_cart">
+								<div class="add_cart" onclick="add_cart_dia()">
 									加入购物车
 								</div>
 							</div>
 							<div class="comment_bottom">
 								<img src="../img/comment.png" alt="">
-								<span>4.9万+</span>
+								<span>4.5万+</span>
 								<img src="../img/dianzan.png" alt="">
-								<span>99%</span>
+								<span>93%</span>
 							</div>
 							<div class="shop_description">
 								<span>自营</span>
@@ -609,12 +647,13 @@
 					<li>
 						<a href="./page3.html">
 							<img src="../img/page2/img/img2.jpg" alt="">
-							<img src="../img/page2/t/p2_t_2.jpg" alt="" style="display: none">
 						</a>
 						<em class="p_money_page2">￥169.00</em>
 						<span class="description">美国进口柯克兰Kirkland 原味混合每日坚果仁大罐装孕妇食品休闲零食1130g礼盒腰果杏仁 盐焗1130g</span>
 						<div style="position:relative;">
-							<input type="text" style="width: 30px;height: 28px;text-align: center" value="1">
+							<input type="text"
+								   oninput="value=value.replace(/[^\d]/g,'')"
+								   style="width: 30px;height: 28px;text-align: center" value="1">
 							<div class="demo">
 								<img src="../img/up.png" alt="" style="width: 16px;height: 14px;" class="number_up">
 								<img src="../img/down.png" alt="" style="width: 16px;height: 14px" class="number_down">
@@ -633,18 +672,18 @@
 								<span>丽芝士（Richeese）自营旗舰店</span>
 								<img src="../img/rigt.png" alt="">
 							</div>
-
 						</div>
 					</li>
 					<li>
 						<a href="./page3.html">
 							<img src="../img/page2/img/img3.jpg" alt="">
-							<img src="../img/page2/t/p2_t_3.jpg" alt="" style="display: none">
 						</a>
 						<em class="p_money_page2">￥169.00</em>
 						<span class="description">马来西亚进口 过山车(GOTOGO)麦糯糯牛奶味蛋糕卷 早餐糕点代餐480克（20克24）（新老包装随机发货）</span>
 						<div style="position:relative;">
-							<input type="text" style="width: 30px;height: 28px;text-align: center" value="1">
+							<input type="text"
+								   oninput="value=value.replace(/[^\d]/g,'')"
+								   style="width: 30px;height: 28px;text-align: center" value="1">
 							<div class="demo">
 								<img src="../img/up.png" alt="" style="width: 16px;height: 14px;" class="number_up">
 								<img src="../img/down.png" alt="" style="width: 16px;height: 14px" class="number_down">
@@ -654,9 +693,9 @@
 							</div>
 							<div class="comment_bottom">
 								<img src="../img/comment.png" alt="">
-								<span>4.9万+</span>
+								<span>14.9万+</span>
 								<img src="../img/dianzan.png" alt="">
-								<span>99%</span>
+								<span>91%</span>
 							</div>
 							<div class="shop_description">
 								<span>自营</span>
@@ -669,12 +708,12 @@
 					<li>
 						<a href="./page3.html">
 							<img src="../img/page2/img/img4.jpg" alt="">
-							<img src="../img/page2/t/p2_t_4.jpg" alt="" style="display: none">
 						</a>
 						<em class="p_money_page2">￥169.00</em>
 						<span class="description">【年货新鲜】德国进口 Knoppers威化饼25g*24包 牛奶榛子五层巧克力夹心饼干休闲零食华夫饼 整盒实惠款，25g*24包</span>
 						<div style="position:relative;">
-							<input type="text" style="width: 30px;height: 28px;text-align: center" value="1">
+							<input type="text" oninput="value=value.replace(/[^\d]/g,'')"
+								   style="width: 30px;height: 28px;text-align: center" value="1">
 							<div class="demo">
 								<img src="../img/up.png" alt="" style="width: 16px;height: 14px;" class="number_up">
 								<img src="../img/down.png" alt="" style="width: 16px;height: 14px" class="number_down">
@@ -684,9 +723,9 @@
 							</div>
 							<div class="comment_bottom">
 								<img src="../img/comment.png" alt="">
-								<span>4.9万+</span>
+								<span>2.9万+</span>
 								<img src="../img/dianzan.png" alt="">
-								<span>99%</span>
+								<span>89%</span>
 							</div>
 							<div class="shop_description">
 								<span>自营</span>
@@ -698,12 +737,12 @@
 					<li>
 						<a href="./page3.html">
 							<img src="../img/page2/img/img5.jpg" alt="">
-							<img src="../img/page2/t/p2_t_5.jpg" alt="" style="display: none">
 						</a>
 						<em class="p_money_page2">￥169.00</em>
 						<span class="description">英国进口 哈得斯（MACKIE’S）薯片-切达奶酪洋葱味 40g/袋 芝士休闲零食小吃</span>
 						<div style="position:relative;">
-							<input type="text" style="width: 30px;height: 28px;text-align: center" value="1">
+							<input type="text" oninput="value=value.replace(/[^\d]/g,'')"
+								   style="width: 30px;height: 28px;text-align: center" value="1">
 							<div class="demo">
 								<img src="../img/up.png" alt="" style="width: 16px;height: 14px;" class="number_up">
 								<img src="../img/down.png" alt="" style="width: 16px;height: 14px" class="number_down">
@@ -713,9 +752,9 @@
 							</div>
 							<div class="comment_bottom">
 								<img src="../img/comment.png" alt="">
-								<span>4.9万+</span>
+								<span>9.9万+</span>
 								<img src="../img/dianzan.png" alt="">
-								<span>99%</span>
+								<span>98%</span>
 							</div>
 							<div class="shop_description">
 								<span>自营</span>
@@ -728,12 +767,12 @@
 					<li>
 						<a href="./page3.html">
 							<img src="../img/page2/img/img6.jpg" alt="">
-							<img src="../img/page2/t/p2_t_6.jpg" alt="" style="display: none">
 						</a>
 						<em class="p_money_page2">￥169.00</em>
 						<span class="description">瑞士进口瑞士莲巧克力Lindt软心精选Lindor牛奶榛果黑巧克力球内含5种口味送礼喜糖圣诞节礼物 软心5味巧克力球600g</span>
 						<div style="position:relative;">
-							<input type="text" style="width: 30px;height: 28px;text-align: center" value="1">
+							<input type="text" oninput="value=value.replace(/[^\d]/g,'')"
+								   style="width: 30px;height: 28px;text-align: center" value="1">
 							<div class="demo">
 								<img src="../img/up.png" alt="" style="width: 16px;height: 14px;" class="number_up">
 								<img src="../img/down.png" alt="" style="width: 16px;height: 14px" class="number_down">
@@ -743,9 +782,9 @@
 							</div>
 							<div class="comment_bottom">
 								<img src="../img/comment.png" alt="">
-								<span>4.9万+</span>
+								<span>8.2万+</span>
 								<img src="../img/dianzan.png" alt="">
-								<span>99%</span>
+								<span>92%</span>
 							</div>
 							<div class="shop_description">
 								<span>自营</span>
@@ -758,12 +797,12 @@
 					<li>
 						<a href="./page3.html">
 							<img src="../img/page2/img/img7.jpg" alt="">
-							<img src="../img/page2/t/p2_t_7.jpg" alt="" style="display: none">
 						</a>
 						<em class="p_money_page2">￥118.00</em>
 						<span class="description">瑞士进口瑞士莲巧克力Lindt软心精选Lindor牛奶榛果黑巧克力球内含5种口味送礼喜糖圣诞节礼物 软心5味巧克力球600g</span>
 						<div style="position:relative;">
-							<input type="text" style="width: 30px;height: 28px;text-align: center" value="1">
+							<input type="text" oninput="value=value.replace(/[^\d]/g,'')"
+								   style="width: 30px;height: 28px;text-align: center" value="1">
 							<div class="demo">
 								<img src="../img/up.png" alt="" style="width: 16px;height: 14px;" class="number_up">
 								<img src="../img/down.png" alt="" style="width: 16px;height: 14px" class="number_down">
@@ -773,9 +812,9 @@
 							</div>
 							<div class="comment_bottom">
 								<img src="../img/comment.png" alt="">
-								<span>4.9万+</span>
+								<span>2.9万+</span>
 								<img src="../img/dianzan.png" alt="">
-								<span>99%</span>
+								<span>92%</span>
 							</div>
 							<div class="shop_description">
 								<span>自营</span>
@@ -787,12 +826,12 @@
 					<li>
 						<a href="./page3.html">
 							<img src="../img/page2/img/img8.jpg" alt="">
-							<img src="../img/page2/t/p2_t_8.jpg" alt="" style="display: none">
 						</a>
 						<em class="p_money_page2">￥9.90</em>
 						<span class="description">美国进口柯克兰Kirkland 原味混合每日坚果仁大罐装孕妇食品休</span>
 						<div style="position:relative;">
-							<input type="text" style="width: 30px;height: 28px;text-align: center" value="1">
+							<input type="text" oninput="value=value.replace(/[^\d]/g,'')"
+								   style="width: 30px;height: 28px;text-align: center" value="1">
 							<div class="demo">
 								<img src="../img/up.png" alt="" style="width: 16px;height: 14px;" class="number_up">
 								<img src="../img/down.png" alt="" style="width: 16px;height: 14px" class="number_down">
@@ -802,9 +841,9 @@
 							</div>
 							<div class="comment_bottom">
 								<img src="../img/comment.png" alt="">
-								<span>4.9万+</span>
+								<span>43.9万+</span>
 								<img src="../img/dianzan.png" alt="">
-								<span>99%</span>
+								<span>91%</span>
 							</div>
 							<div class="shop_description">
 								<span>自营</span>
@@ -817,12 +856,12 @@
 					<li>
 						<a href="./page3.html">
 							<img src="../img/page2/img/img9.jpg" alt="">
-							<img src="../img/page2/t/p2_t_9.jpg" alt="" style="display: none">
 						</a>
 						<em class="p_money_page2">￥19.80</em>
 						<span class="description">印尼进口 Nabati 丽芝士（Richeese）休闲零食 奶酪味 威化饼干 200g/盒 早餐下午茶</span>
 						<div style="position:relative;">
-							<input type="text" style="width: 30px;height: 28px;text-align: center" value="1">
+							<input type="text" oninput="value=value.replace(/[^\d]/g,'')"
+								   style="width: 30px;height: 28px;text-align: center" value="1">
 							<div class="demo">
 								<img src="../img/up.png" alt="" style="width: 16px;height: 14px;" class="number_up">
 								<img src="../img/down.png" alt="" style="width: 16px;height: 14px" class="number_down">
@@ -832,9 +871,9 @@
 							</div>
 							<div class="comment_bottom">
 								<img src="../img/comment.png" alt="">
-								<span>4.9万+</span>
+								<span>42.9万+</span>
 								<img src="../img/dianzan.png" alt="">
-								<span>99%</span>
+								<span>91%</span>
 							</div>
 							<div class="shop_description">
 								<span>自营</span>
@@ -846,15 +885,15 @@
 					</li>
 					<li>
 						<a href="./page3.html">
-							<img src="../img/page2/img/img10.jpg" alt="">
-							<img src="../img/page2/t/p2_t_10.jpg" alt="" style="display: none">
+							<img src="../img/page2/img/img10.jpg" alt="">s
 						</a>
 						<em class="p_money_page2">￥78.00</em>
 						<em class="p_money_page2" style="display: none">￥28.00</em>
 						<span class="description">日本进口 白色恋人 北海道白巧克力 曲奇夹心饼干 饼干蛋糕 办公室休闲零食小吃 132g 12枚礼盒装</span>
 						<span class="description" style="display: none">韩国进口 白色恋人 北海道白巧克力 曲奇夹心饼干 饼干蛋糕 办公室休闲零食小吃 132g 12枚礼盒装</span>
 						<div style="position:relative;">
-							<input type="text" style="width: 30px;height: 28px;text-align: center" value="1">
+							<input type="text" oninput="value=value.replace(/[^\d]/g,'')"
+								   style="width: 30px;height: 28px;text-align: center" value="1">
 							<div class="demo">
 								<img src="../img/up.png" alt="" style="width: 16px;height: 14px;" class="number_up">
 								<img src="../img/down.png" alt="" style="width: 16px;height: 14px" class="number_down">
@@ -864,9 +903,9 @@
 							</div>
 							<div class="comment_bottom">
 								<img src="../img/comment.png" alt="">
-								<span>4.9万+</span>
+								<span>14.2万+</span>
 								<img src="../img/dianzan.png" alt="">
-								<span>99%</span>
+								<span>88%</span>
 							</div>
 							<div class="shop_description">
 								<span>自营</span>
@@ -879,8 +918,7 @@
 				<ul class="none">
 					<li>
 						<a href="./page3.html">
-							<img src="../img/page2/img/img1.jpg" alt="">
-							<img src="../img/page2/t/p2_t_1.jpg" alt="" style="display: none">
+							<img src="../img/page2/t/p2_t_1.jpg" alt="">
 						</a>
 						<em class="p_money_page2">￥27.90</em>
 						<em class="p_money_page2" style="display: none">￥22.90</em>
@@ -901,26 +939,26 @@
 							</div>
 							<div class="comment_bottom">
 								<img src="../img/comment.png" alt="">
-								<span>4.9万+</span>
+								<span>7.2万+</span>
 								<img src="../img/dianzan.png" alt="">
-								<span>99%</span>
+								<span>97%</span>
 							</div>
 							<div class="shop_description">
 								<span>自营</span>
-								<span>星七自营旗舰店</span>
+								<span>外婆家店铺</span>
 								<img src="../img/rigt.png" alt="">
 							</div>
 						</div>
 					</li>
 					<li>
 						<a href="./page3.html">
-							<img src="../img/page2/img/img2.jpg" alt="">
-							<img src="../img/page2/t/p2_t_2.jpg" alt="" style="display: none">
+							<img src="../img/page2/t/p2_t_2.jpg" alt="">
 						</a>
 						<em class="p_money_page2">￥169.00</em>
 						<span class="description">美国进口柯克兰Kirkland 原味混合每日坚果仁大罐装孕妇食品休闲零食1130g礼盒腰果杏仁 盐焗1130g</span>
 						<div style="position:relative;">
-							<input type="text" style="width: 30px;height: 28px;text-align: center" value="1">
+							<input type="text" oninput="value=value.replace(/[^\d]/g,'')"
+								   style="width: 30px;height: 28px;text-align: center" value="1">
 							<div class="demo">
 								<img src="../img/up.png" alt="" style="width: 16px;height: 14px;" class="number_up">
 								<img src="../img/down.png" alt="" style="width: 16px;height: 14px" class="number_down">
@@ -930,13 +968,13 @@
 							</div>
 							<div class="comment_bottom">
 								<img src="../img/comment.png" alt="">
-								<span>4.9万+</span>
+								<span>1.2万+</span>
 								<img src="../img/dianzan.png" alt="">
-								<span>99%</span>
+								<span>92%</span>
 							</div>
 							<div class="shop_description">
 								<span>京东自营</span>
-								<span>丽芝士（Richeese）自营旗舰店</span>
+								<span>耐克旗舰店</span>
 								<img src="../img/rigt.png" alt="">
 							</div>
 
@@ -944,13 +982,13 @@
 					</li>
 					<li>
 						<a href="./page3.html">
-							<img src="../img/page2/img/img3.jpg" alt="">
-							<img src="../img/page2/t/p2_t_3.jpg" alt="" style="display: none">
+							<img src="../img/page2/t/p2_t_3.jpg" alt="">
 						</a>
 						<em class="p_money_page2">￥169.00</em>
 						<span class="description">马来西亚进口 过山车(GOTOGO)麦糯糯牛奶味蛋糕卷 早餐糕点代餐480克（20克24）（新老包装随机发货）</span>
 						<div style="position:relative;">
-							<input type="text" style="width: 30px;height: 28px;text-align: center" value="1">
+							<input type="text" oninput="value=value.replace(/[^\d]/g,'')"
+								   style="width: 30px;height: 28px;text-align: center" value="1">
 							<div class="demo">
 								<img src="../img/up.png" alt="" style="width: 16px;height: 14px;" class="number_up">
 								<img src="../img/down.png" alt="" style="width: 16px;height: 14px" class="number_down">
@@ -966,7 +1004,7 @@
 							</div>
 							<div class="shop_description">
 								<span>自营</span>
-								<span>过山车GOTOGO自营旗舰店</span>
+								<span>巴宝莉</span>
 								<img src="../img/rigt.png" alt="">
 							</div>
 
@@ -974,13 +1012,13 @@
 					</li>
 					<li>
 						<a href="./page3.html">
-							<img src="../img/page2/img/img4.jpg" alt="">
-							<img src="../img/page2/t/p2_t_4.jpg" alt="" style="display: none">
+							<img src="../img/page2/t/p2_t_4.jpg" alt="">
 						</a>
 						<em class="p_money_page2">￥169.00</em>
 						<span class="description">【年货新鲜】德国进口 Knoppers威化饼25g*24包 牛奶榛子五层巧克力夹心饼干休闲零食华夫饼 整盒实惠款，25g*24包</span>
 						<div style="position:relative;">
-							<input type="text" style="width: 30px;height: 28px;text-align: center" value="1">
+							<input type="text" oninput="value=value.replace(/[^\d]/g,'')"
+								   style="width: 30px;height: 28px;text-align: center" value="1">
 							<div class="demo">
 								<img src="../img/up.png" alt="" style="width: 16px;height: 14px;" class="number_up">
 								<img src="../img/down.png" alt="" style="width: 16px;height: 14px" class="number_down">
@@ -990,26 +1028,26 @@
 							</div>
 							<div class="comment_bottom">
 								<img src="../img/comment.png" alt="">
-								<span>4.9万+</span>
+								<span>14.2万+</span>
 								<img src="../img/dianzan.png" alt="">
-								<span>99%</span>
+								<span>97%</span>
 							</div>
 							<div class="shop_description">
 								<span>自营</span>
-								<span>倍乐思Beryl's自营旗舰店</span>
+								<span>路易斯威登</span>
 								<img src="../img/rigt.png" alt="">
 							</div>
 						</div>
 					</li>
 					<li>
 						<a href="./page3.html">
-							<img src="../img/page2/img/img5.jpg" alt="">
-							<img src="../img/page2/t/p2_t_5.jpg" alt="" style="display: none">
+							<img src="../img/page2/t/p2_t_5.jpg" alt="">
 						</a>
 						<em class="p_money_page2">￥169.00</em>
 						<span class="description">英国进口 哈得斯（MACKIE’S）薯片-切达奶酪洋葱味 40g/袋 芝士休闲零食小吃</span>
 						<div style="position:relative;">
-							<input type="text" style="width: 30px;height: 28px;text-align: center" value="1">
+							<input type="text" oninput="value=value.replace(/[^\d]/g,'')"
+								   style="width: 30px;height: 28px;text-align: center" value="1">
 							<div class="demo">
 								<img src="../img/up.png" alt="" style="width: 16px;height: 14px;" class="number_up">
 								<img src="../img/down.png" alt="" style="width: 16px;height: 14px" class="number_down">
@@ -1025,7 +1063,7 @@
 							</div>
 							<div class="shop_description">
 								<span>自营</span>
-								<span>哈得斯官方旗舰店</span>
+								<span>香奈儿</span>
 								<img src="../img/rigt.png" alt="">
 							</div>
 
@@ -1033,13 +1071,13 @@
 					</li>
 					<li>
 						<a href="./page3.html">
-							<img src="../img/page2/img/img6.jpg" alt="">
-							<img src="../img/page2/t/p2_t_6.jpg" alt="" style="display: none">
+							<img src="../img/page2/t/p2_t_6.jpg" alt="">
 						</a>
 						<em class="p_money_page2">￥169.00</em>
 						<span class="description">瑞士进口瑞士莲巧克力Lindt软心精选Lindor牛奶榛果黑巧克力球内含5种口味送礼喜糖圣诞节礼物 软心5味巧克力球600g</span>
 						<div style="position:relative;">
-							<input type="text" style="width: 30px;height: 28px;text-align: center" value="1">
+							<input type="text" oninput="value=value.replace(/[^\d]/g,'')"
+								   style="width: 30px;height: 28px;text-align: center" value="1">
 							<div class="demo">
 								<img src="../img/up.png" alt="" style="width: 16px;height: 14px;" class="number_up">
 								<img src="../img/down.png" alt="" style="width: 16px;height: 14px" class="number_down">
@@ -1055,7 +1093,7 @@
 							</div>
 							<div class="shop_description">
 								<span>自营</span>
-								<span>帝亚零食专营店</span>
+								<span>天马飞瀑铺</span>
 								<img src="../img/rigt.png" alt="">
 							</div>
 
@@ -1063,13 +1101,13 @@
 					</li>
 					<li>
 						<a href="./page3.html">
-							<img src="../img/page2/img/img7.jpg" alt="">
-							<img src="../img/page2/t/p2_t_7.jpg" alt="" style="display: none">
+							<img src="../img/page2/t/p2_t_7.jpg" alt="">
 						</a>
 						<em class="p_money_page2">￥118.00</em>
 						<span class="description">瑞士进口瑞士莲巧克力Lindt软心精选Lindor牛奶榛果黑巧克力球内含5种口味送礼喜糖圣诞节礼物 软心5味巧克力球600g</span>
 						<div style="position:relative;">
-							<input type="text" style="width: 30px;height: 28px;text-align: center" value="1">
+							<input type="text" oninput="value=value.replace(/[^\d]/g,'')"
+								   style="width: 30px;height: 28px;text-align: center" value="1">
 							<div class="demo">
 								<img src="../img/up.png" alt="" style="width: 16px;height: 14px;" class="number_up">
 								<img src="../img/down.png" alt="" style="width: 16px;height: 14px" class="number_down">
@@ -1085,20 +1123,20 @@
 							</div>
 							<div class="shop_description">
 								<span>自营</span>
-								<span>帝亚零食专营店</span>
+								<span>七星聚首店铺</span>
 								<img src="../img/rigt.png" alt="">
 							</div>
 						</div>
 					</li>
 					<li>
 						<a href="./page3.html">
-							<img src="../img/page2/img/img8.jpg" alt="">
-							<img src="../img/page2/t/p2_t_8.jpg" alt="" style="display: none">
+							<img src="../img/page2/t/p2_t_8.jpg" alt="">
 						</a>
 						<em class="p_money_page2">￥9.90</em>
 						<span class="description">美国进口柯克兰Kirkland 原味混合每日坚果仁大罐装孕妇食品休</span>
 						<div style="position:relative;">
-							<input type="text" style="width: 30px;height: 28px;text-align: center" value="1">
+							<input type="text" oninput="value=value.replace(/[^\d]/g,'')"
+								   style="width: 30px;height: 28px;text-align: center" value="1">
 							<div class="demo">
 								<img src="../img/up.png" alt="" style="width: 16px;height: 14px;" class="number_up">
 								<img src="../img/down.png" alt="" style="width: 16px;height: 14px" class="number_down">
@@ -1114,7 +1152,7 @@
 							</div>
 							<div class="shop_description">
 								<span>自营</span>
-								<span>星七自营旗舰店</span>
+								<span>泡脚专业店铺</span>
 								<img src="../img/rigt.png" alt="">
 							</div>
 
@@ -1122,13 +1160,13 @@
 					</li>
 					<li>
 						<a href="./page3.html">
-							<img src="../img/page2/img/img9.jpg" alt="">
-							<img src="../img/page2/t/p2_t_9.jpg" alt="" style="display: none">
+							<img src="../img/page2/t/p2_t_9.jpg" alt="">
 						</a>
 						<em class="p_money_page2">￥19.80</em>
 						<span class="description">印尼进口 Nabati 丽芝士（Richeese）休闲零食 奶酪味 威化饼干 200g/盒 早餐下午茶</span>
 						<div style="position:relative;">
-							<input type="text" style="width: 30px;height: 28px;text-align: center" value="1">
+							<input type="text" oninput="value=value.replace(/[^\d]/g,'')"
+								   style="width: 30px;height: 28px;text-align: center" value="1">
 							<div class="demo">
 								<img src="../img/up.png" alt="" style="width: 16px;height: 14px;" class="number_up">
 								<img src="../img/down.png" alt="" style="width: 16px;height: 14px" class="number_down">
@@ -1144,7 +1182,7 @@
 							</div>
 							<div class="shop_description">
 								<span>自营</span>
-								<span>丽芝士（Richeese）自营旗舰店</span>
+								<span>冥界三店铺</span>
 								<img src="../img/rigt.png" alt="">
 							</div>
 
@@ -1152,15 +1190,15 @@
 					</li>
 					<li>
 						<a href="./page3.html">
-							<img src="../img/page2/img/img10.jpg" alt="">
-							<img src="../img/page2/t/p2_t_10.jpg" alt="" style="display: none">
+							<img src="../img/page2/t/p2_t_10.jpg" alt="">
 						</a>
 						<em class="p_money_page2">￥78.00</em>
 						<em class="p_money_page2" style="display: none">￥28.00</em>
 						<span class="description">日本进口 白色恋人 北海道白巧克力 曲奇夹心饼干 饼干蛋糕 办公室休闲零食小吃 132g 12枚礼盒装</span>
 						<span class="description" style="display: none">韩国进口 白色恋人 北海道白巧克力 曲奇夹心饼干 饼干蛋糕 办公室休闲零食小吃 132g 12枚礼盒装</span>
 						<div style="position:relative;">
-							<input type="text" style="width: 30px;height: 28px;text-align: center" value="1">
+							<input type="text" oninput="value=value.replace(/[^\d]/g,'')"
+								   style="width: 30px;height: 28px;text-align: center" value="1">
 							<div class="demo">
 								<img src="../img/up.png" alt="" style="width: 16px;height: 14px;" class="number_up">
 								<img src="../img/down.png" alt="" style="width: 16px;height: 14px" class="number_down">
@@ -1176,7 +1214,7 @@
 							</div>
 							<div class="shop_description">
 								<span>自营</span>
-								<span>进口食品自营专区</span>
+								<span>天衣无缝店铺</span>
 								<img src="../img/rigt.png" alt="">
 							</div>
 						</div>

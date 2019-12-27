@@ -479,7 +479,8 @@
 }
 
 #side_list_pro ul li {
-    border-bottom: 0.5px darkblue solid;
+    border-bottom: 1px darkblue solid;
+
 }
 
 .notification {
@@ -547,8 +548,13 @@
     padding: 30px;
 }
 
+.rate_list {
+    cursor: pointer;
+}
+
 .rate_list label {
     margin-left: 10px;
+    cursor: pointer;
 }
 
 .rate_right span {
@@ -709,4 +715,67 @@
 button {
     cursor: pointer;
     outline: none;
+}
+
+#add_success {
+    left: 500px;
+    height: 200px;
+    width: 500px;
+    background-color: white;
+    position: fixed;
+    top: 40%;
+    margin: 0 auto;
+    border: 5px solid #ccc;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 9999;
+}
+
+#add_success_2 {
+    display: flex;
+    justify-content: center;
+}
+
+#add_success_2 :nth-child(1) {
+    border: 1px solid #ddd;
+    background: #fcfcfc;
+    color: #666;
+    display: inline-block;
+    width: 123px;
+    height: 41px;
+    margin: 0 5px;
+    line-height: 41px;
+    text-align: center;
+    font-size: 14px;
+    font-family: "Microsoft YaHei";
+    cursor: pointer;
+}
+
+#add_success_2 :nth-child(2) {
+    border: 1px solid #ff4141;
+    background: #ff5c4d;
+    color: #FFF;
+    display: inline-block;
+    width: 123px;
+    height: 41px;
+    margin: 0 5px;
+    line-height: 41px;
+    text-align: center;
+    font-size: 14px;
+    font-family: "Microsoft YaHei";
+}
+
+.zhezhao {
+    width: 100%;
+    height: 4470px;
+    background-color: #000;
+    filter: alpha(opacity=50);
+    -moz-opacity: 0.5;
+    opacity: 0.5;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    display: none;
+    z-index: 1000;
 }

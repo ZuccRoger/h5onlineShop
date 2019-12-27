@@ -15,7 +15,25 @@
 					$('html,body').animate({
 						scrollTop: 0
 					}, 500)
-				})
+				});
+
+
+				$('#intro_ad ul li').hover(function () {
+					console.log(this.childNodes);
+					this.style.border = "1px solid red";
+					this.childNodes[3].style.opacity = 0.1;
+					this.childNodes[5].style.opacity = 0.1;
+					this.childNodes[7].style.display = 'block';
+					this.childNodes[9].style.display = 'block';
+					console.log('移入');
+				}, function () {
+					this.style.border = "none";
+					this.childNodes[3].style.opacity = 1;
+					this.childNodes[5].style.opacity = 1;
+					this.childNodes[7].style.display = 'none';
+					this.childNodes[9].style.display = 'none';
+					console.log('移出');
+				});
 
 			})
 
@@ -24,7 +42,7 @@
 				var date = new Date();
 				var now = date.getTime();
 				//设置截止时间
-				var str = "2019/12/28 00:00:00";
+				var str = "2019/12/29 00:00:00";
 				var endDate = new Date(str);
 				var end = endDate.getTime();
 				//时间差
@@ -684,14 +702,14 @@
 									<a href=""
 									   class="intro_a2">
 										<p>恒都澳洲牛腩</p>
-										<p class="p_money">￥62</p>
+										<p class="p_money">￥<b>62</b></p>
 										<img class="intro_wine" src="../img/intro2/snack3.jpg" alt="">
 									</a>
 									<a href=""
 									   class="intro_a2"
 									   style="margin-left: 3px">
 										<p>天润浓缩酸奶</p>
-										<p class="p_money">￥55 </p>
+										<p class="p_money">￥<b>55</b></p>
 										<img class="intro_wine" src="../img/intro2/snack4.jpg" alt="">
 									</a>
 								</div>
@@ -703,7 +721,7 @@
 									   style="margin-left: 2px"
 									   class="intro_a2">
 										<p>进口牛油果</p>
-										<p class="p_money">￥48.8</p>
+										<p class="p_money">￥<b>48.8</b></p>
 										<img class="intro_wine" src="../img/intro2/snack5.jpg" alt="">
 									</a>
 									<a href=""
@@ -711,7 +729,7 @@
 									   class="intro_a2"
 									>
 										<p>泰国黑虎虾</p>
-										<p class="p_money">￥129</p>
+										<p class="p_money">￥<b>129</b></p>
 										<img class="intro_wine" src="../img/intro2/snack6.jpg" alt="">
 									</a>
 								</div>
@@ -783,14 +801,14 @@
 									<a href=""
 									   class="intro_a2">
 										<p>范思哲香水</p>
-										<p class="p_money">￥349</p>
+										<p class="p_money">￥<b>349</b></p>
 										<img class="intro_wine" src="../img/intro3/snack2.jpg" alt="">
 									</a>
 									<a href=""
 									   class="intro_a2"
 									   style="margin-left: 3px">
 										<p>雅思兰黛眼霜</p>
-										<p class="p_money">￥590 </p>
+										<p class="p_money">￥<b>590</b></p>
 										<img class="intro_wine" src="../img/intro3/snack3.jpg" alt="">
 									</a>
 								</div>
@@ -802,7 +820,7 @@
 									   style="margin-left: 2px"
 									   class="intro_a2">
 										<p>迪奥粉色唇蜜</p>
-										<p class="p_money">￥310</p>
+										<p class="p_money">￥<b>310</b></p>
 										<img class="intro_wine" src="../img/intro3/snack4.jpg" alt="">
 									</a>
 									<a href=""
@@ -810,7 +828,7 @@
 									   class="intro_a2"
 									>
 										<p>滋源see young</p>
-										<p class="p_money">￥99</p>
+										<p class="p_money">￥<b>99</b></p>
 										<img class="intro_wine" src="../img/intro3/snack5.jpg" alt="">
 									</a>
 								</div>
@@ -883,14 +901,14 @@
 									<a href=""
 									   class="intro_a2">
 										<p>博朗剃须刀</p>
-										<p class="p_money">￥329</p>
+										<p class="p_money">￥<b>329</b></p>
 										<img class="intro_wine" src="../img/intro4/snack2.jpg" alt="">
 									</a>
 									<a href=""
 									   class="intro_a2"
 									   style="margin-left: 3px">
 										<p>佳能单反相机</p>
-										<p class="p_money">￥4999 </p>
+										<p class="p_money">￥<b>4999</b></p>
 										<img class="intro_wine" src="../img/intro4/snack3.jpg" alt="">
 									</a>
 								</div>
@@ -902,7 +920,7 @@
 									   style="margin-left: 2px"
 									   class="intro_a2">
 										<p>荣耀全屏手机</p>
-										<p class="p_money">￥899</p>
+										<p class="p_money">￥<b>899</b></p>
 										<img class="intro_wine" src="../img/intro4/snack4.jpg" alt="">
 									</a>
 									<a href=""
@@ -910,7 +928,7 @@
 									   class="intro_a2"
 									>
 										<p>小米平衡车</p>
-										<p class="p_money">￥1999</p>
+										<p class="p_money">￥<b>1999</b></p>
 										<img class="intro_wine" src="../img/intro4/snack5.jpg" alt="">
 									</a>
 								</div>
@@ -961,93 +979,201 @@
 						<ul style="width: 1080px;display: flex;flex-wrap: wrap">
 							<li>
 								<img src="../img/intro5/thing1.jpg" alt="">
-								<span>防水双肩包 男电脑背包多功能商务潮书包 黑色</span>
-								<span>￥229</span>
+								<span class="index_bottom_span2">免打孔厨房置物架壁挂五金刀架调料收纳挂架挂钩厨卫用品厨房挂件 80cm双杯(免打孔)</span>
+								<span class="index_bottom_span3">￥229</span>
+								<div class="index_bottom_div4">
+									<img src="../img/index_cart.png" alt="" class="index_cart_bottom">
+								</div>
+								<div class="index_bottom_div5">
+									<img src="../img/similar.png" alt="" class="index_cart_bottom">
+								</div>
 							</li>
 							<li>
 								<img src="../img/intro5/thing2.jpg" alt="">
-								<span>免打孔厨房置物架壁挂五金刀架调料收纳挂架挂钩厨卫用品厨房挂件 80cm双杯(免打孔)</span>
-								<span>￥157</span>
+								<span class="index_bottom_span2">免打孔厨房置物架壁挂五金刀架调料收纳挂架挂钩厨卫用品厨房挂件 80cm双杯(免打孔)</span>
+								<span class="index_bottom_span3">￥157</span>
+								<div class="index_bottom_div4">
+									<img src="../img/index_cart.png" alt="" class="index_cart_bottom">
+								</div>
+								<div class="index_bottom_div5">
+									<img src="../img/similar.png" alt="" class="index_cart_bottom">
+								</div>
 							</li>
 							<li>
 								<img src="../img/intro5/thing3.jpg" alt="">
-								<span>汽车套装封釉水晶纳米液体玻璃喷雾镀膜剂包施工镀金漆面镀晶 120ML镀膜剂()</span>
-								<span>￥70</span>
+								<span class="index_bottom_span2">汽车套装封釉水晶纳米液体玻璃喷雾镀膜剂包施工镀金漆面镀晶 120ML镀膜剂()</span>
+								<span class="index_bottom_span3">￥70</span>
+								<div class="index_bottom_div4">
+									<img src="../img/index_cart.png" alt="" class="index_cart_bottom">
+								</div>
+								<div class="index_bottom_div5">
+									<img src="../img/similar.png" alt="" class="index_cart_bottom">
+								</div>
 							</li>
 							<li>
 								<img src="../img/intro5/thing4.jpg" alt="">
-								<span>美的（Midea）M1-L213C 快捷微波炉 微电脑操控 360°转盘加热 智能蒸煮菜单 21升</span>
-								<span>￥335</span>
+								<span class="index_bottom_span2">美的（Midea）M1-L213C 快捷微波炉 微电脑操控 360°转盘加热 智能蒸煮菜单 21升</span>
+								<span class="index_bottom_span3">￥335</span>
+								<div class="index_bottom_div4">
+									<img src="../img/index_cart.png" alt="" class="index_cart_bottom">
+								</div>
+								<div class="index_bottom_div5">
+									<img src="../img/similar.png" alt="" class="index_cart_bottom">
+								</div>
 							</li>
 							<li>
 								<img src="../img/intro5/thing5.png" alt="">
-								<span>【张二嫂直播专属】MENOW美诺独角兽哑光口红礼盒套装4支装滋润保湿哑光雾面唇膏 01#挚爱女神</span>
-								<span>￥89.9</span>
+								<span class="index_bottom_span2">【张二嫂直播专属】MENOW美诺独角兽哑光口红礼盒套装4支装滋润保湿哑光雾面唇膏 01#挚爱女神</span>
+								<span class="index_bottom_span3">￥89.9</span>
+								<div class="index_bottom_div4">
+									<img src="../img/index_cart.png" alt="" class="index_cart_bottom">
+								</div>
+								<div class="index_bottom_div5">
+									<img src="../img/similar.png" alt="" class="index_cart_bottom">
+								</div>
 							</li>
 							<li>
 								<img src="../img/intro5/thing6.jpg" alt="">
-								<span>（3瓶装）南京同仁堂100g 维生素E乳液 身体乳男女身体面部护肤保湿乳 缓解皮肤干燥瘙痒滋润</span>
-								<span>￥59.9</span>
+								<span class="index_bottom_span2">（3瓶装）南京同仁堂100g 维生素E乳液 身体乳男女身体面部护肤保湿乳 缓解皮肤干燥瘙痒滋润</span>
+								<span class="index_bottom_span3">￥59.9</span>
+								<div class="index_bottom_div4">
+									<img src="../img/index_cart.png" alt="" class="index_cart_bottom">
+								</div>
+								<div class="index_bottom_div5">
+									<img src="../img/similar.png" alt="" class="index_cart_bottom">
+								</div>
 							</li>
 							<li>
-								<img src="../img/intro5/thing1.jpg" alt="">
-								<span>防水双肩包 男电脑背包多功能商务潮书包 黑色</span>
-								<span>￥229</span>
+								<img src="../img/intro5/thing7.jpg" alt="">
+								<span class="index_bottom_span2">鸭鸭YAYA反季新品男士羽绒服短款加厚户外冬装保暖外套派克服女 黑色 加厚(可脱卸帽) M</span>
+								<span class="index_bottom_span3">￥218</span>
+								<div class="index_bottom_div4">
+									<img src="../img/index_cart.png" alt="" class="index_cart_bottom">
+								</div>
+								<div class="index_bottom_div5">
+									<img src="../img/similar.png" alt="" class="index_cart_bottom">
+								</div>
 							</li>
 							<li>
-								<img src="../img/intro5/thing2.jpg" alt="">
-								<span>免打孔厨房置物架壁挂五金刀架调料收纳挂架挂钩厨卫用品厨房挂件 80cm双杯(免打孔)</span>
-								<span>￥157</span>
+								<img src="../img/intro5/thing8.png" alt="">
+								<span class="index_bottom_span2">费列罗巧克力礼盒装情人节圣诞节生日礼物送女朋友女生闺蜜男友</span>
+								<span class="index_bottom_span3">￥68</span>
+								<div class="index_bottom_div4">
+									<img src="../img/index_cart.png" alt="" class="index_cart_bottom">
+								</div>
+								<div class="index_bottom_div5">
+									<img src="../img/similar.png" alt="" class="index_cart_bottom">
+								</div>
 							</li>
 							<li>
-								<img src="../img/intro5/thing3.jpg" alt="">
-								<span>汽车套装封釉水晶纳米液体玻璃喷雾镀膜剂包施工镀金漆面镀晶 120ML镀膜剂()</span>
-								<span>￥70</span>
+								<img src="../img/intro5/thing9.jpg" alt="">
+								<span class="index_bottom_span2">耐热玻璃保鲜盒密封盒微波炉饭盒便当盒成人上班带饭的饭盒女带盖 【岩粉】660ML8只装</span>
+								<span class="index_bottom_span3">￥198</span>
+								<div class="index_bottom_div4">
+									<img src="../img/index_cart.png" alt="" class="index_cart_bottom">
+								</div>
+								<div class="index_bottom_div5">
+									<img src="../img/similar.png" alt="" class="index_cart_bottom">
+								</div>
 							</li>
 							<li>
-								<img src="../img/intro5/thing4.jpg" alt="">
-								<span>美的（Midea）M1-L213C 快捷微波炉 微电脑操控 360°转盘加热 智能蒸煮菜单 21升</span>
-								<span>￥335</span>
+								<img src="../img/intro5/thing10.jpg" alt="">
+								<span class="index_bottom_span2">厨房感应灯带雷达人体声控灯厕所灯走廊过道楼梯车库宾馆用led灯具佛山·照明同款 金线声光控 18瓦白光 34cm</span>
+								<span class="index_bottom_span3">￥335</span>
+								<div class="index_bottom_div4">
+									<img src="../img/index_cart.png" alt="" class="index_cart_bottom">
+								</div>
+								<div class="index_bottom_div5">
+									<img src="../img/similar.png" alt="" class="index_cart_bottom">
+								</div>
 							</li>
 							<li>
-								<img src="../img/intro5/thing5.png" alt="">
-								<span>【张二嫂直播专属】MENOW美诺独角兽哑光口红礼盒套装4支装滋润保湿哑光雾面唇膏 01#挚爱女神</span>
-								<span>￥89.9</span>
+								<img src="../img/intro5/thing11.jpg" alt="">
+								<span class="index_bottom_span2">【品牌特惠】登山徒步旅行背包男双肩包女超大容量户外旅游出差行李包轻便书包 黑色小号</span>
+								<span class="index_bottom_span3">￥89.9</span>
+								<div class="index_bottom_div4">
+									<img src="../img/index_cart.png" alt="" class="index_cart_bottom">
+								</div>
+								<div class="index_bottom_div5">
+									<img src="../img/similar.png" alt="" class="index_cart_bottom">
+								</div>
 							</li>
 							<li>
-								<img src="../img/intro5/thing6.jpg" alt="">
-								<span>（3瓶装）南京同仁堂100g 维生素E乳液 身体乳男女身体面部护肤保湿乳 缓解皮肤干燥瘙痒滋润</span>
-								<span>￥59.9</span>
+								<img src="../img/intro5/thing12.jpg" alt="">
+								<span class="index_bottom_span2">鸭鸭【YAYA】小蜜蜂服女2019年冬季冬新款韩版长款修身连帽bf面包服潮女 粉色 XL</span>
+								<span class="index_bottom_span3">￥424</span>
+								<div class="index_bottom_div4">
+									<img src="../img/index_cart.png" alt="" class="index_cart_bottom">
+								</div>
+								<div class="index_bottom_div5">
+									<img src="../img/similar.png" alt="" class="index_cart_bottom">
+								</div>
 							</li>
 							<li>
-								<img src="../img/intro5/thing1.jpg" alt="">
-								<span>防水双肩包 男电脑背包多功能商务潮书包 黑色</span>
-								<span>￥229</span>
+								<img src="../img/intro5/thing13.jpg" alt="">
+								<span class="index_bottom_span2">卡通热水袋充电暖宝宝可拆洗毛绒注水可爱暖水袋热宝宝暖手宝礼品 羞羞兔棕色【智能防爆 礼盒包装】</span>
+								<span class="index_bottom_span3">￥229</span>
+								<div class="index_bottom_div4">
+									<img src="../img/index_cart.png" alt="" class="index_cart_bottom">
+								</div>
+								<div class="index_bottom_div5">
+									<img src="../img/similar.png" alt="" class="index_cart_bottom">
+								</div>
 							</li>
 							<li>
-								<img src="../img/intro5/thing2.jpg" alt="">
-								<span>免打孔厨房置物架壁挂五金刀架调料收纳挂架挂钩厨卫用品厨房挂件 80cm双杯(免打孔)</span>
-								<span>￥157</span>
+								<img src="../img/intro5/thing14.png" alt="">
+								<span class="index_bottom_span2">纤枝玲 4条装时尚新品棉条纹收腹中腰男士四角内裤男士透气舒适平角棉内裤 组一 L</span>
+								<span class="index_bottom_span3">￥157</span>
+								<div class="index_bottom_div4">
+									<img src="../img/index_cart.png" alt="" class="index_cart_bottom">
+								</div>
+								<div class="index_bottom_div5">
+									<img src="../img/similar.png" alt="" class="index_cart_bottom">
+								</div>
 							</li>
 							<li>
-								<img src="../img/intro5/thing3.jpg" alt="">
-								<span>汽车套装封釉水晶纳米液体玻璃喷雾镀膜剂包施工镀金漆面镀晶 120ML镀膜剂()</span>
-								<span>￥70</span>
+								<img src="../img/intro5/thing15.jpg" alt="">
+								<span class="index_bottom_span2">平板加绒保暖防寒工装皮靴潮牌马靴男英伦风沙漠增高马丁靴秋冬季切尔西踢不烂军战狼靴冬天布洛克男鞋子 A1868棕色 39</span>
+								<span class="index_bottom_span3">￥188</span>
+								<div class="index_bottom_div4">
+									<img src="../img/index_cart.png" alt="" class="index_cart_bottom">
+								</div>
+								<div class="index_bottom_div5">
+									<img src="../img/similar.png" alt="" class="index_cart_bottom">
+								</div>
 							</li>
 							<li>
-								<img src="../img/intro5/thing4.jpg" alt="">
-								<span>美的（Midea）M1-L213C 快捷微波炉 微电脑操控 360°转盘加热 智能蒸煮菜单 21升</span>
-								<span>￥335</span>
+								<img src="../img/intro5/thing16.jpg" alt="">
+								<span class="index_bottom_span2">新中式现代简约美式吊灯餐厅卧室书房二头三头四头客厅布艺长方形佛山·照明同款 2头古铜色</span>
+								<span class="index_bottom_span3">￥259</span>
+								<div class="index_bottom_div4">
+									<img src="../img/index_cart.png" alt="" class="index_cart_bottom">
+								</div>
+								<div class="index_bottom_div5">
+									<img src="../img/similar.png" alt="" class="index_cart_bottom">
+								</div>
 							</li>
 							<li>
-								<img src="../img/intro5/thing5.png" alt="">
-								<span>【张二嫂直播专属】MENOW美诺独角兽哑光口红礼盒套装4支装滋润保湿哑光雾面唇膏 01#挚爱女神</span>
-								<span>￥89.9</span>
+								<img src="../img/intro5/thing17.jpg" alt="">
+								<span class="index_bottom_span2">三只松鼠什锦水果罐头 方便食品新鲜糖水黄桃椰果菠萝200g/罐</span>
+								<span class="index_bottom_span3">￥89.9</span>
+								<div class="index_bottom_div4">
+									<img src="../img/index_cart.png" alt="" class="index_cart_bottom">
+								</div>
+								<div class="index_bottom_div5">
+									<img src="../img/similar.png" alt="" class="index_cart_bottom">
+								</div>
 							</li>
 							<li>
-								<img src="../img/intro5/thing6.jpg" alt="">
-								<span>（3瓶装）南京同仁堂100g 维生素E乳液 身体乳男女身体面部护肤保湿乳 缓解皮肤干燥瘙痒滋润</span>
-								<span>￥59.9</span>
+								<img src="../img/intro5/thing18.jpg" alt="">
+								<span class="index_bottom_span2">三只松鼠乳酸菌小伴侣面包 营养早餐代餐口袋手撕面包网红零食饼干蛋糕糕点520g/箱</span>
+								<span class="index_bottom_span3">￥28.9</span>
+								<div class="index_bottom_div4">
+									<img src="../img/index_cart.png" alt="" class="index_cart_bottom">
+								</div>
+								<div class="index_bottom_div5">
+									<img src="../img/similar.png" alt="" class="index_cart_bottom">
+								</div>
 							</li>
 						</ul>
 					</div>

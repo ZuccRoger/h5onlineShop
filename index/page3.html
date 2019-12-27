@@ -8,25 +8,14 @@
     <link rel="stylesheet" type="text/css" href="../css/index3.css">
     <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
     <script type="text/javascript">
-        let choose_list_array, detail_list_array, add_cart_img, minus_cart_img, number_cart, small_img_list_array;
+        let choose_list_array, detail_list_array, add_cart_img, minus_cart_img, number_cart, small_img_list_array,
+            zhezhao;
         let small, shadow, shadowWH, smallW, smallMT, big, bigW, bigImg
         let temp = 1;
         let number = 1;
 
        // TODO 1. 评论页面选择功能
 
-
-
-        // var addBtnDom = document.querySelector("#add_cart");
-        // var shopCarDom = document.querySelector("#cart");
-        //
-        // addBtnDom.addEventListener("click", function () {
-        //     console.log("22");
-        //     //第一种方式
-        //     controllPath(addBtnDom, shopCarDom);
-        //     //第二种方式
-        //     //controllPath(".add-btn", ".shop-car");
-        // })
 
         function drawBall() {
             var ballDom = document.createElement("div");
@@ -40,69 +29,14 @@
             return ballDom;
         }
 
+        function add_cart_dia() {
+            $('#add_success').css('display', 'flex');
+            zhezhao.style.display = "block";
+        }
 
-        function controllPath(addBtn, shopCar) {
-            var addBtnDom = null,
-                shopCarDom = null;
-            if (typeof addBtn === "string") {
-                addBtnDom = document.querySelector(addBtn);
-            } else if (addBtn instanceof HTMLElement) {
-                addBtnDom = addBtn
-            } else {
-                alert("传入的参数错误： 第一个参数应为增加按钮的dom元素或该元素的选择器。");
-                return;
-            }
-
-            if (typeof shopCar === "string") {
-                shopCarDom = document.querySelector(shopCar);
-            } else if (shopCar instanceof HTMLElement) {
-                shopCarDom = shopCar;
-            } else {
-                alert("传入的参数错误： 第二个参数应为购物车的dom元素或该元素的选择器。");
-                return;
-            }
-
-            // 获取两个dom的位置
-            var addBtnposition = addBtnDom.getBoundingClientRect();
-            var shopCarPosition = shopCarDom.getBoundingClientRect();
-            var addBtnCenterX = (addBtnposition.left + addBtnposition.right) / 2;
-            var addBtnCenterY = (addBtnposition.top + addBtnposition.bottom) / 2;
-            var shopCarCenterX = (shopCarPosition.left + shopCarPosition.right) / 2;
-            var shopCarCenterY = (shopCarPosition.top + shopCarPosition.bottom) / 2;
-            //计算增加按钮 是在 相对于购物车的 左边还是右边（用于控制后面的移动方向）
-            var relativePosition = addBtnCenterX > shopCarCenterX ? -1 : 1;
-
-            // 获取连个dom之间的距离
-            var xDistance = Math.abs(addBtnCenterX - shopCarCenterX);
-            var yDistance = Math.abs(addBtnCenterY - shopCarCenterY);
-
-            // 绘制小球并设置其位置
-            var ballDom = drawBall();
-            ballDom.style.top = addBtnCenterY + "px";
-            ballDom.style.left = addBtnCenterX + "px";
-            document.body.appendChild(ballDom);
-            /*
-             * 根据一元二次方程的轨迹求出对象的系数 y = ax^2 + bx + c
-             *  var coefficientC = 0;
-             *  var coefficientB = 0;
-             *  var coefficientA = yDistance / Math.pow(xDistance, 2);
-             */
-            //小球的横竖坐标
-            var xAbscissa = 0, yAbscissa = 0;
-
-            //设置移动路径
-            var ballTimer = setInterval(function () {
-                //每次重新坐标
-                xAbscissa += 5 * relativePosition;
-                yAbscissa = (yDistance / Math.pow(xDistance, 2)) * Math.pow(xAbscissa, 2);
-                ballDom.style.top = addBtnCenterY + yAbscissa + "px";
-                ballDom.style.left = addBtnCenterX + xAbscissa + "px";
-                //检查是否到达终点
-                var surplusDistance = parseInt(ballDom.style.left) - shopCarCenterX;
-                if (Math.abs(surplusDistance) <= 10) {
-                    clearInterval(ballTimer);
-                }
-            }, 25);
+        function cancel_dia() {
+            $('#add_success').css('display', 'none');
+            zhezhao.style.display = "none";
         }
 
         $(window).load(function () {
@@ -112,7 +46,7 @@
             number = $('#input_number_p3').val();
             add_cart_img = $('#address_bottom:nth-child(2)');
             minus_cart_img = $('#address_bottom:nth-child(3)');
-            console.log(choose_list_array[0]);
+            zhezhao = document.getElementById("zhezhao");
         })
 
         $(function () {
@@ -120,6 +54,15 @@
                 $('html,body').animate({
                     scrollTop: 0
                 }, 500)
+            })
+            $(".rate_list").click(function () {
+                if ($(this).context.textContent.length == 53) {
+                    $('#rate_detail ul').eq(0).removeClass('none');
+                    $('#rate_detail ul').eq(1).addClass('none');
+                } else {
+                    $('#rate_detail ul').eq(0).addClass('none');
+                    $('#rate_detail ul').eq(1).removeClass('none');
+                }
             })
         })
 
@@ -164,6 +107,7 @@
 <body>
 <!-- 顶部条 -->
 <div style="display: flex;flex-direction: column">
+    <div class="zhezhao" id="zhezhao"></div>
     <div class="hd_header_wrap">
         <div style="width: 1070px;height: 13.75rem;">
             <div class="hd_header_bar">
@@ -590,7 +534,7 @@
                                 <img src="../img/down.png" onclick="minus_cart()" alt="" style="cursor: pointer">
                             </div>
 
-                            <div id="add_cart" style="cursor: pointer">
+                            <div id="add_cart" style="cursor: pointer" onclick="add_cart_dia()">
                                 <img src="../img/cart_2.png" alt="">
                                 <span id="btn_add_cart">加入购物车</span>
                             </div>
@@ -796,7 +740,7 @@
                 </div>
                 <div style="display: flex" id="rate_list">
                     <div class="rate_list">
-                        <label for="rate_1"><input type="radio" id="rate_1" name="rate">全部(5万+)</label>
+                        <label for="rate_1"><input type="radio" id="rate_1" name="rate" checked>全部(5万+)</label>
                     </div>
                     <div class="rate_list">
                         <label for="rate_2"><input type="radio" id="rate_2" name="rate">晒单(700+)</label>
@@ -816,7 +760,7 @@
                 </div>
 
                 <div id="rate_detail">
-                    <ul>
+                    <ul class="current">
                         <li>
                             <div style="position:relative;width: 80px">
                                 <img src="../img/page3/portraits/icon.jpg" alt=""
@@ -846,9 +790,9 @@
                         </li>
                         <li>
                             <div style="position:relative;width: 80px">
-                                <img src="../img/page3/portraits/icon2.jpg" alt=""
+                                <img src="../img/page3/portraits/icon8.jpg" alt=""
                                      class="user_img">
-                                <span class="user_comment">ed5555</span>
+                                <span class="user_comment">-伟-_-</span>
                             </div>
                             <div class="rate_detail_right">
                                 <div class="flex_center_center">
@@ -861,7 +805,7 @@
                                 </div>
                                 <div class="flex_center_center">
                                     <span style="width: 80px;">内容:</span>
-                                    <span>包装精美，高端大气上档次;看得出来商家很用心。宝贝真心不错，与图片相符，没有任何差异，真的是物超所宝贝收到了，卖家发货很快，物流也非常给力,客服服务态度极好，很有耐心、给人一种亲切感，好喜欢。还有包装精美，高端大气上档次;看得出来商家很用心。宝贝真心不错，与图片相符，没有任何差异，真的是物超所值，物美价廉啊。质量很好，下次还会再关顾!，</span>
+                                    <span>一盒20包，一包几条小鱼，味道还不错，跟以前在超市买的差不多</span>
                                 </div>
                                 <div class="flex_center_center">
                                     <span style="margin-right: 10px">晒单:</span>
@@ -979,6 +923,171 @@
                                 </div>
                             </div>
                         </li>
+                    </ul>
+                    <ul class="none">
+                        <li>
+                            <div style="position:relative;width: 80px">
+                                <img src="../img/page3/portraits/icon7.jpg" alt=""
+                                     class="user_img">
+                                <span class="user_comment">樱***9</span>
+                            </div>
+                            <div class="rate_detail_right">
+                                <div class="flex_center_center">
+                                    <span>评分:</span>
+                                    <span style="display: flex;flex-direction: row">
+                                        <img src="../img/page3/star.png" alt="">
+                                        <img src="../img/page3/star.png" alt="">
+                                         <img src="../img/page3/star.png" alt="">
+                                         <img src="../img/page3/star.png" alt="">
+                                    </span>
+                                </div>
+                                <div class="flex_center_center">
+                                    <span style="width: 80px;">内容:</span>
+                                    <span>物流很快，价钱也实惠，味道真的很棒，全家人都爱吃，不止一次购买了。客服的态度也很好，给她大大的一个赞。很满意的一次购物。</span>
+                                </div>
+                                <div class="flex_center_center">
+                                    <span style="margin-right: 10px">晒单:</span>
+                                    <img class="upload_photo" src="../img/page3/upload_photo/upload_photo9.jpg" alt="">
+                                    <img class="upload_photo" src="../img/page3/upload_photo/upload_photo10.jpg" alt="">
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div style="position:relative;width: 80px">
+                                <img src="../img/page3/portraits/icon2.jpg" alt=""
+                                     class="user_img">
+                                <span class="user_comment">ed5555</span>
+                            </div>
+                            <div class="rate_detail_right">
+                                <div class="flex_center_center">
+                                    <span>评分:</span>
+                                    <span style="display: flex;flex-direction: row">
+                                        <img src="../img/page3/star.png" alt="">
+                                        <img src="../img/page3/star.png" alt="">
+                                         <img src="../img/page3/star.png" alt="">
+                                    </span>
+                                </div>
+                                <div class="flex_center_center">
+                                    <span style="width: 80px;">内容:</span>
+                                    <span>包装精美，高端大气上档次;看得出来商家很用心。宝贝真心不错，与图片相符，没有任何差异，真的是物超所宝贝收到了，卖家发货很快，物流也非常给力,客服服务态度极好，很有耐心、给人一种亲切感，好喜欢。还有包装精美，高端大气上档次;看得出来商家很用心。宝贝真心不错，与图片相符，没有任何差异，真的是物超所值，物美价廉啊。质量很好，下次还会再关顾!，</span>
+                                </div>
+                                <div class="flex_center_center">
+                                    <span style="margin-right: 10px">晒单:</span>
+                                    <img class="upload_photo" src="../img/page3/upload_photo/upload_photo3.jpg" alt="">
+                                    <img class="upload_photo" src="../img/page3/upload_photo/upload_photo4.jpg" alt="">
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div style="position:relative;width: 80px">
+                                <img src="../img/page3/portraits/icon3.jpg" alt=""
+                                     class="user_img">
+                                <span class="user_comment">j***f</span>
+                            </div>
+                            <div class="rate_detail_right">
+                                <div class="flex_center_center">
+                                    <span>评分:</span>
+                                    <span style="display: flex;flex-direction: row">
+                                        <img src="../img/page3/star.png" alt="">
+                                        <img src="../img/page3/star.png" alt="">
+                                         <img src="../img/page3/star.png" alt="">
+                                         <img src="../img/page3/star.png" alt="">
+                                         <img src="../img/page3/star.png" alt="">
+                                    </span>
+                                </div>
+                                <div class="flex_center_center">
+                                    <span style="width: 80px;">内容:</span>
+                                    <span>店家客服服务态度很好，物流也很给力噢。味道不错。赞赞赞👍</span>
+                                </div>
+                                <div class="flex_center_center">
+                                    <span style="margin-right: 10px">晒单:</span>
+                                    <img class="upload_photo" src="../img/page3/upload_photo/upload_photo11.jpg" alt="">
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div style="position:relative;width: 80px">
+                                <img src="../img/page3/portraits/icon4.jpg" alt=""
+                                     class="user_img">
+                                <span class="user_comment">l***1</span>
+                            </div>
+                            <div class="rate_detail_right">
+                                <div class="flex_center_center">
+                                    <span>评分:</span>
+                                    <span style="display: flex;flex-direction: row">
+                                        <img src="../img/page3/star.png" alt="">
+                                        <img src="../img/page3/star.png" alt="">
+                                         <img src="../img/page3/star.png" alt="">
+                                         <img src="../img/page3/star.png" alt="">
+                                    </span>
+                                </div>
+                                <div class="flex_center_center">
+                                    <span style="width: 80px;">内容:</span>
+                                    <span>包装完美，价格优惠，日期新鲜。可以吃好长时间了。</span>
+                                </div>
+                                <div class="flex_center_center">
+                                    <span style="margin-right: 10px">晒单:</span>
+                                    <img class="upload_photo" src="../img/page3/upload_photo/upload_photo12.jpg" alt="">
+                                    <img class="upload_photo" src="../img/page3/upload_photo/upload_photo13.jpg" alt="">
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div style="position:relative;width: 80px">
+                                <img src="../img/page3/portraits/icon10.jpg" alt=""
+                                     class="user_img">
+                                <span class="user_comment">_国强</span>
+                            </div>
+                            <div class="rate_detail_right">
+                                <div class="flex_center_center">
+                                    <span>评分:</span>
+                                    <span style="display: flex;flex-direction: row">
+                                        <img src="../img/page3/star.png" alt="">
+                                        <img src="../img/page3/star.png" alt="">
+                                         <img src="../img/page3/star.png" alt="">
+                                         <img src="../img/page3/star.png" alt="">
+                                         <img src="../img/page3/star.png" alt="">
+                                    </span>
+                                </div>
+                                <div class="flex_center_center">
+                                    <span style="width: 80px;">内容:</span>
+                                    <span>价钱相对商店的便宜一点，味道还可以，微辣对我来说都有点辣了。里面酱汁太多小鱼干太少。</span>
+                                </div>
+                                <div class="flex_center_center">
+                                    <span style="margin-right: 10px">晒单:</span>
+                                    <img class="upload_photo" src="../img/page3/upload_photo/upload_photo14.jpg" alt="">
+                                    <img class="upload_photo" src="../img/page3/upload_photo/upload_photo8.jpg" alt="">
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div style="position:relative;width: 80px">
+                                <img src="../img/page3/portraits/icon6.jpg" alt=""
+                                     class="user_img">
+                                <span class="user_comment">_-Michelle-_</span>
+                            </div>
+                            <div class="rate_detail_right">
+                                <div class="flex_center_center">
+                                    <span>评分:</span>
+                                    <span style="display: flex;flex-direction: row">
+                                        <img src="../img/page3/star.png" alt="">
+                                        <img src="../img/page3/star.png" alt="">
+                                         <img src="../img/page3/star.png" alt="">
+                                         <img src="../img/page3/star.png" alt="">
+                                         <img src="../img/page3/star.png" alt="">
+                                    </span>
+                                </div>
+                                <div class="flex_center_center">
+                                    <span style="width: 80px;">内容:</span>
+                                    <span>这个小蛋卷有点贵，但是确实好吃！一个大包里面有25个左右，大包也不大，也很轻，毕竟小蛋卷就很小。半个手掌的长度，一个全部放在嘴里也没有问题。邮寄过来的箱子很大，估计是怕压碎了。也确实没有挤压坏的。味道很好，里面有夹心，吃着有点甜，不是很腻，个人还是很喜欢的！</span>
+                                </div>
+                                <div class="flex_center_center">
+                                    <span style="margin-right: 10px">晒单:</span>
+                                    <img class="upload_photo" src="../img/page3/upload_photo/upload_photo1.jpg" alt="">
+                                    <img class="upload_photo" src="../img/page3/upload_photo/upload_photo2.jpg" alt="">
+                                </div>
+                            </div>
+                        </li>
 
                     </ul>
                 </div>
@@ -986,6 +1095,16 @@
 
         </div>
 
+        <div id="add_success">
+            <div style="text-align: center;    display: flex;    justify-content: center;    margin: 30px;">
+                <img src="../img/page3/gou.png" alt="" style="width: 23px;height: 23px">
+                <h3 style="display: inline">已成功加入购物车</h3>
+            </div>
+            <div id="add_success_2">
+                <a href="" onclick="cancel_dia()">继续购物</a>
+                <a href="./page4.html">查看购物车</a>
+            </div>
+        </div>
 
         <div id="bottom_parent" style="margin-top: 3200px">
             <div id="bottom">

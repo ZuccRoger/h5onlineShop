@@ -714,6 +714,7 @@ ul li img {
 }
 
 #intro_ad ul li {
+	width: 168px;
 	background-color: white;
 	height: 240px;
 	margin: 5px;
@@ -722,6 +723,7 @@ ul li img {
 	flex-direction: column;
 	transition: all .3s ease;
 	line-height: 20px;
+	position: relative;
 }
 
 #intro_ad ul li img {
@@ -730,7 +732,7 @@ ul li img {
 	margin: 10px;
 }
 
-#intro_ad ul li :nth-child(2) {
+.index_bottom_span2 {
 	word-break: break-all;
 	width: 150px;
 	height: 38px;
@@ -746,7 +748,15 @@ ul li img {
 	line-height: 20px;
 }
 
-#intro_ad ul li :nth-child(3) {
+.current {
+	display: block;
+}
+
+.none {
+	display: none;
+}
+
+.index_bottom_span3 {
 	margin-left: 8px;
 	font-size: 14px;
 	color: #ff4040;
@@ -945,7 +955,7 @@ ul li img {
 	width: 140px;
 	height: 40px;
 	background-color: red;
-	z-index: 9999;
+	/*z-index: 9999;*/
 	opacity: 1;
 	display: flex;
 	align-items: center;
@@ -969,4 +979,35 @@ ul li img {
 	border-radius: 50%;
 }
 
+b {
+	margin-left: 0px !important;
+}
 
+.index_cart_bottom {
+	width: 20px !important;
+	height: 20px !important;
+}
+
+.index_bottom_div4 {
+	display: block;
+	width: 40px;
+	height: 40px;
+	background-color: #f22020;
+	border-radius: 50%;
+	display: none;
+	position: absolute;
+	bottom: 20px;
+	left: 30px;
+}
+
+.index_bottom_div5 {
+	display: block;
+	width: 40px;
+	height: 40px;
+	background-color: #f22020;
+	border-radius: 50%;
+	display: none;
+	position: absolute;
+	bottom: 20px;
+	right: 30px;
+}

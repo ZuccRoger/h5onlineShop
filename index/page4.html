@@ -31,7 +31,6 @@
             console.log(amount);
             money_item[x - 1].innerHTML = amount[x] * price[x];
             weight_item[x - 1].innerHTML = (amount[x] * weight[x]).toFixed(2) + "kg";
-
         }
 
         function add(x) {
@@ -198,7 +197,7 @@
                 </div>
 
                 <div style="height: 20px;display: flex;align-items: center" id="order_title_all">
-                    <input type="checkbox" id="select_all" onclick="checkboxOnclick(this)">
+                    <input type="checkbox" id="select_all" onclick="checkboxOnclick(this)" checked>
                     <ul id="p4_title">
                         <li>全选</li>
                         <li>商品信息</li>

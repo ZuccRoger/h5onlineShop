@@ -1,11 +1,33 @@
 <!DOCTYPE html>
 <html>
-<!--	TODO 页面下滑至按需加载、锚点回到顶部-->
 <head>
     <meta charset="utf-8"/>
     <title></title>
     <link rel="stylesheet" type="text/css" href="../css/index.css">
     <link rel="stylesheet" type="text/css" href="../css/index5.css">
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script type="text/javascript">
+        var flag = 0;
+        $(function () {
+            $('.slide_right').click(function () {
+                $('#list ul').eq(0).addClass('none');
+                $('#list ul').eq(1).removeClass('none');
+                flag = 1;
+                $('.slide_left').attr('src', '../img/page5/slide_left_right/left_true.png');
+                $('.slide_right').attr('src', '../img/page5/slide_left_right/right.png')
+            });
+            $('.slide_left').click(function () {
+                $('#list ul').eq(0).removeClass('none');
+                $('#list ul').eq(1).addClass('none');
+                flag--;
+                if(flag==0){
+                    $('.slide_left').attr('src', '../img/page5/slide_left_right/left.png');
+                    $('.slide_right').attr('src', '../img/page5/slide_left_right/right_true.png')
+                }
+            });
+        })
+
+    </script>
 </head>
 <body>
 <!-- 顶部条 -->
@@ -148,22 +170,22 @@
             </div>
 
             <div style="height: 180px;margin-top: 20px;display: flex;justify-content: space-between" id="p5_pic_list">
-                <div style="background-image: url(../img/page5/bg/p5_bg_1.png);">
+                <div style="background-image: url(../img/page5/bg/p5_bg_1.png);cursor: pointer">
                     <span>1号抢购</span>
                     <span>臻选为你 <br> 购物更自在</span>
                     <img src="../img/page5/bg/1.png" alt="">
                 </div>
-                <div style="background-image: url(../img/page5/bg/p5_bg_2.png)">
+                <div style="background-image: url(../img/page5/bg/p5_bg_2.png);cursor: pointer">
                     <span>福利集市</span>
                     <span>福利随心兑<br> 享品质生活</span>
                     <img src="../img/page5/bg/2.png" alt="">
                 </div>
-                <div style="background-image: url(../img/page5/bg/p5_bg_3.png)">
+                <div style="background-image: url(../img/page5/bg/p5_bg_3.png);cursor: pointer">
                     <span>超级品牌</span>
                     <span>精品汇聚<br> 品质如一</span>
                     <img src="../img/page5/bg/3.png" alt="">
                 </div>
-                <div style="background-image: url(../img/page5/bg/p5_bg_4.png)">
+                <div style="background-image: url(../img/page5/bg/p5_bg_4.png);cursor: pointer">
                     <span>金币商城</span>
                     <span>签到送金币<br> 好货准时抢</span>
                     <img src="../img/page5/bg/4.png" alt="">
@@ -176,56 +198,97 @@
                     <h4 class="guess_you_like" style="display: inline">猜您喜欢</h4>
                 </div>
                 <span style="display: block">实时推荐最适合您的商品</span>
-                <div>
+                <div id="list">
                     <img src="../img/page5/slide_left_right/left.png" alt="" class="slide_left">
                     <img src="../img/page5/slide_left_right/right_true.png" alt="" class="slide_right">
-                    <ul>
+                    <ul class="current">
                         <li>
                             <img src="../img/page5/ad/ad_1.jpg" alt="">
-                            <span class="recommend_span_1">¥<b>59.9</b></span>
+                            <span class="recommend_span_1">¥<b>29.9</b></span>
                             <span class="recommend_span_2">【张二嫂直播专属】嗨吃家酸辣粉110g*12桶整箱方便速食网红夜宵重庆风味方便粉丝即食红薯粉批发采购 酸辣粉整箱</span>
                         </li>
                         <li>
-                            <img src="../img/page5/ad/ad_1.jpg" alt="">
+                            <img src="../img/page5/ad/ad_2.jpg" alt="">
                             <span class="recommend_span_1">¥<b>59.9</b></span>
+                            <span class="recommend_span_2">迪士尼DISNEY 宝宝爬行垫 婴儿拼接爬爬垫 泡沫拼图防滑地垫游戏毯加厚2CM 60*60cm</span>
+                        </li>
+                        <li>
+                            <img src="../img/page5/ad/ad_3.jpg" alt="">
+                            <span class="recommend_span_1">¥<b>49.9</b></span>
+                            <span class="recommend_span_2">潮旭 华为畅享10plus手机壳超薄透明畅享10plus保护套全包边硅胶壳防摔硬壳新品男女情侣潮流款 华为畅享10plus【蓝色】送 膜+挂绳+指环</span>
+                        </li>
+                        <li>
+                            <img src="../img/page5/ad/ad_4.jpg" alt="">
+                            <span class="recommend_span_1">¥<b>159.9</b></span>
+                            <span class="recommend_span_2">迪士尼DISNEY 双面加厚宝宝爬行垫爬爬垫 防滑地垫游戏毯 加厚2cm</span>
+                        </li>
+                        <li>
+                            <img src="../img/page5/ad/ad_5.jpg" alt="">
+                            <span class="recommend_span_1">¥<b>52.2</b></span>
+                            <span class="recommend_span_2">亿色(ESR) 苹果11手机壳iPhone11保护套全包防摔透明玻璃壳硅胶软边全透明镜面潮牌6.1英寸男女 琉璃-剔透白</span>
+                        </li>
+                        <li>
+                            <img src="../img/page5/ad/ad_6.jpg" alt="">
+                            <span class="recommend_span_1">¥<b>249.2</b></span>
+                            <span class="recommend_span_2">爬行垫XPE可折叠加厚婴儿客厅泡沫地垫子宝宝家用整张儿童爬爬垫 英文动物+猫头鹰 【EPE可卷折款】1.8米*1.2米*0.5CM</span>
+                        </li>
+                        <li>
+                            <img src="../img/page5/ad/ad_7.jpg" alt="">
+                            <span class="recommend_span_1">¥<b>349.9</b></span>
+                            <span class="recommend_span_2">亿色(ESR)  iphone xs max手机壳苹果xs max手机保护套 超薄透明防摔玻璃镜面抖音同款男女款  琉璃-剔透白</span>
+                        </li>
+                        <li>
+                            <img src="../img/page5/ad/ad_8.jpg" alt="">
+                            <span class="recommend_span_1">¥<b>249.9</b></span>
+                            <span class="recommend_span_2">亿色(ESR) iPhone11 Pro max手机壳 苹果11Pro max保护套全包防摔透明玻璃壳硅胶软边透明6.5英寸琉璃-剔透白</span>
+                        </li>
+                    </ul>
+                    <ul class="none">
+                        <li>
+                            <img src="../img/page5/ad/ad_9.jpg" alt="">
+                            <span class="recommend_span_1">¥<b>622.9</b></span>
+                            <span class="recommend_span_2">衣柜实木北欧定制衣橱出租房公寓板式三门组装整体衣柜木质 B款（600*500*1900) 枫木色</span>
+                        </li>
+                        <li>
+                            <img src="../img/page5/ad/ad_10.jpg" alt="">
+                            <span class="recommend_span_1">¥<b>229.9</b></span>
+                            <span class="recommend_span_2">道顿A3+/A3++/A4激光铜版纸封皮纸胶装机热熔胶装订机标书文件书籍封皮封面纸 200g A3++ 激光铜版纸 白色</span>
+                        </li>
+                        <li>
+                            <img src="../img/page5/ad/ad_11.jpg" alt="">
+                            <span class="recommend_span_1">¥<b>33.9</b></span>
+                            <span class="recommend_span_2">奇砚QY-15A三孔打孔机强力带刀打孔器 干部人事档案三孔装订机 重型3孔打孔机切纸 可打150张 QY-15A带5MM钻头</span>
+                        </li>
+                        <li>
+                            <img src="../img/page5/ad/ad_12.jpg" alt="">
+                            <span class="recommend_span_1">¥<b>59.3</b></span>
                             <span class="recommend_span_2">【张二嫂直播专属】嗨吃家酸辣粉110g*12桶整箱方便速食网红夜宵重庆风味方便粉丝即食红薯粉批发采购 酸辣粉整箱</span>
                         </li>
                         <li>
-                            <img src="../img/page5/ad/ad_1.jpg" alt="">
-                            <span class="recommend_span_1">¥<b>59.9</b></span>
-                            <span class="recommend_span_2">【张二嫂直播专属】嗨吃家酸辣粉110g*12桶整箱方便速食网红夜宵重庆风味方便粉丝即食红薯粉批发采购 酸辣粉整箱</span>
+                            <img src="../img/page5/ad/ad_13.jpg" alt="">
+                            <span class="recommend_span_1">¥<b>229.9</b></span>
+                            <span class="recommend_span_2">滋源 seeyoung 小滋礼盒60ml*6支 新包装 强根健发控油保湿去屑滋养洗护发旅行装</span>
                         </li>
                         <li>
-                            <img src="../img/page5/ad/ad_1.jpg" alt="">
-                            <span class="recommend_span_1">¥<b>59.9</b></span>
-                            <span class="recommend_span_2">【张二嫂直播专属】嗨吃家酸辣粉110g*12桶整箱方便速食网红夜宵重庆风味方便粉丝即食红薯粉批发采购 酸辣粉整箱</span>
+                            <img src="../img/page5/ad/ad_14.jpg" alt="">
+                            <span class="recommend_span_1">¥<b>533.9</b></span>
+                            <span class="recommend_span_2">清扬(CLEAR)去屑洗发水套装 樱花沁爽型720gx2送樱花沁爽100gx2</span>
                         </li>
                         <li>
-                            <img src="../img/page5/ad/ad_1.jpg" alt="">
-                            <span class="recommend_span_1">¥<b>59.9</b></span>
-                            <span class="recommend_span_2">【张二嫂直播专属】嗨吃家酸辣粉110g*12桶整箱方便速食网红夜宵重庆风味方便粉丝即食红薯粉批发采购 酸辣粉整箱</span>
+                            <img src="../img/page5/ad/ad_15.jpg" alt="">
+                            <span class="recommend_span_1">¥<b>449.9</b></span>
+                            <span class="recommend_span_2">霸王育发防脱发生发洗发水380ml+头皮营养液55ml生姜汁控油洗头膏生发液洗护套装（男女士生发增发密发）</span>
                         </li>
                         <li>
-                            <img src="../img/page5/ad/ad_1.jpg" alt="">
-                            <span class="recommend_span_1">¥<b>59.9</b></span>
-                            <span class="recommend_span_2">【张二嫂直播专属】嗨吃家酸辣粉110g*12桶整箱方便速食网红夜宵重庆风味方便粉丝即食红薯粉批发采购 酸辣粉整箱</span>
+                            <img src="../img/page5/ad/ad_16.jpg" alt="">
+                            <span class="recommend_span_1">¥<b>449.9</b></span>
+                            <span class="recommend_span_2">滋源玫瑰精油洗发水 柔顺修护洗发露400ml（无硅油无硫酸盐 精油润养 深层修护 水润亮泽）</span>
                         </li>
-                        <li>
-                            <img src="../img/page5/ad/ad_1.jpg" alt="">
-                            <span class="recommend_span_1">¥<b>59.9</b></span>
-                            <span class="recommend_span_2">【张二嫂直播专属】嗨吃家酸辣粉110g*12桶整箱方便速食网红夜宵重庆风味方便粉丝即食红薯粉批发采购 酸辣粉整箱</span>
-                        </li>
-                        <li>
-                            <img src="../img/page5/ad/ad_1.jpg" alt="">
-                            <span class="recommend_span_1">¥<b>59.9</b></span>
-                            <span class="recommend_span_2">【张二嫂直播专属】嗨吃家酸辣粉110g*12桶整箱方便速食网红夜宵重庆风味方便粉丝即食红薯粉批发采购 酸辣粉整箱</span>
-                        </li>
-
                     </ul>
                 </div>
             </div>
 
-            <div id="bottom_parent">
+            <div id="bottom_parent" style="margin-top: 40px">
                 <div id="bottom">
                     <ul>
                         <li>
